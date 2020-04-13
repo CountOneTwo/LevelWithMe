@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9170379106718456398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Stage 1/Sound/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637223921357563771
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,15 +32,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 5078819642897473391}
-  - {fileID: 6303143414904044793}
+  - {fileID: -9170379106718456398}
   EditorEvents:
   - {fileID: 6753790730284519539}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6303143414904044793}
+  - {fileID: -9170379106718456398}
   StringsBanks:
   - {fileID: 5078819642897473391}
-  stringsBankWriteTime: 637223899896643239
+  stringsBankWriteTime: 637223921357573722
   cacheVersion: 3
 --- !u!114 &2650581613548085720
 MonoBehaviour:
@@ -76,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Stage 1/Sound/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637223899896643239
+  lastModified: 637223921357573722
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -99,7 +117,7 @@ MonoBehaviour:
   lastModified: 637223899896635247
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &6753790730284519539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +133,7 @@ MonoBehaviour:
   Path: event:/New Event
   guid: d1d014eb333d764caa79fd884f7ab1ec
   Banks:
-  - {fileID: 6303143414904044793}
+  - {fileID: -9170379106718456398}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
