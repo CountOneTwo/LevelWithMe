@@ -28,6 +28,7 @@ public class HealthAndRespawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //transform.position = new Vector3(0,0,0);
         healthCounter.text = "Health: " + currentHealth;
         CheckForRespawn();
         CheckForOutOfBounds();
@@ -55,7 +56,8 @@ public class HealthAndRespawn : MonoBehaviour
         //charController.velocity.Set(0f,0f,0f);
         //charController.SimpleMove(Vector3.zero);
         //charController.Move(Vector3.zero);
-        transform.position = respawnPoint;
+        Debug.Log("Respawning");
+        this.transform.position = respawnPoint;
         currentHealth = maxHealth;
     }
 }

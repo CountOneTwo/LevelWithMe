@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public float projectileSpeed;
     public int damage;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +23,17 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log(3);
-        if(collision.gameObject.GetComponent<Enemy>() != null)
-        {
-            Debug.Log(4);
-            collision.gameObject.GetComponent<Enemy>().health -= damage;
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
+       
+         if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
         {
             Debug.Log(5);
             collision.gameObject.GetComponent<HealthAndRespawn>().currentHealth -= damage;
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Debug.Log(4);
+            collision.gameObject.GetComponent<Enemy>().health -= damage;
         }
         else
         {

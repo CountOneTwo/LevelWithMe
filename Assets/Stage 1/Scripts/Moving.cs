@@ -38,7 +38,7 @@ public class Moving : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            Debug.Log("yo");
+            //Debug.Log("yo");
             velocity.y = -2f;
             /*if (Input.GetButtonDown("Jump"))
             {
@@ -64,7 +64,7 @@ public class Moving : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             isGrounded = false;
-            Debug.Log("oi");
+            //Debug.Log("oi");
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
