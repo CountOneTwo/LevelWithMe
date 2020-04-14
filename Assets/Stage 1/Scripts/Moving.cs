@@ -7,6 +7,12 @@ public class Moving : MonoBehaviour
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
 
+    public float jumpHeight;
+    public float gravity;
+    Vector3 velocity;
+
+    bool isGrounded;
+
     private CharacterController charController;
 
 
@@ -22,6 +28,26 @@ public class Moving : MonoBehaviour
 
     private void PlayerMovement()
     {
+        if (charController.isGrounded)
+        {
+            isGrounded = true;
+        }
+        else{
+            isGrounded = false;
+        }
+
+        if (isGrounded && velocity.y < 0)
+        {
+            Debug.Log("yo");
+            velocity.y = -2f;
+            /*if (Input.GetButtonDown("Jump"))
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }*/
+        }
+       
+
+
         float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
         float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
 
@@ -29,11 +55,26 @@ public class Moving : MonoBehaviour
         Vector3 forwardMovement = transform.forward * vertInput;
 
 
-        charController.SimpleMove(forwardMovement + rightMovement);
+        charController.Move((forwardMovement + rightMovement) * movementSpeed * Time.deltaTime);
 
 
+
+        velocity.y += gravity * Time.deltaTime;
+
+        if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            isGrounded = false;
+            Debug.Log("oi");
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        charController.Move(velocity * Time.deltaTime);
+
     }
-    }
+
+
+
+}
 
    /* public class Moving: MonoBehaviour
     {
