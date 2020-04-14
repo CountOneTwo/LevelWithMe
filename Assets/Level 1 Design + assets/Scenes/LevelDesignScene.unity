@@ -13131,7 +13131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e035925a9f85134684a78afd59b7074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeinFactor: 0
+  fadeinFactor: 10
 --- !u!114 &1133883223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24509,7 +24509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1f56a699a5cdc4e8ecfec76505684c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 181.07
   playerBody: {fileID: 3804634124783393809}
 --- !u!4 &3804634126008519411
 Transform:

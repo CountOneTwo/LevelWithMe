@@ -31,8 +31,7 @@ public class Projectile : MonoBehaviour
         }
         else if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
         {
-            Debug.Log(5);
-            collision.gameObject.GetComponent<HealthAndRespawn>().currentHealth -= damage;
+            
         }
         else
         {
