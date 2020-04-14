@@ -24462,7 +24462,7 @@ MonoBehaviour:
   maxHealth: 100
   respawnPoint: {x: 4, y: 1, z: 69}
   currentHealth: 100
-  minimumHeight: -10
+  minimumHeight: -150
   healthCounter: {fileID: 398380957}
 --- !u!143 &3804634124783393823
 CharacterController:
