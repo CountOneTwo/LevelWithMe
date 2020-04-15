@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2744764419467087622}
   m_LocalRotation: {x: -0.7071068, y: -0.000000029802322, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.9538574, y: 15.460979, z: 0.45799637}
-  m_LocalScale: {x: 13.756223, y: 1, z: 47.641808}
+  m_LocalPosition: {x: 5.2, y: 14.8, z: 0.45799637}
+  m_LocalScale: {x: 13, y: 1, z: 48}
   m_Children: []
   m_Father: {fileID: 7423444658740158869}
   m_RootOrder: 0
@@ -120,8 +120,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5619536212018145078}
   m_LocalRotation: {x: -0.7071068, y: -0.000000029802322, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 33.433853, y: -0.8790169, z: 0.45799637}
-  m_LocalScale: {x: -43.62972, y: 1, z: 80.17888}
+  m_LocalPosition: {x: 33.2, y: -1.2, z: 0.45799637}
+  m_LocalScale: {x: -43, y: 1, z: 80}
   m_Children: []
   m_Father: {fileID: 7423444658740158869}
   m_RootOrder: 2
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7423444658740158869}
   m_Layer: 0
-  m_Name: Palace entrance
+  m_Name: P_Palace entrance_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,8 +246,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8648607360562299997}
   m_LocalRotation: {x: -0.7071068, y: -0.000000029802322, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -23.626144, y: -0.8790169, z: 0.45799637}
-  m_LocalScale: {x: -43.62972, y: 1, z: 80.17888}
+  m_LocalPosition: {x: -22.8, y: -1.2, z: 0.45799637}
+  m_LocalScale: {x: -43, y: 1, z: 80}
   m_Children: []
   m_Father: {fileID: 7423444658740158869}
   m_RootOrder: 1
