@@ -21,19 +21,15 @@ public class EnemyProjectile : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(3);
-       
+    {      
          if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
         {
-            Debug.Log(5);
             collision.gameObject.GetComponent<HealthAndRespawn>().currentHealth -= damage;
             Destroy(gameObject);
         }
         else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
-            Debug.Log(4);
-            collision.gameObject.GetComponent<Enemy>().health -= damage;
+
         }
         else
         {
