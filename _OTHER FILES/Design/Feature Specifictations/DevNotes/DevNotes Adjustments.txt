@@ -1,0 +1,15 @@
+- Hide area should be larger than show area (roughly 20%) and both should be visualized with spheres in the editor
+- Need separate text elements for author, development role, date, and actual message to style them differently later
+- Get rid of continous camera facing
+	- Instead rotate only the yaw to face player POSITION (not camera rotation) once when the message appears
+- Add progress bar showing how long you still need to look at it
+- Reduce look at time by a lot (maybe half it)
+- Store exposed variables on the parent object of the prefab
+	- Exposed enum for author that includes role in parenthesis -> e.g. "Aurelio (Artist)"
+		- Generates name and development role text from this
+		- Option "???" resembles traitor notes
+			- If chosen, author name, date, and development role will not be shown
+	- Two exposted variables for the date
+		- Enum for months
+		- Integer for day (slider with mininum of 1 and maximum of 31)
+	- If possible, put character limit on the exposed message content variable
