@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d0ac10d2f7aab4ab0b544e9bb74a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8379803022288976052, guid: 28269f6c4c305a34884eef34b3c340cb,
+  projectilePrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
     type: 3}
   projectileSpawn: {fileID: 559038535}
 --- !u!1 &1037647828
