@@ -13,6 +13,6 @@ public class DeveloperNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(GameObject.Find("Player").transform.position);
+        //transform.LookAt(GameObject.Find("Player").transform.position);
     }
 }

@@ -6,13 +6,16 @@ public class Arrow : MonoBehaviour
 {
     public float projectileSpeed;
     public int damage;
+    public float windupMultiplier;
+
+    public float speed;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 5.0f);
-        GetComponent<Rigidbody>().velocity = transform.forward * 40;
+        GetComponent<Rigidbody>().velocity = transform.forward * speed * windupMultiplier;
     }
 
     // Update is called once per frame

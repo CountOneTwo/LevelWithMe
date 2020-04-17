@@ -11,6 +11,7 @@ public class InformationIcon : MonoBehaviour
     public float range;
     public Canvas developerComment;
     public Material whenRead;
+    public Slider progressSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class InformationIcon : MonoBehaviour
     void Update()
     {
         VisibilityCheck();
+        transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, transform.position.y, GameObject.Find("Player").transform.position.z));
     }
 
     void VisibilityCheck()
@@ -36,6 +38,11 @@ public class InformationIcon : MonoBehaviour
                     developerComment.enabled = true;
                     renderer.enabled = false;
                     renderer.material = whenRead;
+                    progressSlider.gameObject.SetActive(false);
+
+                    developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
+
+
                 }
             }
             else
@@ -48,9 +55,12 @@ public class InformationIcon : MonoBehaviour
         {
        
             developerComment.enabled = false;
+            progressSlider.gameObject.SetActive(true);
             renderer.enabled = true;
             timeLookedAt = 0;
         }
+
+        progressSlider.value = timeLookedAt / timeToDisplay;
            /* if (renderer.isVisible)
         {
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < range)
