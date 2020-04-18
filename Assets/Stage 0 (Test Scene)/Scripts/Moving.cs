@@ -64,6 +64,9 @@ public class Moving : MonoBehaviour
 
         charController.Move(velocity * Time.deltaTime);
 
+
+
+
     }
 
 

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 668966128543835137}
   - component: {fileID: 143372438377216846}
   - component: {fileID: 4500853929970819285}
-  - component: {fileID: 4705559282030469686}
   - component: {fileID: 7482085243229012315}
   m_Layer: 0
   m_Name: P_Arrow
@@ -113,14 +112,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!81 &4705559282030469686
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089335080803395256}
-  m_Enabled: 1
 --- !u!114 &7482085243229012315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,5 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 100
   damage: 10
-  windupMultiplier: 1.8207413
+  windupMultiplier: 0.5
   speed: 40

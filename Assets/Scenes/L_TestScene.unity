@@ -316,7 +316,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bb631df1dc1f754ebc8590050402fe7, type: 2}
+  - {fileID: 2100000, guid: 089df72d80c05c245a28caeee319f609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -867,7 +867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bb631df1dc1f754ebc8590050402fe7, type: 2}
+  - {fileID: 2100000, guid: 3e0fe67eb2339a84a8d7d462de5f18ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1282,7 +1282,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bb631df1dc1f754ebc8590050402fe7, type: 2}
+  - {fileID: 2100000, guid: 3e0fe67eb2339a84a8d7d462de5f18ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1375,7 +1375,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bb631df1dc1f754ebc8590050402fe7, type: 2}
+  - {fileID: 2100000, guid: 3e0fe67eb2339a84a8d7d462de5f18ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1560,7 +1560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bb631df1dc1f754ebc8590050402fe7, type: 2}
+  - {fileID: 2100000, guid: 3e0fe67eb2339a84a8d7d462de5f18ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1706,6 +1706,7 @@ GameObject:
   - component: {fileID: 1886600088}
   - component: {fileID: 1886600089}
   - component: {fileID: 1886600090}
+  - component: {fileID: 1886600091}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1797,7 +1798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886600082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da2883afa2426434fb69ae5fc01d0c6e, type: 3}
   m_Name: 
@@ -1856,6 +1857,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeoutFactor: 10
   blackScreen: {fileID: 1801016189}
+--- !u!114 &1886600091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886600082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d758d3db115b9448aae4787dcd9d25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalInputName: Horizontal
+  verticalInputName: Vertical
+  dashButton: Dash
+  acceleration: 10
+  jumpHeight: 5
+  gravity: -20
+  additionalFallGravity: -20
+  dashSpeed: 50
+  slideFactor: 0.8
+  maxSpeed: 50
 --- !u!1 &1930042320
 GameObject:
   m_ObjectHideFlags: 0
