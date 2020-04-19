@@ -6,6 +6,8 @@ public class Enemy_Stage2 : MonoBehaviour
 {
     BoxCollider b;
     Bounds bounds;
+
+    public Vector3[] cornerPoints;
     // Start is called before the first frame update
     void Start()
     {
