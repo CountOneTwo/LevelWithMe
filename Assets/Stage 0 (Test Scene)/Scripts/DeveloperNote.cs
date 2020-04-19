@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 
 public class DeveloperNote : MonoBehaviour
 {
 
-    public enum developer {Bonnie, Sandra, Nikolai, Alejandro, Iver};
+    public enum developer {BonnieIProgramming, SandraIDesign, NikolaiIDesign, AlejandroIArtISound, IverIArt, Traitor};
     public enum month {January, February, March, April, May, June, July, August, September, October, November, December};
 
-
+    public Text contentText;
+    public Text developerText;
+    public Text roleText;
+    public Text dateText;
 
 
     public developer selectedDeveloper;
@@ -28,6 +32,40 @@ public class DeveloperNote : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (selectedDeveloper == developer.Traitor)
+        {
+
+        }
+        else
+        {
+            switch (selectedDeveloper)
+            {
+                case developer.BonnieIProgramming:
+                    developerText.text = "Bonnie";
+                    roleText.text = "Programming";
+                    break;
+                case developer.SandraIDesign:
+                    developerText.text = "Sandra";
+                    roleText.text = "Design";
+                    break;
+                case developer.NikolaiIDesign:
+                    developerText.text = "Nikolai";
+                    roleText.text = "Design";
+                    break;
+                case developer.AlejandroIArtISound:
+                    developerText.text = "Alejandro";
+                    roleText.text = "Art & Sound";
+                    break;
+                case developer.IverIArt:
+                    developerText.text = "Iver";
+                    roleText.text = "Art";
+                    break;
+            }
+            dateText.text = dayOfMonth + "." + selectedMonth.ToString();
+
+        }
+
+        contentText.text = content;
         
     }
 
@@ -37,13 +75,12 @@ public class DeveloperNote : MonoBehaviour
         //transform.LookAt(GameObject.Find("Player").transform.position);
     }
 
-    void OnGui()
+    void OnDrawGizmos()
     {
-        if (content.Length > 300)
-        {
-            content = content.Substring(0, 299);
-        }
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, showArea);
 
-
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, hideArea);
     }
 }
