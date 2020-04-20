@@ -1,0 +1,37 @@
+2020-04-20 14:44:06.6746 [DEBUG] Validating model...
+2020-04-20 14:44:06.8546 [DEBUG] Model validated
+2020-04-20 14:44:06.8556 [DEBUG] Authenticating with server...
+2020-04-20 14:44:07.4192 [DEBUG] Connected to room. (122562:SceneFusion:SceneFusion)
+2020-04-20 14:44:07.4222 [INFO] Connected to server.
+2020-04-20 14:44:07.4242 [DEBUG] OS : Microsoft Windows NT 10.0.18362.0
+2020-04-20 14:44:07.4242 [DEBUG] Unity Version : 2019.3.8f1
+2020-04-20 14:44:07.4242 [DEBUG] Pro License : False
+2020-04-20 14:44:07.4242 [DEBUG] Platform : WindowsEditor
+2020-04-20 14:44:07.4257 [DEBUG] Build Target : StandaloneWindows64
+2020-04-20 14:44:07.4257 [DEBUG] Scene Fusion version : 1.8.7
+2020-04-20 14:44:07.4282 [DEBUG] Scene Fusion client build : 0
+2020-04-20 14:44:07.4282 [DEBUG] User : ignaciodipaola@hotmail.com
+2020-04-20 14:44:07.4282 [DEBUG] Waiting for server response
+2020-04-20 14:44:07.5393 [DEBUG] Tier: Indie (5 Seats), Permissions: 00000A02
+2020-04-20 14:44:07.5393 [DEBUG] User Permissions: FFFFFFFF
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.MovieTexture
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RayTracingShader
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.LocalizationAsset
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.TerrainLayer
+2020-04-20 14:44:07.8392 [DEBUG] No stand-in for UnityEngine.VFX.VisualEffectAsset
+2020-04-20 14:44:08.1314 [DEBUG] Uploading scene 'L_Level2DesignScene'
+2020-04-20 14:44:08.3329 [DEBUG] Encoding objects for Stage 2/scenes/L_Level2DesignScene.unity
+2020-04-20 14:44:09.6562 [DEBUG] Compressing scene data
+2020-04-20 14:44:11.8031 [DEBUG] Spawn request. (Objects: 1193)
+2020-04-20 14:44:11.8051 [DEBUG] Entity RPC. (Id: 1, Size: 16006, Reporting Threshold: 10000)
+2020-04-20 14:44:13.0321 [DEBUG] Loading complete
+2020-04-20 14:45:05.6438 [DEBUG] Spawn request. (Objects: 1)
+2020-04-20 14:45:08.1696 [DEBUG] Spawn request. (Objects: 1)
+2020-04-20 14:45:13.1208 [DEBUG] Spawn request. (Objects: 1)
+2020-04-20 14:45:30.9331 [DEBUG] Spawn request. (Objects: 1)
+2020-04-20 14:46:01.5972 [DEBUG] Spawn request. (Objects: 1)
+2020-04-20 14:48:09.1650 [DEBUG] Disconnecting from room (122562:SceneFusion:SceneFusion)
+2020-04-20 14:48:09.1680 [INFO] Disconnected from server.
+2020-04-20 14:48:09.1680 [DEBUG] Disconnect. (Duration: 241)
