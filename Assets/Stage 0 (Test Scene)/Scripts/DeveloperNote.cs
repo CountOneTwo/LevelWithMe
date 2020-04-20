@@ -10,12 +10,14 @@ public class DeveloperNote : MonoBehaviour
     public enum developer {BonnieIProgramming, SandraIDesign, NikolaiIDesign, AlejandroIArtISound, IverIArt, Traitor};
     public enum month {January, February, March, April, May, June, July, August, September, October, November, December};
 
+
+    [Header("Text Fields")]
     public Text contentText;
     public Text developerText;
     public Text roleText;
     public Text dateText;
 
-
+    [Header("Adjustable Options")]
     public developer selectedDeveloper;
     public month selectedMonth;
 
@@ -24,6 +26,8 @@ public class DeveloperNote : MonoBehaviour
 
     public float showArea;
     public float hideArea;
+
+    public float timeToDisplay;
 
 
     [TextArea(3, 20)]
@@ -34,7 +38,9 @@ public class DeveloperNote : MonoBehaviour
     {
         if (selectedDeveloper == developer.Traitor)
         {
-
+            developerText.text = "";
+            roleText.text = "";
+            dateText.text = "";
         }
         else
         {

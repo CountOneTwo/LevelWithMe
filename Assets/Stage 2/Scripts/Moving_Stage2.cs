@@ -69,7 +69,7 @@ public class Moving_Stage2 : MonoBehaviour
             resultingMovement = Vector3.zero;
         }
 
-        print(resultingMovement.magnitude);
+        //print(resultingMovement.magnitude);
 
         if (Input.GetButtonDown(dashButton))
         {
