@@ -559,8 +559,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5793370063837323930, guid: fea095c1ad2be1747a5423e95e331a6c,
     type: 3}
   health: 100
-  centerOfSpawnArea: {x: 26.6, y: 3.98, z: 24.21}
-  sizeOfSpawnArea: {x: -20.11, y: 20.22, z: 20.68}
+  centerOfSpawnArea: {x: 25.38, y: 1.1, z: 24.21}
+  sizeOfSpawnArea: {x: -34.9, y: 9.7, z: 20.68}
+  movementSpeed: 0
 --- !u!1 &638760203
 GameObject:
   m_ObjectHideFlags: 0

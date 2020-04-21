@@ -31,6 +31,12 @@ public class Enemy_Stage2 : MonoBehaviour
 
     public Vector3 centerOfSpawnArea;
     public Vector3 sizeOfSpawnArea;
+
+    bool moving;
+    float timeWaited;
+
+    public float movementSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,15 +52,34 @@ public class Enemy_Stage2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  print(bounds2);
-        transform.position = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
-       // print(RandomPointInBounds(bounds));
+        //  print(bounds2);
+        // transform.position = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
+        // print(RandomPointInBounds(bounds));
         //transform.position = new Vector3(0,0,0);
+        //Movement();
         HealthCheck();
         DetectionCheck();
         if (detected)
         {
             DetectedActions();
+        }
+    }
+
+    void Movement()
+    {
+        if (moving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, nextPoint, movementSpeed * Time.deltaTime);
+        }
+        else
+        {
+            timeWaited += Time.deltaTime;
+            if (timeWaited > waitTillMove)
+            {
+                nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
+                moving = true;
+
+            }
         }
     }
 
