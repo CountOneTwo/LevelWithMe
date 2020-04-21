@@ -27,9 +27,13 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>() != null)
+        if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {
-            collision.gameObject.GetComponent<Enemy>().health -= damage;
+            collision.gameObject.GetComponent<Enemy_Stage2>().health -= damage;
+            collision.gameObject.GetComponent<Enemy_Stage2>().detected = true;
+            collision.gameObject.GetComponent<Enemy_Stage2>().timeUndetected = 0;
+            print("hit");
+
             Destroy(gameObject);
         }
         else if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
