@@ -468,8 +468,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621408382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.188, y: -0.287, z: -0.2274}
-  m_LocalScale: {x: 0.12207244, y: 0.12207244, z: 0.12207244}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.7983189, y: 3.7983189, z: 3.7983189}
   m_Children:
   - {fileID: 597633989}
   m_Father: {fileID: 1930042324}
@@ -484,7 +484,7 @@ BoxCollider:
   m_GameObject: {fileID: 621408382}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -550,8 +550,8 @@ MonoBehaviour:
   numberInSalve: 3
   delayInSalve: 1
   windup: 3
-  fov: 100
-  updatedFov: 100
+  fov: 30
+  updatedFov: 40
   nextPoint: {x: 0, y: 0, z: 0}
   timeTillLost: 3
   waitTillMove: 3
@@ -559,7 +559,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5793370063837323930, guid: fea095c1ad2be1747a5423e95e331a6c,
     type: 3}
   health: 100
-  cornerPoints: []
+  centerOfSpawnArea: {x: 26.6, y: 3.98, z: 24.21}
+  sizeOfSpawnArea: {x: -20.11, y: 20.22, z: 20.68}
 --- !u!1 &638760203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,8 +2048,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 26.02, y: 22.78, z: 25.14}
+  m_Center: {x: 0, y: 5.47, z: 0}
 --- !u!23 &1930042322
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2104,8 +2105,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930042320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.05, y: 1.27, z: 27.65}
-  m_LocalScale: {x: 22.616976, y: 22.616976, z: 22.616976}
+  m_LocalPosition: {x: 28.05, y: -1.025, z: 27.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 621408383}
   m_Father: {fileID: 0}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy_Stage2 : MonoBehaviour
 {
-    BoxCollider b;
-    Bounds bounds;
+    //BoxCollider b;
+    //Bounds bounds2;
     public int numberInSalve;
     public float delayInSalve;
     public float windup;
@@ -29,7 +29,8 @@ public class Enemy_Stage2 : MonoBehaviour
 
     public float health;
 
-    public Vector3[] cornerPoints;
+    public Vector3 centerOfSpawnArea;
+    public Vector3 sizeOfSpawnArea;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,14 +38,18 @@ public class Enemy_Stage2 : MonoBehaviour
         timeTillNextShot = windup;
         currentFov = fov;
        // b = GetComponentInParent<BoxCollider>();
-       // bounds = b.bounds;
+       // bounds2 = b.bounds;
+        //print(bounds2);
        // b.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.position = RandomPointInBounds(bounds);
+      //  print(bounds2);
+        transform.position = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
+       // print(RandomPointInBounds(bounds));
+        //transform.position = new Vector3(0,0,0);
         HealthCheck();
         DetectionCheck();
         if (detected)
@@ -61,23 +66,23 @@ public class Enemy_Stage2 : MonoBehaviour
         }
     }
 
-    public Vector3 RandomPointInBounds(Bounds bounds)
+    public Vector3 RandomPointInArea(Vector3 center, Vector3 size)
     {
         return new Vector3(
-            Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
-            Random.Range(bounds.min.z, bounds.max.z)
+            Random.Range(center.x - size.x / 2, center.x + size.x / 2),
+            Random.Range(center.y - size.y / 2, center.y + size.y / 2),
+            Random.Range(center.z - size.z / 2, center.z + size.z / 2)
         );
     }
 
     void DetectionCheck(){
-
+        //print(Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position));
         if (Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position) < currentFov) {
-            print(Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position));
+           
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit)){
-                print(hit.transform.gameObject.name);
+            if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position - transform.position, out hit)){
+              //  print(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name.Equals("Player"))
                 {
                     //Detected
@@ -96,6 +101,7 @@ public class Enemy_Stage2 : MonoBehaviour
             detected = false;
             currentFov = fov;
             //Maybe reset time till next shot
+          
         }
 
     }
@@ -123,5 +129,10 @@ public class Enemy_Stage2 : MonoBehaviour
     }
 
 
-
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow cube at the transform position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(centerOfSpawnArea, sizeOfSpawnArea);
+    }
 }

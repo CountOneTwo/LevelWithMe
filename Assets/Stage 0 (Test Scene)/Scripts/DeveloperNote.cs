@@ -82,7 +82,7 @@ public class DeveloperNote : MonoBehaviour
         //transform.LookAt(GameObject.Find("Player").transform.position);
     }
 
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, showArea);
