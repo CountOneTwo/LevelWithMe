@@ -453,6 +453,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e034109109d9d419494246b60124fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberInSalve: 0
+  delayInSalve: 0
+  windup: 0
+  fov: 0
+  updatedFov: 0
+  nextPoint: {x: 0, y: 0, z: 0}
+  timeTillLost: 0
+  waitTillMove: 0
   cornerPoints: []
 --- !u!1 &638760203
 GameObject:
@@ -766,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &932363014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1872,7 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   respawnPoint: {x: 0, y: 3, z: 0}
-  currentHealth: 0
+  currentHealth: 100
   minimumHeight: -100
   healthCounter: {fileID: 1037647830}
 --- !u!114 &1886600090
@@ -1908,7 +1916,7 @@ MonoBehaviour:
   jumpHeight: 5
   gravity: -20
   additionalFallGravity: -20
-  dashSpeed: 50
+  dashSpeed: 10
   slideFactor: 0.8
   maxSpeed: 50
 --- !u!1 &1930042320

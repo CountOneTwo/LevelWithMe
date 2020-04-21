@@ -56,8 +56,12 @@ public class HealthAndRespawn : MonoBehaviour
         //charController.velocity.Set(0f,0f,0f);
         //charController.SimpleMove(Vector3.zero);
         //charController.Move(Vector3.zero);
-        //Debug.Log("Respawning");
+       // Debug.Log("Respawning");
+
+        charController.enabled = false;
         transform.position = respawnPoint;
+        charController.enabled = true;
+
         currentHealth = maxHealth;
     }
 }
