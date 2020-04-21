@@ -9236,7 +9236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 407688577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a204d86d9d879cd45bec66921023c825, type: 3}
+  m_Script: {fileID: 11500000, guid: 18ee98aa5b96f3a4ea15ebdf36eeb5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shooting: {fileID: 2110111999}
@@ -44898,10 +44898,10 @@ GameObject:
   - component: {fileID: 2043628530}
   - component: {fileID: 2043628529}
   - component: {fileID: 2043628528}
-  - component: {fileID: 2043628527}
   - component: {fileID: 2043628526}
   - component: {fileID: 2043628525}
   - component: {fileID: 2043628524}
+  - component: {fileID: 2043628532}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -44921,7 +44921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c11cfbab37d5a4b80af52b7231ac94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeoutFactor: 10
+  fadeoutFactor: 5
   blackScreen: {fileID: 1500166593}
 --- !u!114 &2043628525
 MonoBehaviour:
@@ -44958,23 +44958,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2043628527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043628523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da2883afa2426434fb69ae5fc01d0c6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalInputName: Horizontal
-  verticalInputName: Vertical
-  movementSpeed: 4
-  jumpHeight: 5
-  gravity: -20
 --- !u!136 &2043628528
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45052,6 +45035,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 201
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043628532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043628523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d758d3db115b9448aae4787dcd9d25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalInputName: Horizontal
+  verticalInputName: Vertical
+  dashButton: Dash
+  acceleration: 10
+  jumpHeight: 5
+  gravity: -20
+  additionalFallGravity: -20
+  dashSpeed: 10
+  slideFactor: 0.8
+  maxSpeed: 50
 --- !u!1 &2044304817
 GameObject:
   m_ObjectHideFlags: 0
@@ -45969,12 +45974,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2110111997}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d0ac10d2f7aab4ab0b544e9bb74a7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a9582a0bb63f3242b26b649ce9e6e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8379803022288976052, guid: 28269f6c4c305a34884eef34b3c340cb,
+  arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
     type: 3}
   projectileSpawn: {fileID: 718203943}
+  windupMaximum: 4
+  windupMinimum: 0.5
 --- !u!114 &2110112000
 MonoBehaviour:
   m_ObjectHideFlags: 0
