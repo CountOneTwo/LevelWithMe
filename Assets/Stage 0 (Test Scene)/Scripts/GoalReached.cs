@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GoalReached : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GoalReached : MonoBehaviour
     {
         if (collider.name == "Goal")
         {
+            print("YO");
             StartCoroutine("FadeOutFunction");
         }
     }
@@ -30,6 +32,7 @@ public class GoalReached : MonoBehaviour
     void LevelTransition()
     {
         //Load next level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator FadeOutFunction()

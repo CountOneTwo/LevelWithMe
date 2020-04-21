@@ -6,6 +6,15 @@ public class Enemy_Stage2 : MonoBehaviour
 {
     BoxCollider b;
     Bounds bounds;
+    public int numberInSalve;
+    public float delayInSalve;
+    public float windup;
+    public float fov;
+    public float updatedFov;
+    public Vector3 nextPoint;
+    public float timeTillLost;
+    bool detected;
+    public float waitTillMove;
 
     public Vector3[] cornerPoints;
     // Start is called before the first frame update
@@ -20,6 +29,8 @@ public class Enemy_Stage2 : MonoBehaviour
     void Update()
     {
         transform.position = RandomPointInBounds(bounds);
+        DetectionCheck();
+
     }
 
     public Vector3 RandomPointInBounds(Bounds bounds)
@@ -29,6 +40,11 @@ public class Enemy_Stage2 : MonoBehaviour
             Random.Range(bounds.min.y, bounds.max.y),
             Random.Range(bounds.min.z, bounds.max.z)
         );
+    }
+
+    void DetectionCheck(){
+
+
     }
 
 }

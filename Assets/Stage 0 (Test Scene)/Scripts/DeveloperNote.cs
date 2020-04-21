@@ -7,7 +7,7 @@ using UnityEditor;
 public class DeveloperNote : MonoBehaviour
 {
 
-    public enum developer {BonnieIProgramming, SandraIDesign, NikolaiIDesign, AlejandroIArtISound, IverIArt, Traitor};
+    public enum developer {BonnieIProgramming, SandraIDesign, NikolaiIDesign, AlejandroIArt, IverIArt, Traitor};
     public enum month {January, February, March, April, May, June, July, August, September, October, November, December};
 
 
@@ -58,9 +58,10 @@ public class DeveloperNote : MonoBehaviour
                     developerText.text = "Nikolai";
                     roleText.text = "Design";
                     break;
-                case developer.AlejandroIArtISound:
+                case developer.AlejandroIArt:
                     developerText.text = "Alejandro";
-                    roleText.text = "Art & Sound";
+                    //roleText.text = "Art & Sound";
+                    roleText.text = "Art";
                     break;
                 case developer.IverIArt:
                     developerText.text = "Iver";

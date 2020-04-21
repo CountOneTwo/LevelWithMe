@@ -16,6 +16,7 @@ public class Arrow : MonoBehaviour
     {
         Destroy(gameObject, 5.0f);
         GetComponent<Rigidbody>().velocity = transform.forward * speed * windupMultiplier;
+        damage = (int)windupMultiplier * damage;
     }
 
     // Update is called once per frame
