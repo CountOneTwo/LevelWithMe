@@ -14,7 +14,7 @@ public class Moving_Stage2 : MonoBehaviour
     public float dashSpeed;
     public float slideFactor;
     public float maxSpeed;
-    Vector3 downwardsVelocity;
+    Vector3 velocity;
 
     bool isGrounded;
 
@@ -34,9 +34,6 @@ public class Moving_Stage2 : MonoBehaviour
 
     private void PlayerMovement()
     {
-
-        
-        //ResetJump
         if (charController.isGrounded)
         {
             isGrounded = true;
@@ -46,30 +43,22 @@ public class Moving_Stage2 : MonoBehaviour
             isGrounded = false;
         }
 
-        //Gravity
-        if (isGrounded && downwardsVelocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
-            downwardsVelocity.y = -2f;
+            velocity.y = -2f;
         }
 
 
-        //Get Input
+
         float horizInput = Input.GetAxis(horizontalInputName) * acceleration;
         float vertInput = Input.GetAxis(verticalInputName) * acceleration;
 
         Vector3 rightMovement = transform.right * horizInput;
         Vector3 forwardMovement = transform.forward * vertInput;
 
+        Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration  + movementLastFrame * Time.deltaTime);
 
-
-        //Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration  + movementLastFrame * Time.deltaTime);
-        Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration);
-
-
-
-
-
-
+        
         if (resultingMovement.magnitude > maxSpeed)
         {
             resultingMovement = Vector3.ClampMagnitude(resultingMovement,maxSpeed);
@@ -81,14 +70,16 @@ public class Moving_Stage2 : MonoBehaviour
         }
 
         //print(resultingMovement.magnitude);
+
         if (Input.GetButtonDown(dashButton))
         {
-            charController.Move((forwardMovement + rightMovement) * dashSpeed /*movementLastFrame * Time.deltaTime*/);
-            return;
+            charController.Move((forwardMovement + rightMovement) * Time.deltaTime * dashSpeed);
         }
+        else
+        {
+            
 
-
-        charController.Move(resultingMovement * Time.deltaTime /*movementLastFrame * Time.deltaTime*/);
+            charController.Move(resultingMovement * Time.deltaTime);
             //movementLastFrame = ((forwardMovement + rightMovement) * acceleration + movementLastFrame) * slideFactor;
 
 
@@ -96,30 +87,29 @@ public class Moving_Stage2 : MonoBehaviour
 
 
 
-          //  movementLastFrame = (resultingMovement  * slideFactor);
+            movementLastFrame = (resultingMovement  * slideFactor);
+        }
+
+       
 
 
 
-
-        //Gravity
-        downwardsVelocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime;
 
         if (transform.position.y < positionLastFrame.y)
         {
-            downwardsVelocity.y += additionalFallGravity * Time.deltaTime;
+            velocity.y += additionalFallGravity * Time.deltaTime;
         }
 
         positionLastFrame = transform.position;
 
-
-        //Jumping
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             isGrounded = false;
-            downwardsVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        charController.Move(downwardsVelocity * Time.deltaTime);
+        charController.Move(velocity * Time.deltaTime);
 
 
 
