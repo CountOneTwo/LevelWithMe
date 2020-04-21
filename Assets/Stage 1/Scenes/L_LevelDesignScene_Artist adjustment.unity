@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46509898, g: 0.256096, b: 0.19775322, a: 1}
+  m_IndirectSpecularColor: {r: 0.46515512, g: 0.2561008, b: 0.19805321, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2327,6 +2327,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "We really need to settle on the aesthetic we\u2019re going for, so
+        here\u2019s my idea of a mood board. The building is based on brutalist architecture:
+        raw structures, concrete materials, contrast between light and dark areas.
+        You see it\u2019s not your everyday shooter setting, huh? The player\u2019s
+        weapon can even be a bow. You guys like that?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6339449086235056563, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_Name
@@ -2436,6 +2460,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "haha))) You can see that player is just a capsule. Look at the shadow)
+        I think we should make capsule invisible? Players should think they\u2019re
+        human."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -4262,6 +4308,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "For starters, I\u2019ve set up the input mapping like this: WASD to
+        move around, SPACE to jump, and LEFT\r MOUSE BUTTON to shoot. I coded it
+        so that you\u2019ve got to pick up the bow to be able to shoot. It\u2019s
+        right at\r the entrance of the building. That way, the player can get used
+        to the basic controls before they\u2019re\r introduced to the combat system."
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -5106,6 +5171,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "What is the reason for using a custom skybox of this quality? It looks
+        like you got it from the asset store. Unity\u2019s built-in skybox is no
+        feast for the eyes, but this one is worse. It is too good for a placeholder
+        and too bad for a final asset. Publishers hate uncertainty about what is
+        work in progress and what is the intended quality the team is aiming for!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -5519,6 +5608,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: 'I imagine long corridors like this: Artificial lights contrast with
+        the dark material of the walls. Alien elements of brutalism are joined by
+        more familiar visuals of science fiction. Let me know if you need more concept
+        art for the interior of the temple!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -6267,6 +6379,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "This spot WAS MADE for an Easter egg, don\u2019t you think?!? We can
+        put our names somewhere, the old-but-proven way. An homage to the first Easter
+        egg! Or there are photos of us you can shoot, the stylish-but-macabre approach.
+        Just like in Doom 2. That was SOO COOL back then! Never got to see it myself,
+        though. I\u2019d ragequit before getting to that part :(("
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -6476,6 +6612,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "I\u2019ll take care of it! I can even use my sister\u2019s studio.
+        My boss will probably kill me if I take one more day off, but you know what?
+        Fuck him ^^ I\u2019ve been working on this project full-time already, and
+        I think we\u2019re onto something here. Let\u2019s work hard and create something
+        great!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -7774,6 +7934,28 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "That\u2019s great idea! I have many ideas for arrows already: Ice arrows,
+        teleportation arrows, explosion arrows, triple arrows, smoke arrows. I\u2019ll
+        put the whole list on Google Drive. It\u2019s 7 pages, sorry Sandra)))"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -8100,6 +8282,28 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: Ohh, love all of them)) Will look amazing in 3d) Maybe we can have 5
+        or 6 different enemies? Also some on the ground. First enemy could be third
+        from left maybe? Looks super cool and dangerous!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -8332,6 +8536,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "I put some walls here so player can\u2019t see enemies. Can be surprise
+        moment. Without walls, you can shoot from far away and enemies have no chance.
+        Remember arrows don\u2019t have range limit right now) "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -10234,6 +10460,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Afaik you wanted to have some basic jumping sequences? So it\u2019s
+        not just shooter-meets-walking-simulator. Is that how you imagined them?
+        And how do we make it work within a temple? Just putting some loose platforms
+        somewhere will look SUPER WEIRD, won\u2019t it???"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -10466,6 +10715,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: 'Quick reminder: This map will become the third level of the final game.
+        The player should start with the bow equipped, Bonnie. You have to fix this
+        for the next build! Our goal is a vertical slice: A single, polished level
+        with all features of the final game. There is no need for tutorial sections.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -10754,6 +11026,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Aaand I fell from map\u2026 again))) I think exploring is even better
+        if players don\u2019t die? Maybe we add invisible walls? What about water
+        and player can\u2019t swim? Concepts look like temple is in the ocean. Or
+        real walls even? What do you say, Sandra?))"
       objectReference: {fileID: 0}
     - target: {fileID: 6221310280492826854, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -11470,6 +11765,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: Scribbled some room shapes and I LOVE the idea of a large hall connecting
+        different segments of the map! Is it difficult to design the level with this
+        idea in mind? We can have rows and rows of giant pillars to give you that
+        larger-than-common-humans feeling. Would PERFECTLY fit the idea of a temple
+        with divine knowledge, or what do you think?!?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -11698,6 +12017,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "We need to teach the players how to shoot in a safe environment, ensuring
+        they\u2019re not going to proceed before they got the hang of it. Let\u2019s
+        say they must hit some fixed buttons with their arrows to open a door leading
+        to the next room. I\u2019ve put some placeholder spheres on the wall and
+        will get right to the implementation of activating objects when they collide
+        with instances of the arrow prefab."
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -11802,6 +12141,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "If I were the player in our game, this staircase would be driving me
+        mad already. It really needn\u2019t be so long, as far as I\u2019m concerned.
+        I\u2019ll make some adjustments to the original mesh file in Maya to shorten
+        this whole segment of the level. Perhaps we should avoid extensive walking
+        sections in general, it\u2019s an action shooter game after all."
       objectReference: {fileID: 0}
     - target: {fileID: 6339449086235056563, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -11912,6 +12270,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: 'For story I thought: Player is intruder in this building. You look
+        for hidden knowledge about gods; they send drones to defend it. Bow of the
+        player belongs to traitor god and traitor helps player find the information.
+        What if gods are level bosses? Would be super cool!))'
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -12396,6 +12777,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "FANTASTIC concepts for the enemies, Alejandro! I tried to draw what
+        the gameplay will look like. I\u2019m thinking it\u2019s a bit of Half-Life,
+        BioShock, and some stealth elements from Deus Ex maybe??? OOOH, I\u2019d
+        love that, stealth kills are just so much fun!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -12778,6 +13182,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: Agreed! The next playable build should feature a complete overhaul of
+        the level design. A more open gameplay structure and an architecture that
+        resembles actual buildings are the main goals. We should create a new empty
+        scene and start from scratch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -13115,6 +13542,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Does anyone else think the enemies TOTALLY look like GIANT CANDY right
+        now?!? C\u2019mon, I can\u2019t be the only one. Reminds me of the Baroness
+        Von Bon Bon fight in Cuphead (great game btw). Are you SUGAR you want to
+        keep their skin this way? :)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -13249,6 +13699,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: It is high time somebody takes care of the sound design. During my time
+        at Barrakuda Games, the sound team was involved from the very first conceptualization
+        meeting. Most of our mechanics are well-established in the fps genre. That
+        means our visuals and sound must be outstanding! Iver, can you take care
+        of it? Or Nikolai perhaps?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -14474,6 +14948,29 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Guys, guys, what about THIS for the temple you\u2019re entering? It
+        can be a temple IN THE SKY. How cool is that?!? And BOOM, we have an explanation
+        why noob players can fall off the map here! Gotta admit I was inspired by
+        BioShock Infinite, but damn, that game looked soooo sexy!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 6221310280492826854, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14814,6 +15311,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: You want to keep it like this, Sandra? Player could try to jump off.
+        It looks like you can land on bridge support. Respawn is very annoying. We
+        have no checkpoints yet( Only one at start.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -15393,6 +15912,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Phew, worked on this all night! Let\u2019s hope my boss won\u2019t
+        notice ^^ A long bridge leads to this temple in the midst of the ocean. Awe-inspiring,
+        rigid shapes merge with antique elements and religious iconography. We\u2019re
+        heading somewhere but there\u2019s so much left to do. I\u2019ll definitely
+        ask my boss for some days off!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 6221310280492826854, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -16124,6 +16667,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "WOAH!!! Looks AMAZING. It\u2019s called mood board? The buildings give
+        me some Control vibes. Or NaissanceE. Did you play that, Alejandro? It\u2019s
+        one of these can\u2019t-describe-with-words kind of games. The weapon should
+        definitely be a bow! Just finished Horizon: Zero Dawn and the ranged-hunter-combat
+        was delicious. Bows are OP!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -16351,6 +16918,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "For the next build, I\u2019ll rework the projectile behaviour, so they\u2019re
+        affected by gravity\u2014just like real arrows. I\u2019ll take care of the
+        enemy AI, focussing on movement patterns and different alertness states.
+        For impatient players (like myself), I\u2019d like to add a basic dash mechanic
+        that can be used in and out of combat. This could also provide some interesting
+        options for level design."
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -16634,6 +17221,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: There is no need for walls right now. Players that die from fall damage
+        get to know our respawn system. We should focus on creating a rough level
+        layout to test the core gameplay loop in a first prototype like this. The
+        exact boundaries of the play space are of secondary importance at this stage.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6221310280492826854, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -17465,6 +18075,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: Guys, what if the bow talks to player? Can be sooo funny)) Maybe traitor
+        god was sealed in their bow? Now they talk to player and help them find hidden
+        knowledge for revenge. Long walks can be more interesting if bow tells some
+        stories.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6339449086235056563, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_Name
@@ -18208,6 +18841,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "My visual ideas for the enemies: some flying drones and some gun turrets.
+        I\u2019ve got to say the research took me some days (I don\u2019t do a lot
+        of character design) but I think it finally paid off. I can do some rough
+        3d models of the different versions so you can get a better idea of what
+        they\u2019ll look like. You have any favorites? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -19051,6 +19708,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Tried some different shapes for the bow weapon and put together one
+        of these mood boards you showed me. There are SOOO many games with bows out
+        there, guys, we\u2019re in great company! Tomb Raider, Kingdom Come: Deliverance,
+        Far Cry: Primal, and even Assassin\u2019s Creed: Origins, my ALL TIME FAVOURITE!
+        I\u2019ll play through all of them for \u201Cresearch\u201D ;)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -19185,6 +19866,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: 'The core gameplay loop currently consists of very few building blocks:
+        moving, aiming, and shooting. The game is lacking variation and a sense of
+        progression. We could spread quivers in the level that unlock special arrow
+        types on pick-up. The number of arrow types must be kept to a minimum for
+        development feasibility, though.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -19439,6 +20144,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: What is the purpose of this cover box? Crouching is not included in
+        our movement system. Covers must have a minimum height of two units. Otherwise,
+        their relevance for the game state is non-existent. Further explanations
+        are part of the level design guidelines document.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -19852,6 +20580,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Boss fight has to be special)) We can base it on virtue, too. Maybe
+        trust? Trust makes blind. Boss can have many eyes. Or it\u2019s giant armadillo.
+        Maybe builds up armor in the fight. Virtue could be endurance. Or vitality.
+        What do you think?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -20749,6 +21500,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: Hopefully, everyone is aware that you can get on top of all these corridors
+        right now. I might be able to fix it by finetuning the jump behaviour. My
+        idea was to drastically increase the effect of gravity once the player reaches
+        the peak of their jump, which would result in less realistic, yet more direct
+        controls. This will take some time because of problems with the engine-level
+        physics system.
+      objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -21223,6 +21989,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "Imo there\u2019s a bit of a problem with the level at the moment. It
+        plays like you\u2019re on rails, rather than exploring a vast temple-like
+        structure. It\u2019s more like a Call of Duty campaign than the Federal Bureau
+        of Control (if you know what I mean). Are there any ways to fix that?!?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
@@ -22373,6 +23162,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: content
+      value: "I\u2019m all with Iver on this one. Sorry guys, but all the hard work
+        that went into the temple concepts simply doesn\u2019t get across when you
+        play the game. It doesn\u2019t feel like a building. We need to design levels
+        that make sense from both a gameplay and an architectural perspective! You
+        designers agree?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221310280469550415, guid: 8b76b10ec95c1d14787e159671e7c4e2,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
