@@ -7,10 +7,18 @@ public class EnemyProjectile_Stage2 : MonoBehaviour
     public float projectileSpeed;
     public int damage;
 
+    public float deviation;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 deviationVector = new Vector3(Random.Range(-deviation, deviation), Random.Range(-deviation, deviation), Random.Range(-deviation, deviation));
+
+
+        transform.LookAt(GameObject.Find("Player").transform);
+        //transform.rotation =  transform.rotation + Quaternion.Euler(Random.Range(-deviation, deviation) , Random.Range(-deviation, deviation), Random.Range(-deviation, deviation) );
+        transform.eulerAngles += deviationVector;
         Destroy(gameObject, 5.0f);
     }
 
@@ -22,9 +30,9 @@ public class EnemyProjectile_Stage2 : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
+        if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
         {
-            collision.gameObject.GetComponent<HealthAndRespawn>().currentHealth -= damage;
+            collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().currentHealth -= damage;
             Destroy(gameObject);
         }
         else if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)

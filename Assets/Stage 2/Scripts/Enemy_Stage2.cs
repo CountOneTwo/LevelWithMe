@@ -28,12 +28,13 @@ public class Enemy_Stage2 : MonoBehaviour
     public float timeUndetected;
 
     public float health;
+    public float allowedDeviation;
 
     public Vector3 centerOfSpawnArea;
     public Vector3 sizeOfSpawnArea;
 
     bool moving;
-    float timeWaited;
+    float timeWaited = 0;
 
     public float movementSpeed;
 
@@ -43,10 +44,11 @@ public class Enemy_Stage2 : MonoBehaviour
         currentShot = 0;
         timeTillNextShot = windup;
         currentFov = fov;
-       // b = GetComponentInParent<BoxCollider>();
-       // bounds2 = b.bounds;
+        // b = GetComponentInParent<BoxCollider>();
+        // bounds2 = b.bounds;
         //print(bounds2);
-       // b.enabled = false;
+        // b.enabled = false;
+        nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
     }
 
     // Update is called once per frame
@@ -56,7 +58,8 @@ public class Enemy_Stage2 : MonoBehaviour
         // transform.position = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
         // print(RandomPointInBounds(bounds));
         //transform.position = new Vector3(0,0,0);
-        //Movement();
+        
+        Movement();
         HealthCheck();
         DetectionCheck();
         if (detected)
@@ -69,6 +72,12 @@ public class Enemy_Stage2 : MonoBehaviour
     {
         if (moving)
         {
+            if (Vector3.Distance(transform.position, nextPoint) < allowedDeviation)
+            {
+                moving = false;
+                
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, nextPoint, movementSpeed * Time.deltaTime);
         }
         else
@@ -76,6 +85,7 @@ public class Enemy_Stage2 : MonoBehaviour
             timeWaited += Time.deltaTime;
             if (timeWaited > waitTillMove)
             {
+                timeWaited = 0;
                 nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
                 moving = true;
 
@@ -138,7 +148,7 @@ public class Enemy_Stage2 : MonoBehaviour
 
         if (timeTillNextShot < 0)
         {
-            Instantiate(projectilePrefab, /*projectileSpawn.*/transform.position, transform.rotation);
+            Instantiate(projectilePrefab, /*projectileSpawn.*/transform.position + transform.forward, transform.rotation);
 
             if (currentShot == numberInSalve -1)
             {

@@ -32,7 +32,7 @@ public class Arrow : MonoBehaviour
             collision.gameObject.GetComponent<Enemy_Stage2>().health -= damage;
             collision.gameObject.GetComponent<Enemy_Stage2>().detected = true;
             collision.gameObject.GetComponent<Enemy_Stage2>().timeUndetected = 0;
-            print("hit");
+
 
             Destroy(gameObject);
         }
