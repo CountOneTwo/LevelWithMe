@@ -21,7 +21,7 @@ public class Enemy_Stage2 : MonoBehaviour
     public float timeTillLost;
 
 
-
+    public float rotationalSpeed;
 
 
     [System.NonSerialized]
@@ -29,6 +29,7 @@ public class Enemy_Stage2 : MonoBehaviour
 
     public float waitTillMove;
     public float maxWaitTillMove;
+    float currentWaitTillMove;
 
     float currentFov;
     float currentDetectionDepth;
@@ -61,6 +62,7 @@ public class Enemy_Stage2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
         currentDetectionDepth = detectionDepth;
         currentHealth = maxHealth;
         currentShot = 0;
@@ -105,12 +107,12 @@ public class Enemy_Stage2 : MonoBehaviour
         else
         {
             timeWaited += Time.deltaTime;
-            if (timeWaited > waitTillMove)
+            if (timeWaited > currentWaitTillMove)
             {
                 timeWaited = 0;
                 nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
                 moving = true;
-
+                currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
             }
         }
     }
@@ -153,7 +155,8 @@ public class Enemy_Stage2 : MonoBehaviour
            
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position - transform.position, out hit)){
+            if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position - transform.position, out hit) && Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < currentDetectionDepth)
+            {
               //  print(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name.Equals("Player"))
                 {
@@ -161,7 +164,7 @@ public class Enemy_Stage2 : MonoBehaviour
                     detected = true;
                     timeUndetected = 0;
                     currentFov = updatedFov;
-                    
+                    currentDetectionDepth = updatedDetectionDepth;
                     return;
                 }
             }
@@ -172,6 +175,7 @@ public class Enemy_Stage2 : MonoBehaviour
         {
             detected = false;
             currentFov = fov;
+            currentDetectionDepth = detectionDepth;
             //Maybe reset time till next shot
           
         }
@@ -180,7 +184,10 @@ public class Enemy_Stage2 : MonoBehaviour
 
     void DetectedActions()
     {
-        transform.LookAt(GameObject.Find("Player").transform);
+        //transform.LookAt(GameObject.Find("Player").transform);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(GameObject.Find("Player").transform.position - transform.position), Time.deltaTime * rotationalSpeed);
+
+
         timeTillNextShot -= Time.deltaTime;
 
         if (timeTillNextShot < 0)

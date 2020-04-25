@@ -842,16 +842,20 @@ MonoBehaviour:
   windup: 3
   fov: 30
   updatedFov: 40
+  detectionDepth: 100
+  updatedDetectionDepth: 100
   nextPoint: {x: 0, y: 0, z: 0}
   timeTillLost: 3
+  rotationalSpeed: 1
   waitTillMove: 3
+  maxWaitTillMove: 3
   projectileSpawn: {fileID: 0}
   projectilePrefab: {fileID: 5793370063837323930, guid: fea095c1ad2be1747a5423e95e331a6c,
     type: 3}
-  maxHealth: 0
-  currentHealth: 0
-  healthPerTick: 0
-  tickTime: 0
+  maxHealth: 100
+  currentHealth: 100
+  healthPerTick: 10
+  tickTime: 1
   allowedDeviation: 0.1
   centerOfSpawnArea: {x: 25.38, y: 1.1, z: 24.21}
   sizeOfSpawnArea: {x: -34.9, y: 9.7, z: 20.68}
@@ -3023,7 +3027,7 @@ MonoBehaviour:
   additionalFallGravity: -20
   dashSpeed: 30
   slideFactor: 0.8
-  maxSpeed: 10
+  maxSpeed: 50
   dashCooldown: 3
 --- !u!114 &1886600092
 MonoBehaviour:
