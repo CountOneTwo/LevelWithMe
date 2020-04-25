@@ -6,17 +6,34 @@ public class Arrow : MonoBehaviour
 {
     public float projectileSpeed;
     public int damage;
+    public int maxDamage;
+    public int maxProjectileSpeed;
+
+    [System.NonSerialized]
     public float windupMultiplier;
 
-    public float speed;
+    //public float speed;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 5.0f);
-        GetComponent<Rigidbody>().velocity = transform.forward * speed * windupMultiplier;
+        projectileSpeed = projectileSpeed * windupMultiplier;
+
+        if (projectileSpeed > maxProjectileSpeed)
+        {
+            projectileSpeed = maxProjectileSpeed;
+        }
+
+        GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed * windupMultiplier;
+
         damage = (int)windupMultiplier * damage;
+
+        if (damage > maxDamage)
+        {
+            damage = maxDamage;
+        }
     }
 
     // Update is called once per frame
@@ -29,7 +46,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {
-            collision.gameObject.GetComponent<Enemy_Stage2>().health -= damage;
+            collision.gameObject.GetComponent<Enemy_Stage2>().currentHealth -= damage;
             collision.gameObject.GetComponent<Enemy_Stage2>().detected = true;
             collision.gameObject.GetComponent<Enemy_Stage2>().timeUndetected = 0;
 

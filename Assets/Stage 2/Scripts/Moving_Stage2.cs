@@ -14,9 +14,13 @@ public class Moving_Stage2 : MonoBehaviour
     public float dashSpeed;
     public float slideFactor;
     public float maxSpeed;
+    public float dashCooldown;
     Vector3 downwardsVelocity;
 
     bool isGrounded;
+
+    float cooldownTimer;
+    bool cooldown;
 
     private CharacterController charController;
 
@@ -81,10 +85,28 @@ public class Moving_Stage2 : MonoBehaviour
         }
 
         //print(resultingMovement.magnitude);
+
+        //Dash
         if (Input.GetButtonDown(dashButton))
         {
-            charController.Move((forwardMovement + rightMovement) * dashSpeed /*movementLastFrame * Time.deltaTime*/);
-            return;
+            if (!cooldown)
+            {
+                cooldown = true;
+                cooldownTimer = 0;
+                charController.Move((forwardMovement + rightMovement) * dashSpeed /*movementLastFrame * Time.deltaTime*/);
+                return;
+            }
+
+        }
+
+        if (cooldown)
+        {
+            cooldownTimer += Time.deltaTime;
+
+            if (cooldownTimer > dashSpeed)
+            {
+                cooldown = false;
+            }
         }
 
 

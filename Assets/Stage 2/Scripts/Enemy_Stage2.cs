@@ -27,7 +27,12 @@ public class Enemy_Stage2 : MonoBehaviour
     [System.NonSerialized]
     public float timeUndetected;
 
-    public float health;
+    public float maxHealth;
+    public float currentHealth;
+    public float healthPerTick;
+    public float tickTime;
+    float tickTimer;
+
     public float allowedDeviation;
 
     public Vector3 centerOfSpawnArea;
@@ -41,6 +46,7 @@ public class Enemy_Stage2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
         currentShot = 0;
         timeTillNextShot = windup;
         currentFov = fov;
@@ -95,7 +101,22 @@ public class Enemy_Stage2 : MonoBehaviour
 
     void HealthCheck()
     {
-        if (health < 0)
+        if (!detected)
+        {
+            if (tickTimer > tickTime)
+            {
+                currentHealth += healthPerTick;
+                tickTimer = 0;
+                if (currentHealth > maxHealth)
+                {
+                    currentHealth = maxHealth;
+                }
+            }
+        }
+
+        tickTimer += Time.deltaTime;
+
+        if (currentHealth < 0)
         {
             Destroy(gameObject);
         }
