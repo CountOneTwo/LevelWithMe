@@ -6,30 +6,35 @@ public class Enemy_Stage2 : MonoBehaviour
 {
     //BoxCollider b;
     //Bounds bounds2;
+
+    [Header("Shooting")]
     public int numberInSalve;
     public float delayInSalve;
     public float windup;
+    public float allowedDeviation;
 
-
+    [Header("Detection")]
     public float fov;
     public float updatedFov;
-
     public float detectionDepth;
     public float updatedDetectionDepth;
-
-    public Vector3 nextPoint;
     public float timeTillLost;
 
 
+    [Header("Movement")]
+    public float waitTillMove;
+    public float maxWaitTillMove;
+    float currentWaitTillMove;
+    [System.NonSerialized]
+    public Vector3 nextPoint;
     public float rotationalSpeed;
+    public float movementSpeed;
 
 
     [System.NonSerialized]
     public bool detected;
 
-    public float waitTillMove;
-    public float maxWaitTillMove;
-    float currentWaitTillMove;
+
 
     float currentFov;
     float currentDetectionDepth;
@@ -43,21 +48,26 @@ public class Enemy_Stage2 : MonoBehaviour
     [System.NonSerialized]
     public float timeUndetected;
 
+
+    [Header("Health")]
     public float maxHealth;
-    public float currentHealth;
     public float healthPerTick;
     public float tickTime;
     float tickTimer;
+    [System.NonSerialized]
+    public float currentHealth;
 
-    public float allowedDeviation;
+    
 
+
+    [Header("Spawn")]
     public Vector3 centerOfSpawnArea;
     public Vector3 sizeOfSpawnArea;
 
     bool moving;
     float timeWaited = 0;
 
-    public float movementSpeed;
+
 
     // Start is called before the first frame update
     void Start()
