@@ -9,18 +9,33 @@ public class Enemy_Stage2 : MonoBehaviour
     public int numberInSalve;
     public float delayInSalve;
     public float windup;
+
+
     public float fov;
     public float updatedFov;
+
+    public float detectionDepth;
+    public float updatedDetectionDepth;
+
     public Vector3 nextPoint;
     public float timeTillLost;
+
+
+
+
 
     [System.NonSerialized]
     public bool detected;
 
     public float waitTillMove;
+    public float maxWaitTillMove;
+
     float currentFov;
+    float currentDetectionDepth;
+
     float timeTillNextShot;
     int currentShot;
+
     public GameObject projectileSpawn;
     public GameObject projectilePrefab;
 
@@ -46,6 +61,7 @@ public class Enemy_Stage2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentDetectionDepth = detectionDepth;
         currentHealth = maxHealth;
         currentShot = 0;
         timeTillNextShot = windup;
