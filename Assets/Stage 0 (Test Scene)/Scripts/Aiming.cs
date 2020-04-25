@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Aiming : MonoBehaviour
 {
@@ -10,8 +11,13 @@ public class Aiming : MonoBehaviour
 
     private float xAxisClamp;
 
+    public Slider mouseSensSlider;
+    public InputField mouseSensInputField;
+
     private void Awake()
     {
+        mouseSensSlider.value = mouseSensitivity;
+        mouseSensInputField.text = mouseSensitivity.ToString();
         Cursor.lockState = CursorLockMode.Locked;
         xAxisClamp = 0.0f;
     }
@@ -19,6 +25,25 @@ public class Aiming : MonoBehaviour
     private void Update()
     {
         CameraRotation();
+    }
+
+    public void ChangeSensitivity(float newSensitivity)
+    {
+        mouseSensitivity = newSensitivity;
+        mouseSensSlider.value = mouseSensitivity;
+        Debug.Log(mouseSensitivity);
+        mouseSensInputField.text = mouseSensitivity.ToString();
+        mouseSensInputField.textComponent.text = mouseSensitivity.ToString();
+    }
+
+    public void ChangeSensitivityBySlider()
+    {
+        ChangeSensitivity(mouseSensSlider.value);
+    }
+
+    public void ChangeSensitivityByInputField()
+    {
+        ChangeSensitivity(float.Parse(mouseSensInputField.text));
     }
 
     private void CameraRotation()

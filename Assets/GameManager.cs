@@ -29,15 +29,22 @@ public class GameManager : MonoBehaviour
     {
         if (gamePaused)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             pauseMenu.enabled = false;
             gamePaused = false;
             Time.timeScale = 1;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
             pauseMenu.enabled = true;
             gamePaused = true;
             Time.timeScale = 0;
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
