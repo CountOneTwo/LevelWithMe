@@ -848,7 +848,10 @@ MonoBehaviour:
   projectileSpawn: {fileID: 0}
   projectilePrefab: {fileID: 5793370063837323930, guid: fea095c1ad2be1747a5423e95e331a6c,
     type: 3}
-  health: 100
+  maxHealth: 0
+  currentHealth: 0
+  healthPerTick: 0
+  tickTime: 0
   allowedDeviation: 0.1
   centerOfSpawnArea: {x: 25.38, y: 1.1, z: 24.21}
   sizeOfSpawnArea: {x: -34.9, y: 9.7, z: 20.68}
@@ -3018,9 +3021,10 @@ MonoBehaviour:
   jumpHeight: 5
   gravity: -20
   additionalFallGravity: -20
-  dashSpeed: 10
+  dashSpeed: 30
   slideFactor: 0.8
-  maxSpeed: 50
+  maxSpeed: 10
+  dashCooldown: 3
 --- !u!114 &1886600092
 MonoBehaviour:
   m_ObjectHideFlags: 0

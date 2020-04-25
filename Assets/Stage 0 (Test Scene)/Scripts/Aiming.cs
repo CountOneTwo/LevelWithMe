@@ -31,7 +31,7 @@ public class Aiming : MonoBehaviour
     {
         mouseSensitivity = newSensitivity;
         mouseSensSlider.value = mouseSensitivity;
-        Debug.Log(mouseSensitivity);
+        //Debug.Log(mouseSensitivity);
         mouseSensInputField.text = mouseSensitivity.ToString();
         mouseSensInputField.textComponent.text = mouseSensitivity.ToString();
     }

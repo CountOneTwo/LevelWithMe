@@ -16,7 +16,7 @@ public class Shooting : MonoBehaviour
 
     void CheckForShooting()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameManager.gamePaused)
         {
             Instantiate(projectilePrefab, projectileSpawn.transform.position, transform.rotation);
         }

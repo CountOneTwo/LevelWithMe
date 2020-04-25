@@ -89,23 +89,28 @@ public class Moving_Stage2 : MonoBehaviour
         //Dash
         if (Input.GetButtonDown(dashButton))
         {
+           // print(2);
             if (!cooldown)
             {
                 cooldown = true;
                 cooldownTimer = 0;
                 charController.Move((forwardMovement + rightMovement) * dashSpeed /*movementLastFrame * Time.deltaTime*/);
+             //   print("dash");
                 return;
+                
             }
 
         }
 
         if (cooldown)
         {
+          //  print(1);
             cooldownTimer += Time.deltaTime;
 
-            if (cooldownTimer > dashSpeed)
+            if (cooldownTimer > dashCooldown)
             {
                 cooldown = false;
+              //  print("Cooldown over");
             }
         }
 

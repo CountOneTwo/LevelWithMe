@@ -24,7 +24,7 @@ public class Shooting_Stage2 : MonoBehaviour
 
     void CheckForShooting()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameManager.gamePaused)
         {
             windup += Time.deltaTime;
 
@@ -34,7 +34,7 @@ public class Shooting_Stage2 : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !GameManager.gamePaused)
         {
             if (windup < windupMinimum)
             {
