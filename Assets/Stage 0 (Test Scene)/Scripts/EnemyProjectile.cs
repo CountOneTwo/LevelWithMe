@@ -22,9 +22,9 @@ public class EnemyProjectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {      
-         if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
+         if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
         {
-            collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().currentHealth -= damage;
+            collision.gameObject.GetComponent<HealthAndRespawn>().currentHealth -= damage;
             Destroy(gameObject);
         }
         else if (collision.gameObject.GetComponent<Enemy>() != null)
