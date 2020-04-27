@@ -9,7 +9,7 @@ public class Arrow : MonoBehaviour
     public int maxDamage;
     public int maxProjectileSpeed;
 
-    [System.NonSerialized]
+    [HideInInspector]
     public float windupMultiplier;
 
     //public float speed;
@@ -19,6 +19,7 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 5.0f);
+        print(windupMultiplier);
         projectileSpeed = projectileSpeed * windupMultiplier;
 
         if (projectileSpeed > maxProjectileSpeed)
