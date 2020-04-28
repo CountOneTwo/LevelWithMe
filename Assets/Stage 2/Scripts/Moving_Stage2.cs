@@ -73,7 +73,7 @@ public class Moving_Stage2 : MonoBehaviour
 
 
         //Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration  + movementLastFrame * Time.deltaTime);
-        Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration);
+        Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration + movementLastFrame);
 
 
         if (resultingMovement.magnitude > maxSpeed)
@@ -81,14 +81,19 @@ public class Moving_Stage2 : MonoBehaviour
             resultingMovement = Vector3.ClampMagnitude(resultingMovement,maxSpeed);
             
         }
-        else if (resultingMovement.magnitude < 1)
+
+
+     /*   if (resultingMovement.magnitude - slideFactor < 0)
         {
-            resultingMovement = Vector3.zero;
+            movementLastFrame = Vector3.ClampMagnitude(resultingMovement, 0);
         }
+        else
+        {
+            movementLastFrame = Vector3.ClampMagnitude(resultingMovement, Mathf.Clamp(resultingMovement.magnitude * resultingMovement.magnitude, 0,maxSpeed) - slideFactor);
+        }*/
 
+        
 
-
-            
 
         //print(resultingMovement.magnitude);
 
