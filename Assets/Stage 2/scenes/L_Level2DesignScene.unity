@@ -2427,6 +2427,12 @@ Transform:
   m_Father: {fileID: 1690713095}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &139739224 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 200068741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &143130574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,6 +3449,207 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: fad775b386d62dd45ad3f4fab4d05f38,
     type: 3}
   m_PrefabInstance: {fileID: 199244730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &200068741
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: This bridge is way too long! The players will quit before they even
+        enter the temple. I moved the player start a little further ahead. If you
+        want to go back to this point (for whatever reason I don't understand), you
+        can always copy and paste the location values of the red cube.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -41.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!1001 &205294205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: Yes, I blocked this path. We have to be careful not to overwhelm the
+        player with too many choices where to go. Even in seemingly open game levels,
+        the amount of viable paths is highly limited and there is usually a single
+        path that the designers want you to take. A lot of the level design work
+        then revolves around guiding players to find and pursue it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 69.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 303.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7041116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.71008945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.51601
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!4 &205294206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 205294205}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &210539209
 GameObject:
@@ -8446,6 +8653,107 @@ Transform:
   m_Father: {fileID: 974233823}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &501312191
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: Hey, you can dash with [SHIFT] already?!? so great!)) Why you didn't
+        tell us, Bonnie? Moving through level is so much better now)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -170.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 330.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9974786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.070967875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -171.86101
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!4 &501312192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 501312191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &501469794
 GameObject:
   m_ObjectHideFlags: 0
@@ -9161,6 +9469,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8b9b8e0af7cc46445b50f4459d537cc2,
     type: 3}
   m_PrefabInstance: {fileID: 537060096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &537548982
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: hideArea
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: Why is path blocked with rubble?!? What if player wants to explore((
+        I sure would like to see what's behind rubble))) Did you add it, Sandra?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 58.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 283.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7041116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.71008945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.51601
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!4 &537548983 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 537548982}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &540326116
 GameObject:
@@ -10512,7 +10926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  respawnPoint: {x: -3, y: 8, z: 180}
+  respawnPoint: {x: -2.623, y: 5.6, z: 180.61}
   currentHealth: 100
   minimumHeight: -250
   healthCounter: {fileID: 702959502}
@@ -10640,7 +11054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654601704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11, y: 8, z: 180.61}
+  m_LocalPosition: {x: -2.623, y: 5.6, z: 180.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1281109828}
@@ -11145,6 +11559,110 @@ Transform:
   m_Father: {fileID: 602174846}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &662968700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: I'm aware we wanted to build the level from modular stick-them-together
+        assets. I just feel like we need something MORE SPECIAL for this altar room.
+        I mean, think of it! This is still a temple for THE GODS after all. The altar
+        has to be a symbol of their power and superiority. OH, just had a great idea!
+        I'll sketch something.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 325.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9961331
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.08785677
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -169.919
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!4 &662968701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 662968700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &663918188
 GameObject:
   m_ObjectHideFlags: 0
@@ -21546,6 +22064,107 @@ Transform:
   m_Father: {fileID: 540326117}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1141129694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedDeveloper
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: You think players will even notice these side corridors leading to the
+        stairs? It's suuuuper hard to see in narrow hallways like this one...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 212.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.747496
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.66426635
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -96.748
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!4 &1141129695 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141129694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148318955
 GameObject:
   m_ObjectHideFlags: 0
@@ -23533,6 +24152,12 @@ Transform:
   m_Father: {fileID: 335374374}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1232338662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 1383375820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239243675
 GameObject:
   m_ObjectHideFlags: 0
@@ -24336,7 +24961,7 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 1073228375}
   windupMaximum: 2.3
-  windupMinimum: 0.35
+  windupMinimum: 0.45
 --- !u!114 &1281109830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26107,6 +26732,99 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1377760389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1383375820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: I added a basic pause menu, in case you want to quit or adjust the settings.
+        Right now, you can only play around with the mouse sensitivity, but hey,
+        it's a start. Use [Q] to open it when playing in the editor. I know it's
+        a bit weird. I'll set it to [ESC] for the final build, but Unity already
+        uses [ESC] to exit play mode...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3299999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 117.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7767308
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6298328
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -101.924
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
 --- !u!1 &1383731768
 GameObject:
   m_ObjectHideFlags: 0
@@ -26640,6 +27358,106 @@ Transform:
   m_Father: {fileID: 974233823}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1412997368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1834021534}
+    m_Modifications:
+    - target: {fileID: 7351113718590483689, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161424, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_Name
+      value: DevNote_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: selectedMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161426, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: content
+      value: I implemented the shooting and aiming system with some more accurate
+        arrow physics. You have to hold the left mouse button to charge your shot
+        and release the mouse button to fire. The longer you charge, the faster the
+        bow flies and the lesser effect does gravity have on it. Also, I made it
+        so that charged arrows deal more damage to enemies. It wasn't part of the
+        feature specification but it's quite cool in my opinion.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -55.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 277.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.73017544
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.68325967
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -266.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
+--- !u!4 &1412997369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7351113719694161427, guid: cfc8bbff5f780fa449fbd045af913473,
+    type: 3}
+  m_PrefabInstance: {fileID: 1412997368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1414883220
 GameObject:
   m_ObjectHideFlags: 0
@@ -34802,10 +35620,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834021533}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.11, y: 8, z: 180.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 139739224}
+  - {fileID: 1232338662}
+  - {fileID: 1141129695}
+  - {fileID: 662968701}
+  - {fileID: 537548983}
+  - {fileID: 205294206}
+  - {fileID: 1412997369}
+  - {fileID: 501312192}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36609,8 +37435,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928685740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11, y: 5.77, z: 178}
-  m_LocalScale: {x: 1, y: 1.8, z: 1}
+  m_LocalPosition: {x: -3.11, y: 4.41, z: 141.61398}
+  m_LocalScale: {x: 1, y: 0.90273595, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
