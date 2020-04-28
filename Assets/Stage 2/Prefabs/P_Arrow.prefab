@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 100
-  damage: 10
+  damage: 23
   maxDamage: 40
-  maxProjectileSpeed: 110
+  maxProjectileSpeed: 130
+  windupMultiplier: 0.7495764

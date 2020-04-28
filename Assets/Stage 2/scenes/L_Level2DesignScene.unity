@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46509898, g: 0.256096, b: 0.19775322, a: 1}
+  m_IndirectSpecularColor: {r: 0.46515512, g: 0.2561008, b: 0.19805321, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10531,14 +10531,14 @@ MonoBehaviour:
   horizontalInputName: Horizontal
   verticalInputName: Vertical
   dashButton: Dash
-  acceleration: 4
-  jumpHeight: 5
-  gravity: -20
-  additionalFallGravity: -20
-  dashSpeed: 10
+  acceleration: 4.4
+  jumpHeight: 7.2
+  gravity: -18
+  additionalFallGravity: -25
+  dashSpeed: 3.5
   slideFactor: 0.8
   maxSpeed: 50
-  dashCooldown: 0
+  dashCooldown: 0.4
 --- !u!114 &654601707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24335,8 +24335,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
     type: 3}
   projectileSpawn: {fileID: 1073228375}
-  windupMaximum: 4
-  windupMinimum: 0.5
+  windupMaximum: 2.3
+  windupMinimum: 0.35
 --- !u!114 &1281109830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28002,7 +28002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509465256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36609,7 +36609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928685740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11, y: 8, z: 180.61}
+  m_LocalPosition: {x: -3.11, y: 5.77, z: 178}
   m_LocalScale: {x: 1, y: 1.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
