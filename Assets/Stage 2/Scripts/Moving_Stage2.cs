@@ -8,6 +8,10 @@ public class Moving_Stage2 : MonoBehaviour
     [SerializeField] private string dashButton;
     [SerializeField] private float acceleration;
 
+
+    [SerializeField] private float slopeForce;
+    [SerializeField] private float slopeForceRayLength;
+
     public float jumpHeight;
     public float gravity;
     public float additionalFallGravity;
@@ -16,6 +20,8 @@ public class Moving_Stage2 : MonoBehaviour
     public float maxSpeed;
     public float dashCooldown;
     Vector3 downwardsVelocity;
+
+    
 
     bool isGrounded;
 
@@ -33,13 +39,14 @@ public class Moving_Stage2 : MonoBehaviour
 
     private void Update()
     {
+        
         PlayerMovement();
     }
 
     private void PlayerMovement()
     {
-
         
+
         //ResetJump
         if (charController.isGrounded)
         {
@@ -65,13 +72,8 @@ public class Moving_Stage2 : MonoBehaviour
         Vector3 forwardMovement = transform.forward * vertInput;
 
 
-
         //Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration  + movementLastFrame * Time.deltaTime);
         Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration);
-
-
-
-
 
 
         if (resultingMovement.magnitude > maxSpeed)
@@ -83,6 +85,10 @@ public class Moving_Stage2 : MonoBehaviour
         {
             resultingMovement = Vector3.zero;
         }
+
+
+
+            
 
         //print(resultingMovement.magnitude);
 
@@ -117,21 +123,12 @@ public class Moving_Stage2 : MonoBehaviour
 
         charController.Move(resultingMovement * Time.deltaTime /*movementLastFrame * Time.deltaTime*/);
             //movementLastFrame = ((forwardMovement + rightMovement) * acceleration + movementLastFrame) * slideFactor;
-
-
-
-
-
-
           //  movementLastFrame = (resultingMovement  * slideFactor);
-
-
-
 
         //Gravity
         downwardsVelocity.y += gravity * Time.deltaTime;
 
-        if (transform.position.y < positionLastFrame.y)
+        if (transform.position.y <= positionLastFrame.y)
         {
             downwardsVelocity.y += additionalFallGravity * Time.deltaTime;
         }
@@ -149,10 +146,23 @@ public class Moving_Stage2 : MonoBehaviour
         charController.Move(downwardsVelocity * Time.deltaTime);
 
 
+        if ((vertInput != 0 || horizInput != 0) && OnSlope())
+        {
+            charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
+            print("yo");
+        }
 
-
-
-       
     }
+
+    private bool OnSlope()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, charController.height / 2 * slopeForceRayLength))
+            if (hit.normal != Vector3.up)
+                return true;
+        return false;
+    }
+
 
 }
