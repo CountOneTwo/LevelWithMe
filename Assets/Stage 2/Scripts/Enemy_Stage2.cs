@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_Stage2 : MonoBehaviour
 {
@@ -25,13 +26,13 @@ public class Enemy_Stage2 : MonoBehaviour
     public float waitTillMove;
     public float maxWaitTillMove;
     float currentWaitTillMove;
-    [System.NonSerialized]
+    [HideInInspector]
     public Vector3 nextPoint;
     public float rotationalSpeed;
     public float movementSpeed;
 
 
-    [System.NonSerialized]
+    [HideInInspector]
     public bool detected;
 
 
@@ -42,10 +43,10 @@ public class Enemy_Stage2 : MonoBehaviour
     float timeTillNextShot;
     int currentShot;
 
-    public GameObject projectileSpawn;
+   // public GameObject projectileSpawn;
     public GameObject projectilePrefab;
 
-    [System.NonSerialized]
+    [HideInInspector]
     public float timeUndetected;
 
 
@@ -53,8 +54,10 @@ public class Enemy_Stage2 : MonoBehaviour
     public float maxHealth;
     public float healthPerTick;
     public float tickTime;
+    public Slider healthSlider;
+    public Canvas healthSliderCanvas;
     float tickTimer;
-    [System.NonSerialized]
+    [HideInInspector]
     public float currentHealth;
 
     
@@ -129,6 +132,16 @@ public class Enemy_Stage2 : MonoBehaviour
 
     void HealthCheck()
     {
+        healthSlider.value = currentHealth / maxHealth;
+        //print(currentHealth);
+        if (currentHealth < maxHealth)
+        {
+            healthSliderCanvas.enabled = true;
+            tickTimer += Time.deltaTime;
+        }
+        //healthSlider.value = currentHealth / maxHealth;
+
+
         if (!detected)
         {
             if (tickTimer > tickTime)
@@ -142,7 +155,7 @@ public class Enemy_Stage2 : MonoBehaviour
             }
         }
 
-        tickTimer += Time.deltaTime;
+        
 
         if (currentHealth < 0)
         {

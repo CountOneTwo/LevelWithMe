@@ -5,9 +5,9 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public float projectileSpeed;
-    public int damage;
-    public int maxDamage;
-    public int maxProjectileSpeed;
+    public float damage;
+    public float maxDamage;
+    public float maxProjectileSpeed;
 
     [HideInInspector]
     public float windupMultiplier;
@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
 
         GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed * windupMultiplier;
 
-        damage = (int)windupMultiplier * damage;
+        damage = windupMultiplier * damage;
 
         if (damage > maxDamage)
         {
@@ -45,6 +45,7 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+       // print(collision.gameObject.name);
         if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {
             collision.gameObject.GetComponent<Enemy_Stage2>().currentHealth -= damage;
