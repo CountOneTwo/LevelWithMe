@@ -71,5 +71,19 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
         {
             respawnPoint = transform.position;
         }
+
+       /* if (collider.gameObject.tag == "OutOfBounds")
+        {
+            Respawn();
+        }*/
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit collision)
+    {
+       // print("yo");
+        if (collision.gameObject.tag == "OutOfBounds")
+        {
+            Respawn();
+        }
     }
 }

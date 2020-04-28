@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void TogglePause()
+    public void TogglePause()
     {
         if (gamePaused)
         {
@@ -33,9 +33,11 @@ public class GameManager : MonoBehaviour
             pauseMenu.enabled = false;
             gamePaused = false;
             Time.timeScale = 1;
+            Cursor.visible = false;
         }
         else
         {
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             pauseMenu.enabled = true;
             gamePaused = true;
