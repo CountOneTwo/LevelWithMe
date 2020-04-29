@@ -286,8 +286,8 @@ MonoBehaviour:
   allowedDeviation: 0.1
   fov: 30
   updatedFov: 40
-  detectionDepth: 100
-  updatedDetectionDepth: 100
+  detectionDepth: 60
+  updatedDetectionDepth: 80
   timeTillLost: 5
   waitTillMove: 3
   maxWaitTillMove: 3

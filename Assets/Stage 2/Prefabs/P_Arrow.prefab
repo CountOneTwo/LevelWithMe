@@ -127,5 +127,5 @@ MonoBehaviour:
   projectileSpeed: 115
   damage: 19
   maxDamage: 45
-  maxProjectileSpeed: 130
-  windupMultiplier: 0.45
+  maxProjectileSpeed: 145
+  windupMultiplier: 0.092631996
