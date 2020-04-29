@@ -3015,10 +3015,10 @@ MonoBehaviour:
   jumpHeight: 5
   gravity: -20
   additionalFallGravity: -20
-  airControlFactor: 0.1
+  airControlFactor: 0.81
   slideFactor: 1
   maxSpeed: 20
-  acceleration: 2
+  acceleration: 1.1
   deaccelerationLogarithmBase: 2
   dashSpeed: 30
   dashCooldown: 3
