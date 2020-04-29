@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da148d3dc3d6c9c49b19279552c2f28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 115
+  projectileSpeed: 100
   damage: 19
   maxDamage: 45
   maxProjectileSpeed: 145
-  windupMultiplier: 0.092631996
+  windupMultiplier: 1.9594742
