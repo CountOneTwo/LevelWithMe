@@ -11900,14 +11900,14 @@ MonoBehaviour:
   horizontalInputName: Horizontal
   verticalInputName: Vertical
   dashButton: Dash
-  slopeForce: 0
-  slopeForceRayLength: 0
+  slopeForce: 464
+  slopeForceRayLength: 1.3
   jumpHeight: 7.2
   gravity: -18
   additionalFallGravity: -25
   airControlFactor: 0.4
   slideFactor: 1
-  maxSpeed: 35
+  maxSpeed: 15
   acceleration: 1.45
   deaccelerationLogarithmBase: 2
   dashSpeed: 3.5
