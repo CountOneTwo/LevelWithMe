@@ -12164,7 +12164,7 @@ GameObject:
   - component: {fileID: 660375054}
   m_Layer: 0
   m_Name: Black Floor (kill on touch)
-  m_TagString: Untagged
+  m_TagString: OutOfBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22169,8 +22169,8 @@ GameObject:
   - component: {fileID: 1092955489}
   - component: {fileID: 1092955488}
   m_Layer: 0
-  m_Name: Cube (277)
-  m_TagString: Untagged
+  m_Name: Black Floor (kill on touch)
+  m_TagString: OutOfBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
