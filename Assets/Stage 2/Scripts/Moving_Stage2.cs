@@ -3,30 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Moving_Stage2 : MonoBehaviour
 {
+
+    [Header("Inputs")]
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
     [SerializeField] private string dashButton;
-    [SerializeField] private float acceleration;
 
-
+    [Header("Slopes")]
     [SerializeField] private float slopeForce;
     [SerializeField] private float slopeForceRayLength;
 
+    [Header("Jump & Gravity")]
     public float jumpHeight;
     public float gravity;
     public float additionalFallGravity;
-    public float dashSpeed;
+    public float airControlFactor;
+
+    [Header("Speed & Acceleration")]
     public float slideFactor;
     public float maxSpeed;
+    [SerializeField] private float acceleration;
+    public float deaccelerationLogarithmBase;
+
+    [Header("Dash")]
+    public float dashSpeed;
     public float dashCooldown;
+
     Vector3 downwardsVelocity;
-
-    
-
+ 
     bool isGrounded;
 
     float cooldownTimer;
     bool cooldown;
+    //bool currentlyJumping;
 
     private CharacterController charController;
 
@@ -71,9 +80,27 @@ public class Moving_Stage2 : MonoBehaviour
         Vector3 rightMovement = transform.right * horizInput;
         Vector3 forwardMovement = transform.forward * vertInput;
 
-
+        Vector3 resultingMovement;
         //Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration  + movementLastFrame * Time.deltaTime);
-        Vector3 resultingMovement = ((forwardMovement + rightMovement) * acceleration + movementLastFrame);
+        if (!isGrounded)
+        {
+            resultingMovement = ((forwardMovement + rightMovement) * acceleration * airControlFactor + movementLastFrame);
+        }
+        else
+        {
+            if ((vertInput == 0 && horizInput == 0))
+            {
+                float clampingMagnitude = Mathf.Log(movementLastFrame.magnitude, deaccelerationLogarithmBase);
+
+                resultingMovement = ((forwardMovement + rightMovement) * acceleration + Vector3.ClampMagnitude(movementLastFrame, clampingMagnitude));
+            }
+            else
+            {
+                resultingMovement = ((forwardMovement + rightMovement) * acceleration + movementLastFrame * slideFactor);
+            }
+        }
+
+        
 
 
         if (resultingMovement.magnitude > maxSpeed)
@@ -82,6 +109,7 @@ public class Moving_Stage2 : MonoBehaviour
             
         }
 
+        movementLastFrame = resultingMovement;
 
      /*   if (resultingMovement.magnitude - slideFactor < 0)
         {
@@ -138,7 +166,14 @@ public class Moving_Stage2 : MonoBehaviour
             downwardsVelocity.y += additionalFallGravity * Time.deltaTime;
         }
 
+        if (downwardsVelocity.y > 0 && transform.position.y <= positionLastFrame.y)
+        {
+            downwardsVelocity.y = -2f;
+        }
+
         positionLastFrame = transform.position;
+
+
 
 
         //Jumping
@@ -154,7 +189,7 @@ public class Moving_Stage2 : MonoBehaviour
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
         {
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
-            print("yo");
+           // print("yo");
         }
 
     }
