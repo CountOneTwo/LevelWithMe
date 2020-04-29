@@ -91,8 +91,15 @@ public class Moving_Stage2 : MonoBehaviour
             if ((vertInput == 0 && horizInput == 0))
             {
                 float clampingMagnitude = Mathf.Log(movementLastFrame.magnitude, deaccelerationLogarithmBase);
-
-                resultingMovement = ((forwardMovement + rightMovement) * acceleration + Vector3.ClampMagnitude(movementLastFrame, clampingMagnitude));
+                if (Mathf.Abs(clampingMagnitude) < 1)
+                {
+                    resultingMovement = Vector3.zero;
+                }
+                else
+                {
+                    resultingMovement = ((forwardMovement + rightMovement) * acceleration + Vector3.ClampMagnitude(movementLastFrame, clampingMagnitude));
+                }
+               
             }
             else
             {
