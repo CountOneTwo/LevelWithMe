@@ -91,6 +91,7 @@ public class Moving_Stage2 : MonoBehaviour
         {
             if ((vertInput == 0 && horizInput == 0))
             {
+                print("Stop");
                 if (instantStop)
                 {
                     resultingMovement = Vector3.zero;

@@ -9,7 +9,9 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque"}
+        Tags { "Queue" = "Overlay+1" }
+		ZTest Always
+
         LOD 200
 
 			
