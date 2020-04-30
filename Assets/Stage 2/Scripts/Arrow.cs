@@ -18,6 +18,9 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y +90, transform.eulerAngles.z);
+
+
         Destroy(gameObject, 5.0f);
         print(windupMultiplier);
         projectileSpeed = projectileSpeed * windupMultiplier;

@@ -43,6 +43,10 @@ public class Shooting_Stage2 : MonoBehaviour
 
             GameObject g = arrowPrefab;
             g.GetComponent<Arrow>().windupMultiplier = windup;
+
+            
+
+
             Instantiate(g, projectileSpawn.transform.position, transform.rotation);
             windup = 0;
         }
