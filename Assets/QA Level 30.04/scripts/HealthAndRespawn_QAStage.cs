@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthAndRespawn_QAStage : MonoBehaviour
 {
@@ -62,11 +63,15 @@ public class HealthAndRespawn_QAStage : MonoBehaviour
         //charController.Move(Vector3.zero);
         // Debug.Log("Respawning");
 
-        charController.enabled = false;
-        transform.position = respawnPoint;
-        charController.enabled = true;
+        /* charController.enabled = false;
+         transform.position = respawnPoint;
+         charController.enabled = true;
 
-        currentHealth = maxHealth;
+         currentHealth = maxHealth;
+
+         Dru's working code*/
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void OnTriggerEnter(Collider collider)
