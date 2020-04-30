@@ -12,7 +12,8 @@ public class Enemy_Stage2 : MonoBehaviour
     public int numberInSalve;
     public float delayInSalve;
     public float windup;
-    public float allowedDeviation;
+    
+   // public float deviationScaler;
 
     [Header("Detection")]
     public float fov;
@@ -26,6 +27,7 @@ public class Enemy_Stage2 : MonoBehaviour
     public float waitTillMove;
     public float maxWaitTillMove;
     float currentWaitTillMove;
+    public float allowedDeviation;
     [HideInInspector]
     public Vector3 nextPoint;
     public float rotationalSpeed;
