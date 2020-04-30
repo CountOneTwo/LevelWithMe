@@ -3020,6 +3020,7 @@ MonoBehaviour:
   maxSpeed: 20
   acceleration: 1.1
   deaccelerationLogarithmBase: 2
+  instantStop: 1
   dashSpeed: 30
   dashCooldown: 3
 --- !u!114 &1886600092

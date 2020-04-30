@@ -24,6 +24,7 @@ public class Moving_Stage2 : MonoBehaviour
     public float maxSpeed;
     [SerializeField] private float acceleration;
     public float deaccelerationLogarithmBase;
+    public bool instantStop;
 
     [Header("Dash")]
     public float dashSpeed;
@@ -90,15 +91,24 @@ public class Moving_Stage2 : MonoBehaviour
         {
             if ((vertInput == 0 && horizInput == 0))
             {
-                float clampingMagnitude = Mathf.Log(movementLastFrame.magnitude, deaccelerationLogarithmBase);
-                if (Mathf.Abs(clampingMagnitude) < 1)
+                if (instantStop)
                 {
                     resultingMovement = Vector3.zero;
                 }
                 else
                 {
-                    resultingMovement = ((forwardMovement + rightMovement) * acceleration + Vector3.ClampMagnitude(movementLastFrame, clampingMagnitude));
+                    float clampingMagnitude = Mathf.Log(movementLastFrame.magnitude, deaccelerationLogarithmBase);
+                    if (Mathf.Abs(clampingMagnitude) < 1)
+                    {
+                        resultingMovement = Vector3.zero;
+                    }
+                    else
+                    {
+                        resultingMovement = ((forwardMovement + rightMovement) * acceleration + Vector3.ClampMagnitude(movementLastFrame, clampingMagnitude));
+                    }
                 }
+
+
                
             }
             else
@@ -118,6 +128,7 @@ public class Moving_Stage2 : MonoBehaviour
 
         movementLastFrame = resultingMovement;
 
+        print(resultingMovement.magnitude * Time.deltaTime);
      /*   if (resultingMovement.magnitude - slideFactor < 0)
         {
             movementLastFrame = Vector3.ClampMagnitude(resultingMovement, 0);
