@@ -1758,7 +1758,13 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 559038535}
   windupMaximum: 4
-  windupMinimum: 0.5
+  windupMinimum: 0
+  minDamage: 5
+  maxDamage: 10
+  minSpeed: 10
+  maxSpeed: 40
+  minMass: 1
+  maxMass: 20
 --- !u!1 &1037647828
 GameObject:
   m_ObjectHideFlags: 0

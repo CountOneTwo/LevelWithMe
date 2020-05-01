@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class Shooting_Stage2 : MonoBehaviour
 {
-
+    [Header("General")]
     public GameObject arrowPrefab;
     public GameObject projectileSpawn;
-    float windup;
+
+   [Header("Windup")]
     public float windupMaximum;
     public float windupMinimum;
+    float windup;
+
+    [Header("Damage")]
+    public float minDamage;
+    public float maxDamage;
+
+    [Header("Speed")]
+    public float minSpeed;
+    public float maxSpeed;
+
+    [Header("Mass")]
+    public float minMass;
+    public float maxMass;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +53,15 @@ public class Shooting_Stage2 : MonoBehaviour
         {
             if (windup < windupMinimum)
             {
-                windup = windupMinimum;
+                //windup = windupMinimum;
+                windup = 0;
+                return;
             }
 
             GameObject g = arrowPrefab;
-            g.GetComponent<Arrow>().windupMultiplier = windup;
+            g.GetComponent<Arrow>().damage = minDamage + ((windup / windupMaximum) * (maxDamage - minDamage));
+            g.GetComponent<Arrow>().speed = minSpeed + ((windup / windupMaximum) * (maxSpeed - minSpeed));
+            g.GetComponent<Arrow>().mass = maxMass - ((windup / windupMaximum) * (maxMass - minMass));
 
             
 

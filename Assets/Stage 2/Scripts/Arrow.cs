@@ -4,40 +4,50 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float projectileSpeed;
     public float damage;
+    public float speed;
+    public float mass;
+    Rigidbody rb;
+
+
+
+   /* public float projectileSpeed;
+   
     public float maxDamage;
     public float maxProjectileSpeed;
 
     [HideInInspector]
     public float windupMultiplier;
 
-    //public float speed;
+    //public float speed;*/
 
 
     // Start is called before the first frame update
     void Start()
     {
-       // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y +90, transform.eulerAngles.z);
-
+        // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y +90, transform.eulerAngles.z);
+        rb = GetComponent<Rigidbody>();
 
         Destroy(gameObject, 5.0f);
-        print(windupMultiplier);
-        projectileSpeed = projectileSpeed * windupMultiplier;
+        //  print(windupMultiplier);
+        //  projectileSpeed = projectileSpeed * windupMultiplier;
 
-        if (projectileSpeed > maxProjectileSpeed)
-        {
-            projectileSpeed = maxProjectileSpeed;
-        }
+        /*    if (projectileSpeed > maxProjectileSpeed)
+            {
+                projectileSpeed = maxProjectileSpeed;
+            }*/
 
-        GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed * windupMultiplier;
+        /// GetComponent<Rigidbody>().velocity = transform.forward * speed * windupMultiplier;
+        /// 
+        rb.mass = mass;
+      rb.velocity = transform.forward * speed;
+        
+       // damage = windupMultiplier * damage;
 
-        damage = windupMultiplier * damage;
-
-        if (damage > maxDamage)
+      /*  if (damage > maxDamage)
         {
             damage = maxDamage;
-        }
+        }*/
     }
 
     // Update is called once per frame
