@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7382518970492399760}
   - component: {fileID: 1957094811798801062}
   - component: {fileID: 5193906252984153695}
+  - component: {fileID: 1287564267056086430}
   m_Layer: 0
   m_Name: P_Balcony_Floor_Edge_10x4
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1287564267056086430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5776042698446127747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1, z: 10}
+  m_Center: {x: -2, y: 0.5, z: 5}
