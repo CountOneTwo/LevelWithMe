@@ -89,7 +89,7 @@ public class Moving_Stage2 : MonoBehaviour
         }
         else
         {
-            if ((vertInput == 0 && horizInput == 0))
+            if (vertInput == 0 && horizInput == 0)
             {
                 print("Stop");
                 if (instantStop)
@@ -118,7 +118,10 @@ public class Moving_Stage2 : MonoBehaviour
             }
         }
 
-        
+        if (Input.GetKey(KeyCode.E))
+        {
+            resultingMovement = Vector3.zero;
+        }
 
 
         if (resultingMovement.magnitude > maxSpeed)
