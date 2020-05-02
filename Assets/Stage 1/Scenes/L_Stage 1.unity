@@ -5317,10 +5317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: content
       value: "For starters, I\u2019ve set up the input mapping like this: WASD to
-        move around, SPACE to jump, and LEFT\r MOUSE BUTTON to shoot. I coded it
-        so that you\u2019ve got to pick up the bow to be able to shoot. It\u2019s
-        right at\r the entrance of the building. That way, the player can get used
-        to the basic controls before they\u2019re\r introduced to the combat system."
+        move around, SPACE to jump, ESC to adjust the mouse sensitivity, and LEFT
+        MOUSE BUTTON to shoot. I coded it so that you\u2019ve got to pick up the
+        bow to be able to shoot. It\u2019s right at the entrance of the building.
+        That way, the player can get used to the basic controls before they\u2019re
+        introduced to the combat system."
       objectReference: {fileID: 0}
     - target: {fileID: 6308428820240690311, guid: 8b76b10ec95c1d14787e159671e7c4e2,
         type: 3}
