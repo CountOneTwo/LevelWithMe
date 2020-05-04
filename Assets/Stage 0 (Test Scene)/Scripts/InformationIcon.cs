@@ -20,6 +20,9 @@ public class InformationIcon : MonoBehaviour
     public Material whenRead;
     public Slider progressSlider;
     DeveloperNote parentNode;
+
+    public Camera mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,25 +50,35 @@ public class InformationIcon : MonoBehaviour
 
                 if (renderer.isVisible)
                 {
-                    timeLookedAt += Time.deltaTime;
-                    if (timeLookedAt > timeToDisplay)
+                    Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+                    RaycastHit hit;
+
+
+
+                    if (Physics.Raycast(ray, out hit) && hit.transform == transform)
                     {
+                        timeLookedAt += Time.deltaTime;
+                        if (timeLookedAt > timeToDisplay)
+                        {
 
-                        developerComment.enabled = true;
-                        renderer.enabled = false;
-                        renderer.material = whenRead;
-                        progressSlider.gameObject.SetActive(false);
+                            developerComment.enabled = true;
+                            renderer.enabled = false;
+                            renderer.material = whenRead;
+                            progressSlider.gameObject.SetActive(false);
 
-                        developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
+                            developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
 
-                        GameManager.devNoteCurrentlyDisplayed = true;
-                        thisNoteDisplayed = true;
-                        print("Eyo");
+                            GameManager.devNoteCurrentlyDisplayed = true;
+                            thisNoteDisplayed = true;
+                            print("Eyo");
 
-                        foreach (Renderer r in GetComponentsInChildren<Renderer>())
-                            r.enabled = false;
+                            foreach (Renderer r in GetComponentsInChildren<Renderer>())
+                                r.enabled = false;
 
+                        }
                     }
+
+
                 }
                 else
                 {
