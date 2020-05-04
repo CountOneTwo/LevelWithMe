@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 120045544}
   - component: {fileID: 120045543}
   - component: {fileID: 120045542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 313516286}
   - component: {fileID: 313516285}
   - component: {fileID: 313516284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 812353198}
   - component: {fileID: 812353197}
   - component: {fileID: 812353196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 2046155625}
   - component: {fileID: 2046155624}
   - component: {fileID: 2046155623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144361747}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 7351113718475924634}
   - component: {fileID: 7351113718475924635}
   - component: {fileID: 7351113718475924632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SliderCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 7351113718590483689}
   - component: {fileID: 7351113718590483691}
   - component: {fileID: 7351113718590483688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 7351113718637634855}
   - component: {fileID: 7351113718637634857}
   - component: {fileID: 7351113718637634854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7351113718705350283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1187,8 @@ GameObject:
   - component: {fileID: 7351113719272544568}
   - component: {fileID: 7351113719272544567}
   - component: {fileID: 2142575590}
-  m_Layer: 0
+  - component: {fileID: 1765702392}
+  m_Layer: 9
   m_Name: InformationIconAndSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,6 +1234,7 @@ MonoBehaviour:
   developerComment: {fileID: 7351113719717536703}
   whenRead: {fileID: 2100000, guid: f291a2e7ba4eb1848803fecdc3cd8efa, type: 2}
   progressSlider: {fileID: 7351113719365787008}
+  mainCamera: {fileID: 0}
 --- !u!23 &2142575590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1272,6 +1274,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &1765702392
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351113719272544565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.8333633
+  m_Center: {x: 0, y: -0.15663671, z: 0.089999914}
 --- !u!1 &7351113719365787038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7351113719365787009}
   - component: {fileID: 7351113719365787008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
