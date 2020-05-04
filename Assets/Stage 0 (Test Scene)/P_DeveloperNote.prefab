@@ -1234,7 +1234,6 @@ MonoBehaviour:
   developerComment: {fileID: 7351113719717536703}
   whenRead: {fileID: 2100000, guid: f291a2e7ba4eb1848803fecdc3cd8efa, type: 2}
   progressSlider: {fileID: 7351113719365787008}
-  mainCamera: {fileID: 0}
 --- !u!23 &2142575590
 MeshRenderer:
   m_ObjectHideFlags: 0

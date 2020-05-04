@@ -21,11 +21,12 @@ public class InformationIcon : MonoBehaviour
     public Slider progressSlider;
     DeveloperNote parentNode;
 
-    public Camera mainCamera;
+    Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         renderer = GetComponent<Renderer>();
         parentNode = GetComponentInParent<DeveloperNote>();
         timeToDisplay = parentNode.timeToDisplay;
