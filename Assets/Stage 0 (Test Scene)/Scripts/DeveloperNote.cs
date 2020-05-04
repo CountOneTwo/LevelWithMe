@@ -68,7 +68,7 @@ public class DeveloperNote : MonoBehaviour
                     roleText.text = "Art";
                     break;
             }
-            dateText.text = dayOfMonth + "." + selectedMonth.ToString();
+            dateText.text = selectedMonth.ToString() + ", " + dayOfMonth;
 
         }
 

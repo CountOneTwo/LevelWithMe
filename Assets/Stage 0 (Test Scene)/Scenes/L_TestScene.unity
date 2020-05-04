@@ -1869,14 +1869,14 @@ MonoBehaviour:
   arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
     type: 3}
   projectileSpawn: {fileID: 559038535}
-  coolDown: 2
-  windupMaximum: 4
+  coolDown: 0.32
+  windupMaximum: 1.5
   windupMinimum: 0
-  minDamage: 5
-  maxDamage: 10
+  minDamage: 10
+  maxDamage: 35
   minSpeed: 10
-  maxSpeed: 40
-  minMass: 1
+  maxSpeed: 60
+  minMass: 0
   maxMass: 20
 --- !u!1 &1037647828
 GameObject:
