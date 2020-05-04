@@ -114,18 +114,28 @@ public class Enemy_Stage2 : MonoBehaviour
             if (Vector3.Distance(transform.position, nextPoint) < allowedDeviation)
             {
                 moving = false;
-                
+                nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
             }
+            if (!detected)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(nextPoint - transform.position), Time.deltaTime * rotationalSpeed);
+            }
+           
 
             transform.position = Vector3.MoveTowards(transform.position, nextPoint, movementSpeed * Time.deltaTime);
         }
         else
         {
+            if (!detected)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(nextPoint - transform.position), Time.deltaTime * rotationalSpeed);
+            }
+            
             timeWaited += Time.deltaTime;
             if (timeWaited > currentWaitTillMove)
             {
                 timeWaited = 0;
-                nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
+                
                 moving = true;
                 currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
             }

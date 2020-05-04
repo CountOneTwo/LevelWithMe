@@ -1850,6 +1850,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
     type: 3}
   projectileSpawn: {fileID: 559038535}
+  coolDown: 2
   windupMaximum: 4
   windupMinimum: 0
   minDamage: 5
