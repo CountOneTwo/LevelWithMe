@@ -43,7 +43,7 @@ public class InformationIcon : MonoBehaviour
 
     void VisibilityCheck()
     {
-        if (GameManager.devNoteCurrentlyDisplayed == false)
+        if (!thisNoteDisplayed)
         {
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < showArea)
             {
@@ -61,21 +61,13 @@ public class InformationIcon : MonoBehaviour
                         if (timeLookedAt > timeToDisplay)
                         {
 
-                            developerComment.enabled = true;
-                            renderer.enabled = false;
-                            renderer.material = whenRead;
-                            progressSlider.gameObject.SetActive(false);
-
-                            developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
-
-                            GameManager.devNoteCurrentlyDisplayed = true;
-                            thisNoteDisplayed = true;
-                            print("Eyo");
-
-                            foreach (Renderer r in GetComponentsInChildren<Renderer>())
-                                r.enabled = false;
+                            EnableDevNote();
 
                         }
+                    }
+                    else
+                    {
+                        timeLookedAt = 0;
                     }
 
 
@@ -90,7 +82,7 @@ public class InformationIcon : MonoBehaviour
                 timeLookedAt = 0;
             }
         }
-        else if (thisNoteDisplayed == true)
+        else
         {
             bool currentlyLookedAt = false;
             foreach (Renderer r in developerComment.gameObject.GetComponentsInChildren<Renderer>())
@@ -117,10 +109,35 @@ public class InformationIcon : MonoBehaviour
 
     }
 
+    void EnableDevNote()
+    {
+        if (GameManager.devNoteCurrentlyDisplayed)
+        {
+            GameManager.currentDevNote.DisableDevNote();
+
+        }
+
+        GameManager.currentDevNote = this;
+
+        developerComment.enabled = true;
+        renderer.enabled = false;
+        renderer.material = whenRead;
+        progressSlider.gameObject.SetActive(false);
+
+        developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
+
+        GameManager.devNoteCurrentlyDisplayed = true;
+        thisNoteDisplayed = true;
+        //print("Eyo");
+
+        foreach (Renderer r in GetComponentsInChildren<Renderer>())
+            r.enabled = false;
+    }
+
 
     void DisableDevNote()
     {
-        print("EyNOO");
+       // print("EyNOO");
         GameManager.devNoteCurrentlyDisplayed = false;
         thisNoteDisplayed = false;
         developerComment.enabled = false;
