@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Stage 2/scenes/Greybox/L_Level2DesignScene.unity
     guid: 70cd1fe255e637c47bc94f232000ce96
   - enabled: 0
-    path: Assets/Stage 2/scenes/L_Stage 2.unity
+    path: Assets/Stage 2/scenes/L_Stage 2_v2.unity
     guid: 4ca91922594aeb946b397ac37cc9f708
   - enabled: 1
     path: Assets/Stage 2/scenes/Occlusion Test/L_Stage 2 Occlusion.unity
