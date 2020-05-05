@@ -9,10 +9,12 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
     public Vector3 respawnPoint;
     public int currentHealth;
     [SerializeField] private float minimumHeight;
-    public Text healthCounter;
-
+    public Slider healthBar;
+    public static bool inCombat;
+    public float disappearTime;
+    float disappearTimer;
     private CharacterController charController;
-
+    public GameObject indicator;
 
     private void Awake()
     {
@@ -23,15 +25,35 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //transform.position = new Vector3(0,0,0);
-        healthCounter.text = "Health: " + currentHealth;
+        healthBar.value = (float)currentHealth / (float)maxHealth;
         CheckForRespawn();
         CheckForOutOfBounds();
+        CheckForDisappearance();
+        disappearTimer += Time.deltaTime;
+        if (healthBar.value == 1)
+        {
+            indicator.SetActive(false);
+        }
+        else
+        {
+            indicator.SetActive(true);
+        }
+    }
+
+
+    void CheckForDisappearance()
+    {
+        if (disappearTimer > disappearTime && healthBar.gameObject.activeInHierarchy == true)
+        {
+            DeActivateHealthBar();
+        }
     }
 
     void CheckForOutOfBounds()
@@ -41,6 +63,22 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
             Respawn();
         }
     }
+
+   public void ActivateHealthBar()
+    {
+        if (healthBar.gameObject.activeInHierarchy == false)
+        {
+            healthBar.gameObject.SetActive(true);
+        }
+        disappearTimer = 0;
+    }
+
+   public void DeActivateHealthBar()
+    {
+        healthBar.gameObject.SetActive(false);
+    }
+
+
 
     void CheckForRespawn()
     {
@@ -57,7 +95,7 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
         //charController.SimpleMove(Vector3.zero);
         //charController.Move(Vector3.zero);
         // Debug.Log("Respawning");
-
+        DeActivateHealthBar();
         charController.enabled = false;
         transform.position = respawnPoint;
         charController.enabled = true;

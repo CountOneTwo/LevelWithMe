@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class Moving_Stage2 : MonoBehaviour
 {
 
@@ -29,6 +30,7 @@ public class Moving_Stage2 : MonoBehaviour
     [Header("Dash")]
     public float dashSpeed;
     public float dashCooldown;
+    public Slider dashSlider;
 
     Vector3 downwardsVelocity;
  
@@ -167,12 +169,20 @@ public class Moving_Stage2 : MonoBehaviour
         {
           //  print(1);
             cooldownTimer += Time.deltaTime;
+            dashSlider.gameObject.SetActive(true);
+            dashSlider.value = cooldownTimer / dashCooldown;
 
             if (cooldownTimer > dashCooldown)
             {
                 cooldown = false;
               //  print("Cooldown over");
             }
+        }
+        else
+        {
+            dashSlider.gameObject.SetActive(false);
+
+
         }
 
 
