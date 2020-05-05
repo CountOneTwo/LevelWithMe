@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 699425143534243118}
   - component: {fileID: 699425143534243119}
   - component: {fileID: 7123770961981160005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: P_TestArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,11 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da148d3dc3d6c9c49b19279552c2f28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 115
-  damage: 19
-  maxDamage: 45
-  maxProjectileSpeed: 145
-  windupMultiplier: 0.45
+  damage: 16.135231
+  speed: 9.313876
+  mass: 28.637724
 --- !u!136 &699425143534243119
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: M_Arrow_2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c0a9f95b6fe0c6648be7ecee9ccc6dfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a9f95b6fe0c6648be7ecee9ccc6dfe, type: 3}
