@@ -1851,7 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d0ac10d2f7aab4ab0b544e9bb74a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
+  projectilePrefab: {fileID: 699425143534243104, guid: 33fc3b5313531e9459a2640b7ec205b3,
     type: 3}
   projectileSpawn: {fileID: 559038535}
 --- !u!114 &963194231
@@ -3246,14 +3246,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934716e93ff54894d95369011e9e8a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTillMove: 0
-  maxWaitTillMove: 0
-  allowedDeviation: 0
+  waitTillMove: 3
+  maxWaitTillMove: 4
+  allowedDeviation: 0.01
   nextPoint: {x: 0, y: 0, z: 0}
-  rotationalSpeed: 0
-  movementSpeed: 0
-  centerOfSpawnArea: {x: 0, y: 0, z: 0}
-  sizeOfSpawnArea: {x: 0, y: 0, z: 0}
+  rotationalSpeed: 10
+  movementSpeed: 20
+  centerOfSpawnArea: {x: -7, y: -1, z: 74}
+  sizeOfSpawnArea: {x: 42.98, y: 12.41, z: 36.26}
+  fov: 20
+  detectionDepth: 50
+  detected: 0
+  distanceToShoot: 5
+  amountOfProjectiles: 10
+  projectileConeAngle: 5
+  projectileDamage: 10
+  projectileSpeed: 40
+  backwardsMoveSpeed: 50
+  backwardsMoveDistance: 10
+  waitTillChaseAgain: 10
 --- !u!65 &1855664031
 BoxCollider:
   m_ObjectHideFlags: 0

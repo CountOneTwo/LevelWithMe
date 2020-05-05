@@ -53,7 +53,7 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
     }
 
     void OnCollisionEnter(Collision collision)
