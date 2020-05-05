@@ -33,6 +33,8 @@ public class EnemyProjectile_Stage2 : MonoBehaviour
         if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().currentHealth -= damage;
+            collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
+
             Destroy(gameObject);
         }
         else if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)

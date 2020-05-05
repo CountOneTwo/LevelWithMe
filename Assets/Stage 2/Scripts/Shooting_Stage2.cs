@@ -27,6 +27,14 @@ public class Shooting_Stage2 : MonoBehaviour
     public float minMass;
     public float maxMass;
 
+    [Header("Crosshair")]
+    public GameObject leftHalf;
+    public GameObject rightHalf;
+    public GameObject fullDrawn;
+    public float returnTime;
+    float returnTimer;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +45,26 @@ public class Shooting_Stage2 : MonoBehaviour
     void Update()
     {
         coolDownTimer += Time.deltaTime;
+       returnTimer += Time.deltaTime;
         CheckForShooting();
+        CheckForCrosshairDisable();
+    }
+    public void CheckForCrosshairDisable()
+    {
+        if (returnTimer > returnTime)
+        {
+            leftHalf.SetActive(false);
+            rightHalf.SetActive(false);
+        }
+    }
+
+    public void ReturnCombatCrosshair()
+    {
+        fullDrawn.SetActive(false);
+        leftHalf.SetActive(true);
+        rightHalf.SetActive(true);
+        leftHalf.GetComponent<RectTransform>().anchoredPosition = new Vector2(-50, 0);
+        rightHalf.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, 0);
     }
 
     void CheckForShooting()
@@ -46,11 +73,27 @@ public class Shooting_Stage2 : MonoBehaviour
         {
             if (Input.GetMouseButton(0) && !GameManager.gamePaused)
             {
-                windup += Time.deltaTime;
+                float windupPercentage = windup / windupMaximum;
 
+                leftHalf.GetComponent<RectTransform>().anchoredPosition = new Vector2(-50 + (33 * windupPercentage), 0);
+                rightHalf.GetComponent<RectTransform>().anchoredPosition = new Vector2(50 - (33 * windupPercentage), 0);
+                // leftHalf.transform.position = new Vector2(-50 + (33 * windupPercentage), 0);
+                // rightHalf.transform.position = new Vector2(50 - (33 * windupPercentage), 0);
+
+
+                windup += Time.deltaTime;
+                returnTimer = 0;
                 if (windup > windupMaximum)
                 {
+                    leftHalf.SetActive(false);
+                    rightHalf.SetActive(false);
+                    fullDrawn.SetActive(true);
                     windup = windupMaximum;
+                }
+                else
+                {
+                    leftHalf.SetActive(true);
+                    rightHalf.SetActive(true);
                 }
             }
 
@@ -69,11 +112,12 @@ public class Shooting_Stage2 : MonoBehaviour
                 g.GetComponent<Arrow>().mass = maxMass - ((windup / windupMaximum) * (maxMass - minMass));
 
 
-
+                ReturnCombatCrosshair();
 
                 Instantiate(g, projectileSpawn.transform.position, transform.rotation);
                 windup = 0;
                 coolDownTimer = 0;
+                returnTimer = 0;
             }
         }
 

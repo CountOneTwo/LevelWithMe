@@ -200,6 +200,7 @@ public class Enemy_Stage2 : MonoBehaviour
                     timeUndetected = 0;
                     currentFov = updatedFov;
                     currentDetectionDepth = updatedDetectionDepth;
+                    GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
                     return;
                 }
             }
