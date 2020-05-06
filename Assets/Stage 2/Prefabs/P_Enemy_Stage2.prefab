@@ -292,8 +292,10 @@ MonoBehaviour:
   maxWaitTillMove: 3
   allowedDeviation: 0.1
   nextPoint: {x: 0, y: 0, z: 0}
-  rotationalSpeed: 45.52
+  rotationalSpeed: 45
+  idleRotationalSpeed: 90
   movementSpeed: 10
+  lookInDirection: 1
   detected: 0
   projectilePrefab: {fileID: 5793370063837323930, guid: fea095c1ad2be1747a5423e95e331a6c,
     type: 3}

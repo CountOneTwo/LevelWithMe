@@ -31,7 +31,9 @@ public class Enemy_Stage2 : MonoBehaviour
     [HideInInspector]
     public Vector3 nextPoint;
     public float rotationalSpeed;
+    public float idleRotationalSpeed;
     public float movementSpeed;
+    public bool lookInDirection;
 
 
     [HideInInspector]
@@ -116,9 +118,9 @@ public class Enemy_Stage2 : MonoBehaviour
                 moving = false;
                 nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
             }
-            if (!detected)
+            if (!detected && lookInDirection == true)
             {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(nextPoint - transform.position), Time.deltaTime * rotationalSpeed);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(nextPoint - transform.position), Time.deltaTime * idleRotationalSpeed);
             }
            
 
@@ -126,9 +128,9 @@ public class Enemy_Stage2 : MonoBehaviour
         }
         else
         {
-            if (!detected)
+            if (!detected && lookInDirection == true)
             {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(nextPoint - transform.position), Time.deltaTime * rotationalSpeed);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(nextPoint - transform.position), Time.deltaTime * idleRotationalSpeed);
             }
             
             timeWaited += Time.deltaTime;
