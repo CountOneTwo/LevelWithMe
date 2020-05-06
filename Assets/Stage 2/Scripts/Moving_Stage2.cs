@@ -11,8 +11,8 @@ public class Moving_Stage2 : MonoBehaviour
     [SerializeField] private string dashButton;
 
     [Header("Slopes")]
-    [SerializeField] public float slopeForce;
-    [SerializeField] public float slopeForceRayLength;
+    [SerializeField] private float slopeForce;
+    [SerializeField] private float slopeForceRayLength;
 
     [Header("Jump & Gravity")]
     public float jumpHeight;
@@ -224,6 +224,26 @@ public class Moving_Stage2 : MonoBehaviour
            // print("yo");
         }
 
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.name.Equals("Increase Force"))
+        {
+            slopeForce = 4;
+            slopeForceRayLength = 2;
+        }
+
+        if (collider.gameObject.name.Equals("Decrease Force"))
+        {
+            slopeForce = 1;
+            slopeForceRayLength = 1.3f;
+        }
+
+        /* if (collider.gameObject.tag == "OutOfBounds")
+         {
+             Respawn();
+         }*/
     }
 
     private bool OnSlope()
