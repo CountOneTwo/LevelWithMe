@@ -11,8 +11,8 @@ public class Moving_Stage2 : MonoBehaviour
     [SerializeField] private string dashButton;
 
     [Header("Slopes")]
-    [SerializeField] private float slopeForce;
-    [SerializeField] private float slopeForceRayLength;
+    [SerializeField] public float slopeForce;
+    [SerializeField] public float slopeForceRayLength;
 
     [Header("Jump & Gravity")]
     public float jumpHeight;
