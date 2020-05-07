@@ -93,7 +93,7 @@ public class Moving_Stage2 : MonoBehaviour
         {
             if (vertInput == 0 && horizInput == 0)
             {
-                print("Stop");
+               // print("Stop");
                 if (instantStop)
                 {
                     resultingMovement = Vector3.zero;
@@ -134,7 +134,7 @@ public class Moving_Stage2 : MonoBehaviour
 
         movementLastFrame = resultingMovement;
 
-        print(resultingMovement.magnitude * Time.deltaTime);
+      //  print(resultingMovement.magnitude * Time.deltaTime);
      /*   if (resultingMovement.magnitude - slideFactor < 0)
         {
             movementLastFrame = Vector3.ClampMagnitude(resultingMovement, 0);

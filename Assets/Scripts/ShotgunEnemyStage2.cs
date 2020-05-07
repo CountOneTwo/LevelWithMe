@@ -33,11 +33,14 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     public float distanceToShoot;
     public float amountOfProjectiles;
     public float projectileConeAngle;
-    public float projectileDamage;
+    public int projectileDamage;
     public float projectileSpeed;
     public float backwardsMoveSpeed;
     public float backwardsMoveDistance;
     public float waitTillChaseAgain;
+
+    [Header("GameObjects")]
+    public GameObject shotgunProjectiles;
 
     bool movingBackwards;
     Vector3 backwardsDestination;
@@ -46,7 +49,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
     }
 
     // Update is called once per frame
@@ -66,17 +69,30 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
     void DetectedActions()
     {
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(GameObject.Find("Player").transform.position - transform.position), Time.deltaTime * rotationalSpeed);
         if (!movingBackwards)
         {
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShoot)
             {
                 //Shoot projectiles
+                for (int i = 0; i < 10; i++)
+                {
+                    GameObject g = shotgunProjectiles;
+                    g.GetComponent<EnemyProjectile_Stage3>().damage = projectileDamage;
+                    g.GetComponent<EnemyProjectile_Stage3>().projectileSpeed = projectileSpeed;
+                    g.GetComponent<EnemyProjectile_Stage3>().deviation = projectileConeAngle;
+
+
+                    Instantiate(g, transform.position + transform.forward * 2, transform.rotation);
+                }
                 movingBackwards = true;
                 backwardsDestination = transform.position - transform.forward * backwardsMoveDistance;
             }
             else
             {
-                Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, movementSpeed * Time.deltaTime);
+
+                
+                transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, movementSpeed * Time.deltaTime);
             }
         }
         else
@@ -91,7 +107,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
             }
             else
             {
-                Vector3.MoveTowards(transform.position, backwardsDestination, backwardsMoveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, backwardsDestination, backwardsMoveSpeed * Time.deltaTime);
                 waitTillChaseAgainTimer = 0;
             }
            
