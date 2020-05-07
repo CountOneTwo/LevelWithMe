@@ -4356,15 +4356,16 @@ MonoBehaviour:
   fov: 50
   detectionDepth: 200
   detected: 0
-  distanceToShoot: 5
-  amountOfProjectiles: 10
+  distanceToShoot: 20
+  amountOfProjectiles: 5
   projectileConeAngle: 5
   projectileDamage: 10
-  projectileSpeed: 40
+  projectileSpeed: 0.001
   backwardsMoveSpeed: 50
   backwardsMoveDistance: 10
   waitTillChaseAgain: 1
-  shotgunProjectiles: {fileID: 0}
+  shotgunProjectiles: {fileID: 5404135725881512573, guid: 862524668ca0f63468c4f711e1dc9bfd,
+    type: 3}
 --- !u!65 &1855664031
 BoxCollider:
   m_ObjectHideFlags: 0
