@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HealthAndRespawn_Stage2 : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
+    
+    [HideInInspector]
     public Vector3 respawnPoint;
     public int currentHealth;
     [SerializeField] private float minimumHeight;
@@ -18,6 +20,7 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
 
     private void Awake()
     {
+        respawnPoint = transform.position;
         charController = GetComponent<CharacterController>();
     }
 

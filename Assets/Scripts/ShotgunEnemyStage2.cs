@@ -75,15 +75,16 @@ public class ShotgunEnemyStage2 : MonoBehaviour
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShoot)
             {
                 //Shoot projectiles
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < amountOfProjectiles; i++)
                 {
                     GameObject g = shotgunProjectiles;
+                  
                     g.GetComponent<EnemyProjectile_Stage3>().damage = projectileDamage;
                     g.GetComponent<EnemyProjectile_Stage3>().projectileSpeed = projectileSpeed;
                     g.GetComponent<EnemyProjectile_Stage3>().deviation = projectileConeAngle;
+                   
 
-
-                    Instantiate(g, transform.position + transform.forward * 2, transform.rotation);
+                    Instantiate(g, transform.position + transform.forward, transform.rotation);
                 }
                 movingBackwards = true;
                 backwardsDestination = transform.position - transform.forward * backwardsMoveDistance;

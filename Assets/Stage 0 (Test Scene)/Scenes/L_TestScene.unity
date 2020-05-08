@@ -4487,7 +4487,7 @@ GameObject:
   - component: {fileID: 1855664032}
   - component: {fileID: 1855664031}
   - component: {fileID: 1855664030}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ShotgunEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4521,7 +4521,7 @@ MonoBehaviour:
   amountOfProjectiles: 5
   projectileConeAngle: 5
   projectileDamage: 10
-  projectileSpeed: 0.001
+  projectileSpeed: 5
   backwardsMoveSpeed: 50
   backwardsMoveDistance: 10
   waitTillChaseAgain: 1
@@ -4960,7 +4960,7 @@ GameObject:
   - component: {fileID: 1979330843}
   - component: {fileID: 1979330842}
   - component: {fileID: 1979330841}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}

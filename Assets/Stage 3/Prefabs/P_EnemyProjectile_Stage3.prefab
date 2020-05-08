@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3828564012567367563}
   - component: {fileID: 768611523780596752}
   - component: {fileID: 7620498275229621277}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: P_EnemyProjectile_Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5404135725881512573}
   m_LocalRotation: {x: 0, y: -0.5440173, z: 0, w: -0.839074}
-  m_LocalPosition: {x: 5.8861074, y: -5.74265, z: 6.1704545}
+  m_LocalPosition: {x: -8.298283, y: -5.2433963, z: 7.8817043}
   m_LocalScale: {x: 0.1310591, y: 0.09133468, z: 0.7102928}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504fc5a8e1e2c55479fc03e760b547c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 100
-  damage: 40
-  deviation: 1
+  projectileSpeed: 5
+  damage: 10
+  deviation: 5
