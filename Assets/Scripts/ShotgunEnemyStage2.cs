@@ -45,10 +45,14 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     bool movingBackwards;
     Vector3 backwardsDestination;
     float waitTillChaseAgainTimer;
+    //Rigidbody rigidbody;
+    CharacterController character;
 
     // Start is called before the first frame update
     void Start()
     {
+        //rigidbody = GetComponent<Rigidbody>();
+       character = GetComponent<CharacterController>();
         currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
     }
 
@@ -87,13 +91,25 @@ public class ShotgunEnemyStage2 : MonoBehaviour
                     Instantiate(g, transform.position + transform.forward, transform.rotation);
                 }
                 movingBackwards = true;
-                backwardsDestination = transform.position - transform.forward * backwardsMoveDistance;
+                 backwardsDestination = transform.position - transform.forward * backwardsMoveDistance;
+                Vector3 heading = backwardsDestination;
+                var distance = heading.magnitude;
+                var direction = heading / distance;
+                character.Move(direction * backwardsMoveSpeed * Time.deltaTime);
             }
             else
             {
 
-                
-                transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, movementSpeed * Time.deltaTime);
+
+                // transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, movementSpeed * Time.deltaTime);
+
+                Vector3 heading = GameObject.Find("Player").transform.position - transform.position;
+                var distance = heading.magnitude;
+                var direction = heading / distance;
+                character.Move(direction * movementSpeed * Time.deltaTime);
+
+                // transform.LookAt(GameObject.Find("Player").transform.position);
+                // rigidbody.AddRelativeForce(Vector3.forward * movementSpeed, ForceMode.Force);
             }
         }
         else
