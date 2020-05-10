@@ -34,7 +34,8 @@ public class Moving_Stage3 : MonoBehaviour
 
     Vector3 downwardsVelocity;
 
-    bool isGrounded;
+    [HideInInspector]
+    public bool isGrounded;
 
     float cooldownTimer;
     [HideInInspector]

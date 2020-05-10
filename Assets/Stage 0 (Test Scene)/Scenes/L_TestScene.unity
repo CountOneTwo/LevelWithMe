@@ -4764,6 +4764,7 @@ GameObject:
   - component: {fileID: 1886600091}
   - component: {fileID: 1886600092}
   - component: {fileID: 1886600093}
+  - component: {fileID: 1886600094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4987,6 +4988,25 @@ MonoBehaviour:
   indicator: {fileID: 1576688549}
   lowHealthScreenEffect: {fileID: 2016068452}
   fadeDuration: 0
+--- !u!114 &1886600094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886600082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84305d70d38a8449a81406bda242901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutDuration: 0
+  fadeInDuration: 0
+  tickTime: 0
+  healthPerTick: 0
+  hideHealthBarTime: 0
+  blurImage: {fileID: 0}
+  regenScreenEffect: {fileID: 0}
 --- !u!1 &1946221142
 GameObject:
   m_ObjectHideFlags: 0

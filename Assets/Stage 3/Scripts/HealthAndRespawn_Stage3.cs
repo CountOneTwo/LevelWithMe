@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthAndRespawn_Stage3 : MonoBehaviour
 {
-    [SerializeField] private int maxHealth;
+    public int maxHealth;
 
     [HideInInspector]
     public Vector3 respawnPoint;
