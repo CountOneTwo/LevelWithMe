@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class HealthAndRespawn_Stage3 : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
+
+    [HideInInspector]
     public Vector3 respawnPoint;
+    [HideInInspector]
+    public Vector3 respawnOrientation;
     public int currentHealth;
     [SerializeField] private float minimumHeight;
     public Slider healthBar;
@@ -16,9 +20,16 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     private CharacterController charController;
     public GameObject indicator;
     public GameObject lowHealthScreenEffect;
+    public static bool dead;
+    GameObject mainCamera;
+
+    public float fadeDuration;
 
     private void Awake()
     {
+        mainCamera = GameObject.Find("Main Camera");
+        respawnPoint = transform.position;
+        respawnOrientation = transform.eulerAngles;
         charController = GetComponent<CharacterController>();
     }
 
@@ -69,9 +80,9 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
 
     void CheckForOutOfBounds()
     {
-        if (transform.position.y < minimumHeight)
+        if (transform.position.y < minimumHeight && !dead)
         {
-            Respawn();
+            PrepareRespawn();
         }
     }
 
@@ -89,28 +100,39 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         healthBar.gameObject.SetActive(false);
     }
 
+    void PrepareRespawn()
+    {
+        dead = true;
+        GameObject.Find("Blackscreen").GetComponent<Fade_Stage23>().RespawnFadeOut(fadeDuration);
 
+        Respawn();
+    }
 
     void CheckForRespawn()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !dead)
         {
-            Respawn();
+            PrepareRespawn();
         }
     }
 
-    void Respawn()
+    public void Respawn()
     {
         //Debug.Log(charController.velocity);
         //charController.velocity.Set(0f,0f,0f);
         //charController.SimpleMove(Vector3.zero);
         //charController.Move(Vector3.zero);
         // Debug.Log("Respawning");
+        dead = false;
         DeActivateHealthBar();
+        GetComponent<Moving_Stage3>().cooldown = false;
+
+
+        GetComponentInChildren<Shooting_Stage2>().DisableCrosshair();
         charController.enabled = false;
         transform.position = respawnPoint;
         charController.enabled = true;
-
+        mainCamera.transform.localEulerAngles = Vector3.zero;
         currentHealth = maxHealth;
     }
 
@@ -130,9 +152,9 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit collision)
     {
         // print("yo");
-        if (collision.gameObject.tag == "OutOfBounds")
+        if (collision.gameObject.tag == "OutOfBounds" && !dead)
         {
-            Respawn();
+            PrepareRespawn();
         }
     }
 }

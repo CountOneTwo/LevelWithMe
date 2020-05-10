@@ -37,7 +37,9 @@ public class Moving_Stage2 : MonoBehaviour
     bool isGrounded;
 
     float cooldownTimer;
-    bool cooldown;
+
+    [HideInInspector]
+    public bool cooldown;
     //bool currentlyJumping;
 
     private CharacterController charController;
@@ -48,6 +50,8 @@ public class Moving_Stage2 : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
     }
+
+
 
     private void Update()
     {

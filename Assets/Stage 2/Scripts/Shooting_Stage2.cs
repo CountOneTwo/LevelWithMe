@@ -53,9 +53,17 @@ public class Shooting_Stage2 : MonoBehaviour
     {
         if (returnTimer > returnTime)
         {
-            leftHalf.SetActive(false);
-            rightHalf.SetActive(false);
+            DisableCrosshair();
         }
+    }
+
+    public void DisableCrosshair()
+    {
+        if (returnTimer < returnTime)
+            returnTimer = returnTime + 1;
+
+        leftHalf.SetActive(false);
+        rightHalf.SetActive(false);
     }
 
     public void ReturnCombatCrosshair()

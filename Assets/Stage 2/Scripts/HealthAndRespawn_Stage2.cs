@@ -9,6 +9,10 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
     
     [HideInInspector]
     public Vector3 respawnPoint;
+    [HideInInspector]
+    public Vector3 respawnOrientation;
+
+
     public int currentHealth;
     [SerializeField] private float minimumHeight;
     public Slider healthBar;
@@ -17,11 +21,19 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
     float disappearTimer;
     private CharacterController charController;
     public GameObject indicator;
+    GameObject mainCamera;
+
+    public float fadeDuration;
+
+    public static bool dead;
 
     private void Awake()
     {
+        mainCamera = GameObject.Find("Main Camera");
         respawnPoint = transform.position;
+        respawnOrientation = transform.eulerAngles;
         charController = GetComponent<CharacterController>();
+
     }
 
     // Start is called before the first frame update
@@ -48,6 +60,7 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
         {
             indicator.SetActive(true);
         }
+        //print(respawnPoint);
     }
 
 
@@ -61,9 +74,9 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
 
     void CheckForOutOfBounds()
     {
-        if (transform.position.y < minimumHeight)
+        if (transform.position.y < minimumHeight && !dead)
         {
-            Respawn();
+            PrepareRespawn();
         }
     }
 
@@ -85,30 +98,41 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
 
     void CheckForRespawn()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !dead)
         {
-            Respawn();
+           PrepareRespawn();
         }
     }
 
-    void Respawn()
+    void PrepareRespawn()
+    {
+        dead = true;
+        GameObject.Find("Blackscreen").GetComponent<Fade_Stage23>().RespawnFadeOut(fadeDuration);
+        
+        
+    }
+
+    public void Respawn()
     {
         //Debug.Log(charController.velocity);
         //charController.velocity.Set(0f,0f,0f);
         //charController.SimpleMove(Vector3.zero);
         //charController.Move(Vector3.zero);
         // Debug.Log("Respawning");
+        dead = false;
         DeActivateHealthBar();
+        GetComponent<Moving_Stage2>().cooldown = false;
+        GetComponentInChildren<Shooting_Stage2>().DisableCrosshair();
         charController.enabled = false;
         transform.position = respawnPoint;
         charController.enabled = true;
-
+        mainCamera.transform.localEulerAngles = Vector3.zero;
         currentHealth = maxHealth;
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name.Equals("Checkpoint"))
+       /* if (collider.gameObject.name.Equals("Checkpoint"))
         {
             respawnPoint = transform.position;
         }
@@ -122,9 +146,9 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit collision)
     {
        // print("yo");
-        if (collision.gameObject.tag == "OutOfBounds")
+        if (collision.gameObject.tag == "OutOfBounds"  && !dead)
         {
-            Respawn();
+            PrepareRespawn();
         }
     }
 }

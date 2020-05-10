@@ -37,7 +37,8 @@ public class Moving_Stage3 : MonoBehaviour
     bool isGrounded;
 
     float cooldownTimer;
-    bool cooldown;
+    [HideInInspector]
+    public bool cooldown;
     //bool currentlyJumping;
 
     private CharacterController charController;
