@@ -75,6 +75,13 @@ public class Moving_Stage2 : MonoBehaviour
 
     public float CurrentVolumeLanding;
 
+    [Header("Dash Sound")]
+    public AudioSource DashAudioSource;
+    public AudioClip Dashsound;
+    [Range(0, 1)] public float DashVolume;
+
+    private bool isDashing;
+
     Vector3 downwardsVelocity;
  
     bool isGrounded;
@@ -205,6 +212,7 @@ public class Moving_Stage2 : MonoBehaviour
            // print(2);
             if (!cooldown)
             {
+                isDashing = true;
                 cooldown = true;
                 cooldownTimer = 0;
                 charController.Move((forwardMovement + rightMovement) * dashSpeed /*movementLastFrame * Time.deltaTime*/);
@@ -380,6 +388,11 @@ public class Moving_Stage2 : MonoBehaviour
             }
         }
         
+        if (isDashing == true)
+        {
+            DashAudioSource.PlayOneShot(Dashsound, DashVolume);
+            isDashing = false;
+        }
 
 
     }
