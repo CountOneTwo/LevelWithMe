@@ -44,7 +44,7 @@ public class Regenaration_Stage3 : MonoBehaviour
                 regenerating = true;
                 regenScreenEffect.enabled = true;
             }
-            else if (blurImage.color.a >= 0.8 /*blurImage.GetComponent<Renderer>().material.GetFloat("Size") >= 10*/)
+            else if (/*blurImage.color.a >= 0.8*/ blurImage.material.GetFloat("_Size") >= 10)
             {
                 Regeneration();
             }
@@ -61,12 +61,11 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     public void ManualFadeOut()
     {
-        if (blurImage.color.a >= 0.8 /*blurImage.GetComponent<Renderer>().material.GetFloat("Size") >= 10*/)
-        {
+
             regenScreenEffect.enabled = false;
             currentlyFadingOut = true;
+            StopAllCoroutines();
             StartCoroutine("FadeInFunction", fadeInDuration);
-        }
     }
 
     void Regeneration()
@@ -93,13 +92,13 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     IEnumerator FadeInFunction(float f)
     {
-        while (/*blurImage.GetComponent<Renderer>().material.GetFloat("Size") > 0*/ blurImage.color.a > 0)
+        while (blurImage.material.GetFloat("_Size") > 0 /*blurImage.color.a > 0*/)
         {
             //blurImage.GetComponent<Renderer>().material.GetFloat("Size");
-            Color c = blurImage.color;
+           /* Color c = blurImage.color;
             c.a -= (Time.deltaTime * f);
-            blurImage.color = c;
-           //blurImage.GetComponent<Renderer>().material.SetFloat("Size", blurImage.GetComponent<Renderer>().material.GetFloat("Size") - f * Time.deltaTime);
+            blurImage.color = c;*/
+           blurImage.material.SetFloat("_Size", blurImage.material.GetFloat("_Size") - f * Time.deltaTime);
 
             yield return null;
         }
@@ -108,13 +107,13 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     IEnumerator FadeOutFunction(float f)
     {
-        while (/*bblurImage.GetComponent<Renderer>().material.GetFloat("Size") < 10*/ blurImage.color.a < 0.8)
+        while (blurImage.material.GetFloat("_Size") < 10 /*blurImage.color.a < 0.8*/)
         {
 
-            Color c = blurImage.color;
+           /* Color c = blurImage.color;
             c.a += (f * Time.deltaTime);
-            blurImage.color = c;
-            //blurImage.GetComponent<Renderer>().material.SetFloat("Size", blurImage.GetComponent<Renderer>().material.GetFloat("Size") + f * Time.deltaTime);
+            blurImage.color = c;*/
+            blurImage.material.SetFloat("_Size", blurImage.material.GetFloat("_Size") + f * Time.deltaTime);
 
             yield return null;
 
