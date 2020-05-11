@@ -53,8 +53,11 @@ public class Moving_Stage3 : MonoBehaviour
 
     private void Update()
     {
-
-        PlayerMovement();
+        if (!Regenaration_Stage3.regenerating)
+        {
+            PlayerMovement();
+        }
+        
     }
 
     private void PlayerMovement()

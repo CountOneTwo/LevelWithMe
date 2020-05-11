@@ -11,6 +11,8 @@ public class Regenaration_Stage3 : MonoBehaviour
     public int healthPerTick;
     public float hideHealthBarTime;
 
+    public static float healthBarTimer;
+
     private Moving_Stage3 movementScript;
     private HealthAndRespawn_Stage3 healthScript;
 
@@ -32,12 +34,15 @@ public class Regenaration_Stage3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R) && movementScript.isGrounded && !currentlyFadingOut)
+        if (Input.GetKey(KeyCode.R) && movementScript.isGrounded && !currentlyFadingOut && !GameManager.gamePaused)
         {
             if (!regenerating)
             {
+                healthBarTimer = 1;
+                healthScript.ActivateHealthBar();
                 StartCoroutine("FadeOutFunction", fadeOutDuration);
                 regenerating = true;
+                regenScreenEffect.enabled = true;
             }
             else if (blurImage.color.a >= 1)
             {
@@ -48,14 +53,20 @@ public class Regenaration_Stage3 : MonoBehaviour
         }
         else
         {
-            if (blurImage.color.a >= 1)
-            {
-                currentlyFadingOut = true;
-                StartCoroutine("FadeInFunction", fadeInDuration);
-            }
-            
+            ManualFadeOut();
+            healthBarTimer -= Time.deltaTime;
         }
 
+    }
+
+    public void ManualFadeOut()
+    {
+        if (blurImage.color.a >= 1)
+        {
+            regenScreenEffect.enabled = false;
+            currentlyFadingOut = true;
+            StartCoroutine("FadeInFunction", fadeInDuration);
+        }
     }
 
     void Regeneration()
@@ -69,11 +80,13 @@ public class Regenaration_Stage3 : MonoBehaviour
             {
                 healthScript.currentHealth = healthScript.maxHealth;
             }
+            tickTimer = 0;
         }
     }
 
     void DisableRegeneration()
     {
+        healthBarTimer = hideHealthBarTime;
         regenerating = false;
         currentlyFadingOut = false;
     }

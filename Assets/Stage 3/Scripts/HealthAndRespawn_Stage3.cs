@@ -16,7 +16,8 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     public Slider healthBar;
     public static bool inCombat;
     public float disappearTime;
-    float disappearTimer;
+    [HideInInspector]
+    public float disappearTimer;
     private CharacterController charController;
     public GameObject indicator;
     public GameObject lowHealthScreenEffect;
@@ -72,7 +73,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
 
     void CheckForDisappearance()
     {
-        if (disappearTimer > disappearTime && healthBar.gameObject.activeInHierarchy == true)
+        if (disappearTimer > disappearTime && healthBar.gameObject.activeInHierarchy == true && Regenaration_Stage3.healthBarTimer <= 0)
         {
             DeActivateHealthBar();
         }
@@ -92,7 +93,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         {
             healthBar.gameObject.SetActive(true);
         }
-        disappearTimer = 0;
+        //disappearTimer = 0;
     }
 
     public void DeActivateHealthBar()
