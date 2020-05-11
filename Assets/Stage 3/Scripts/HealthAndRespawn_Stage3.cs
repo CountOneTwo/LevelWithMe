@@ -44,6 +44,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //transform.position = new Vector3(0,0,0);
         healthBar.value = (float)currentHealth / (float)maxHealth;
         CheckForRespawn();
@@ -106,7 +107,6 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         dead = true;
         GameObject.Find("Blackscreen").GetComponent<Fade_Stage23>().RespawnFadeOut(fadeDuration);
 
-        Respawn();
     }
 
     void CheckForRespawn()
@@ -128,10 +128,11 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         DeActivateHealthBar();
         GetComponent<Moving_Stage3>().cooldown = false;
 
-
-        GetComponentInChildren<Shooting_Stage2>().DisableCrosshair();
+        //print(respawnPoint);
+        GetComponentInChildren<Shooting_Stage3>().DisableCrosshair();
         charController.enabled = false;
         transform.position = respawnPoint;
+        transform.eulerAngles = respawnOrientation;
         charController.enabled = true;
         mainCamera.transform.localEulerAngles = Vector3.zero;
         currentHealth = maxHealth;

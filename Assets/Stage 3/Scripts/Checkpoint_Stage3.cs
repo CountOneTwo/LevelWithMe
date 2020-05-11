@@ -17,7 +17,7 @@ public class Checkpoint_Stage3 : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        print(1);
+        
         if (collision.gameObject.GetComponent<HealthAndRespawn_Stage3>() != null)
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().respawnPoint = transform.GetChild(0).transform.position;

@@ -112,9 +112,12 @@ public class Moving_Stage2 : MonoBehaviour
 
     private void Update()
     {
-        
-        PlayerMovement();
-        Sounds();
+        if (!HealthAndRespawn_Stage2.dead)
+        {
+            PlayerMovement();
+            Sounds();
+        } 
+
     }
 
     private void PlayerMovement()

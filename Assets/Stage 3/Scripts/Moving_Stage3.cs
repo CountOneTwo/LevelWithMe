@@ -30,9 +30,10 @@ public class Moving_Stage3 : MonoBehaviour
     [Header("Dash")]
     public float dashSpeed;
     public float dashCooldown;
-    public Slider dashSlider;
-
-    [Header("New Dash Variables")]
+    public GameObject dashIcon;
+    public Image dashFill;
+    public GameObject dashGlow;
+    public GameObject speedLines;
     public float dashDuration;
     //dashCooldown is above
     public float minimumSpeed;
@@ -46,6 +47,11 @@ public class Moving_Stage3 : MonoBehaviour
     [Range(60,179)]
     public float maximumFOV;
     public AnimationCurve fovOverTime;
+    public float sliderDeactivationTime;
+
+    bool dashing;
+    Vector3 dashDirection;
+    float dashProgression;
 
     Vector3 downwardsVelocity;
 
@@ -68,12 +74,81 @@ public class Moving_Stage3 : MonoBehaviour
 
     private void Update()
     {
-        if (!Regenaration_Stage3.regenerating)
+        if (!Regenaration_Stage3.regenerating && !HealthAndRespawn_Stage3.dead )
         {
-            PlayerMovement();
+            if (!dashing)
+            {
+                PlayerMovement();
+            }
+            else
+            {
+                Dash();
+            }
+           
         }
         
     }
+
+    private void Dash()
+    {
+        dashProgression += Time.deltaTime;
+        if (dashProgression > dashDuration)
+        {
+            GameObject.Find("Main Camera").GetComponent<Camera>().fieldOfView = 60;
+            dashing = false;
+            PlayerMovement();
+            speedLines.SetActive(false);
+            return;
+        }
+
+        DashCooldown();
+
+        float horizInput = Input.GetAxis(horizontalInputName);
+        float vertInput = Input.GetAxis(verticalInputName);
+
+        Vector3 rightMovement = transform.right * horizInput;
+        Vector3 forwardMovement = transform.forward * vertInput;
+        Vector3 newMovement = Vector3.ClampMagnitude(forwardMovement + rightMovement,1);
+
+        float currentFOV = 60 + ((maximumFOV - 60) * fovOverTime.Evaluate(dashProgression / dashDuration));
+        GameObject.Find("Main Camera").GetComponent<Camera>().fieldOfView = currentFOV;
+
+        float currentAirControl = minimumDashControl + ((maximumDashControl - minimumDashControl) * dashControlOverTime.Evaluate(dashProgression / dashDuration));
+        dashDirection = dashDirection + newMovement * currentAirControl;
+
+        float currentSpeed = minimumSpeed + ((maximumSpeed - minimumSpeed) * speedOverTime.Evaluate(dashProgression/dashDuration));
+        Debug.Log(currentSpeed);
+        charController.Move(Vector3.ClampMagnitude(dashDirection, 1) * currentSpeed * Time.deltaTime);
+
+    }
+
+    void DashCooldown()
+    {
+        cooldownTimer -= Time.deltaTime;
+        if (cooldown)
+        {
+            //  print(1);
+            
+            dashIcon.SetActive(true);
+            dashFill.fillAmount = cooldownTimer / dashCooldown;
+
+            if (cooldownTimer < 0)
+            {
+                cooldown = false;
+                dashGlow.SetActive(true);
+            }
+        }
+        else
+        {
+            if (cooldownTimer + sliderDeactivationTime < 0)
+            {
+                dashGlow.SetActive(false);
+                dashIcon.SetActive(false);
+            }
+            
+        }
+    }
+
 
     private void PlayerMovement()
     {
@@ -154,65 +229,38 @@ public class Moving_Stage3 : MonoBehaviour
 
         movementLastFrame = resultingMovement;
 
-        //  print(resultingMovement.magnitude * Time.deltaTime);
-        /*   if (resultingMovement.magnitude - slideFactor < 0)
-           {
-               movementLastFrame = Vector3.ClampMagnitude(resultingMovement, 0);
-           }
-           else
-           {
-               movementLastFrame = Vector3.ClampMagnitude(resultingMovement, Mathf.Clamp(resultingMovement.magnitude * resultingMovement.magnitude, 0,maxSpeed) - slideFactor);
-           }*/
-
-
-
-
-        //print(resultingMovement.magnitude);
+        //----------------------------------------------------------------------------------------------------------//
 
         //Dash
-        if (vertInput != 0 || horizInput != 0)
+
+        if (Input.GetButtonDown(dashButton))
         {
-            if (Input.GetButtonDown(dashButton))
+            if (!cooldown)
             {
-                // print(2);
-                if (!cooldown)
+                if (vertInput == 0 && horizInput == 0)
                 {
-                    cooldown = true;
-                    cooldownTimer = 0;
-                    charController.Move((forwardMovement + rightMovement) * dashSpeed /*movementLastFrame * Time.deltaTime*/);
-                    //   print("dash");
-                    return;
-
+                    dashDirection = transform.forward;
                 }
-
+                else {
+                    dashDirection = forwardMovement + rightMovement;
+                }
+                dashing = true;
+                cooldown = true;
+                cooldownTimer = dashCooldown;
+                dashProgression = 0;
+                speedLines.SetActive(true);
+                Dash();
+                return;
             }
         }
 
-
-        if (cooldown)
-        {
-            //  print(1);
-            cooldownTimer += Time.deltaTime;
-            dashSlider.gameObject.SetActive(true);
-            dashSlider.value = cooldownTimer / dashCooldown;
-
-            if (cooldownTimer > dashCooldown)
-            {
-                cooldown = false;
-                //  print("Cooldown over");
-            }
-        }
-        else
-        {
-            dashSlider.gameObject.SetActive(false);
+        DashCooldown();
 
 
-        }
+
+        charController.Move(resultingMovement * Time.deltaTime);
 
 
-        charController.Move(resultingMovement * Time.deltaTime /*movementLastFrame * Time.deltaTime*/);
-        //movementLastFrame = ((forwardMovement + rightMovement) * acceleration + movementLastFrame) * slideFactor;
-        //  movementLastFrame = (resultingMovement  * slideFactor);
 
         //Gravity
         downwardsVelocity.y += gravity * Time.deltaTime;
@@ -239,13 +287,14 @@ public class Moving_Stage3 : MonoBehaviour
             downwardsVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
+        //Adjust y position
         charController.Move(downwardsVelocity * Time.deltaTime);
 
 
+        //Slopeforce
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
         {
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
-            // print("yo");
         }
 
     }

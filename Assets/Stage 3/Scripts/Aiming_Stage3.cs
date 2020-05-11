@@ -24,7 +24,7 @@ public class Aiming_Stage3 : MonoBehaviour
 
     private void Update()
     {
-        if (!Regenaration_Stage3.regenerating)
+        if (!Regenaration_Stage3.regenerating && !HealthAndRespawn_Stage3.dead)
         {
             CameraRotation();
         }

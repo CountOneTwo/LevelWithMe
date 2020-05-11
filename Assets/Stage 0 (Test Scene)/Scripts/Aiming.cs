@@ -24,7 +24,11 @@ public class Aiming : MonoBehaviour
 
     private void Update()
     {
-        CameraRotation();
+        if (!HealthAndRespawn_Stage2.dead)
+        {
+            CameraRotation();
+        }
+        
     }
 
     public void ChangeSensitivity(float newSensitivity)

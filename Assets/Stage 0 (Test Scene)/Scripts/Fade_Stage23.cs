@@ -27,6 +27,7 @@ public class Fade_Stage23 : MonoBehaviour
 
     public void RespawnFadeOut(float f)
     {
+        StopAllCoroutines();
         StartCoroutine("FadeOutFunction", f);
 
     }
@@ -53,11 +54,11 @@ public class Fade_Stage23 : MonoBehaviour
             yield return null;
         }
 
-        if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>() != null)
+        if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>() != null && GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>().enabled)
         {
             GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>().Respawn();
         }
-        else if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>() != null)
+        else if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>() != null && GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>().enabled)
         {
             GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>().Respawn();
         }
