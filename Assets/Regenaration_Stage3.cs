@@ -34,7 +34,7 @@ public class Regenaration_Stage3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R) && movementScript.isGrounded && !currentlyFadingOut && !GameManager.gamePaused)
+        if (Input.GetKey(KeyCode.R) && movementScript.isGrounded && !currentlyFadingOut && !GameManager.gamePaused && !HealthAndRespawn_Stage3.dead)
         {
             if (!regenerating)
             {

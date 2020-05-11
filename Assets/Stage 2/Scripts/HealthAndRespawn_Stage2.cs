@@ -125,6 +125,7 @@ public class HealthAndRespawn_Stage2 : MonoBehaviour
         GetComponentInChildren<Shooting_Stage2>().DisableCrosshair();
         charController.enabled = false;
         transform.position = respawnPoint;
+        transform.eulerAngles = respawnOrientation;
         charController.enabled = true;
         mainCamera.transform.localEulerAngles = Vector3.zero;
         currentHealth = maxHealth;

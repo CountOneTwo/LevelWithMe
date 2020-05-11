@@ -2378,6 +2378,8 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194233}
+  - component: {fileID: 963194232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2460,7 +2462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de1f56a699a5cdc4e8ecfec76505684c, type: 3}
   m_Name: 
@@ -2491,9 +2493,53 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a9582a0bb63f3242b26b649ce9e6e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
+    type: 3}
+  projectileSpawn: {fileID: 559038535}
+  coolDown: 0.32
+  windupMaximum: 1.5
+  windupMinimum: 0
+  minDamage: 10
+  maxDamage: 35
+  minSpeed: 10
+  maxSpeed: 60
+  minMass: 0
+  maxMass: 20
+  leftHalf: {fileID: 1301040846}
+  rightHalf: {fileID: 661060922}
+  fullDrawn: {fileID: 179935789}
+  returnTime: 1
+--- !u!114 &963194232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c1cca0c358fac4bab4b48020e140f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
+  playerBody: {fileID: 1886600086}
+  mouseSensSlider: {fileID: 306778817}
+  mouseSensInputField: {fileID: 737538201}
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74037f37cc0d5b7458353da70bc0dce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
@@ -5143,6 +5189,30 @@ MonoBehaviour:
   dashSpeed: 30
   dashCooldown: 3
   dashSlider: {fileID: 1847138193}
+  dashDuration: 0
+  minimumSpeed: 0
+  maximumSpeed: 0
+  speedOverTime:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minimumDashControl: 0
+  maximumDashControl: 0
+  dashControlOverTime:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maximumFOV: 0
+  fovOverTime:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   isGrounded: 0
   cooldown: 0
 --- !u!1 &1946221142

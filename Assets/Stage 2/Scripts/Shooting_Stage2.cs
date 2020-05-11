@@ -46,7 +46,14 @@ public class Shooting_Stage2 : MonoBehaviour
     {
         coolDownTimer += Time.deltaTime;
        returnTimer += Time.deltaTime;
-        CheckForShooting();
+
+        if (!HealthAndRespawn_Stage2.dead)
+        {
+            CheckForShooting();
+        }
+        
+
+
         CheckForCrosshairDisable();
     }
     public void CheckForCrosshairDisable()

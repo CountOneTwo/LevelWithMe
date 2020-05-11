@@ -46,7 +46,7 @@ public class Shooting_Stage3 : MonoBehaviour
     {
         coolDownTimer += Time.deltaTime;
         returnTimer += Time.deltaTime;
-        if (!Regenaration_Stage3.regenerating)
+        if (!Regenaration_Stage3.regenerating && !HealthAndRespawn_Stage3.dead)
         {
             CheckForShooting();
         }
