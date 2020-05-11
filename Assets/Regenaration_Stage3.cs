@@ -44,7 +44,7 @@ public class Regenaration_Stage3 : MonoBehaviour
                 regenerating = true;
                 regenScreenEffect.enabled = true;
             }
-            else if (blurImage.color.a >= 1)
+            else if (blurImage.color.a >= 0.8 /*blurImage.GetComponent<Renderer>().material.GetFloat("Size") >= 10*/)
             {
                 Regeneration();
             }
@@ -61,7 +61,7 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     public void ManualFadeOut()
     {
-        if (blurImage.color.a >= 1)
+        if (blurImage.color.a >= 0.8 /*blurImage.GetComponent<Renderer>().material.GetFloat("Size") >= 10*/)
         {
             regenScreenEffect.enabled = false;
             currentlyFadingOut = true;
@@ -93,11 +93,14 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     IEnumerator FadeInFunction(float f)
     {
-        while (blurImage.color.a > 0)
+        while (/*blurImage.GetComponent<Renderer>().material.GetFloat("Size") > 0*/ blurImage.color.a > 0)
         {
+            //blurImage.GetComponent<Renderer>().material.GetFloat("Size");
             Color c = blurImage.color;
             c.a -= (Time.deltaTime * f);
             blurImage.color = c;
+           //blurImage.GetComponent<Renderer>().material.SetFloat("Size", blurImage.GetComponent<Renderer>().material.GetFloat("Size") - f * Time.deltaTime);
+
             yield return null;
         }
         DisableRegeneration();
@@ -105,13 +108,17 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     IEnumerator FadeOutFunction(float f)
     {
-        while (blurImage.color.a < 1)
+        while (/*bblurImage.GetComponent<Renderer>().material.GetFloat("Size") < 10*/ blurImage.color.a < 0.8)
         {
 
             Color c = blurImage.color;
             c.a += (f * Time.deltaTime);
             blurImage.color = c;
+            //blurImage.GetComponent<Renderer>().material.SetFloat("Size", blurImage.GetComponent<Renderer>().material.GetFloat("Size") + f * Time.deltaTime);
+
             yield return null;
+
+
         }
     }
 }
