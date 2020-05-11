@@ -32,6 +32,21 @@ public class Moving_Stage3 : MonoBehaviour
     public float dashCooldown;
     public Slider dashSlider;
 
+    [Header("New Dash Variables")]
+    public float dashDuration;
+    //dashCooldown is above
+    public float minimumSpeed;
+    public float maximumSpeed;
+    public AnimationCurve speedOverTime;
+    [Range(0,1)]
+    public float minimumDashControl;
+    [Range(0, 1)]
+    public float maximumDashControl;
+    public AnimationCurve dashControlOverTime;
+    [Range(60,179)]
+    public float maximumFOV;
+    public AnimationCurve fovOverTime;
+
     Vector3 downwardsVelocity;
 
     [HideInInspector]
