@@ -405,8 +405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 438.95, y: 0}
-  m_SizeDelta: {x: 837.9, y: 0}
+  m_AnchoredPosition: {x: 249.44998, y: 0}
+  m_SizeDelta: {x: 458.89996, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &144136218
 MonoBehaviour:
@@ -441,12 +441,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_Font: {fileID: 12800000, guid: 8215ef9ef87bc784fbf163edb5a95cb7, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
-    m_MaxSize: 69
+    m_MinSize: 0
+    m_MaxSize: 150
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -454,7 +454,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "New dsaddsad dkmaskldmskadmskladmsakldmskladmsaldmdksmadkl mskladmklsmd
-    kls\n ldmsakldm\n mdlsmdklas\nd,l\ndlsa,d\xF6las,d\xF6lsa,d\xF6las,d\xF6"
+    kls\n ldmsakldm\n mdlsmdklas\nd,l\ndlsa,d\xF6las,d\xF6lsa,d\xF6las,d\xF6m, cymxc
+    yxm,c yxkjcn yxjkcnyxkjcnjyxkcyxcyxklcnkyxlcnyxklcnyxkjcnkjyxcnyxkjcnkjyxcnyxkjcnkjyxnckjyxcnyxkjcnyxkjcnyxkjnckjyxncyx"
 --- !u!222 &144136220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3964,8 +3965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 596.6, y: 56.420013}
-  m_SizeDelta: {x: 877.9, y: 0}
+  m_AnchoredPosition: {x: 594, y: 68}
+  m_SizeDelta: {x: 498.9, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1690778345
 MonoBehaviour:
