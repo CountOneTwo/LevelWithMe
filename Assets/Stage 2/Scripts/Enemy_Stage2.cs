@@ -74,7 +74,41 @@ public class Enemy_Stage2 : MonoBehaviour
     bool moving;
     float timeWaited = 0;
 
+    [Header("Taking Damage Sound")]
+    public AudioSource TakeDamageSource;
+    public AudioClip TakeHighDamageClip;
+    public AudioClip TakeLowDamageClip;
 
+    public float HighDamageThreshold;
+
+    [Range(0, 1)] public float MaxHighDamageVolume;
+    public bool PitchChangeEnabledHighDamage;
+    [Range(-3, 3)] public float CurrentPitchHighDamage;
+    [Range(-3, 3)] public float MinPitchHighDamage;
+    [Range(-3, 3)] public float MaxPitchHighDamage;
+
+    [Range(0, 1)] public float MaxLowDamageVolume;
+    public bool PitchChangeEnabledLowDamage;
+    [Range(-3, 3)] public float CurrentPitchLowDamage;
+    [Range(-3, 3)] public float MinPitchLowDamage;
+    [Range(-3, 3)] public float MaxPitchLowDamage;
+
+    private float Healthlastframe;
+
+    [Header("Shooting Sound")]
+    public AudioSource ShootingSource;
+    public AudioClip[] ShootingClips;
+
+    public bool PitchChangeEnabledShooting;
+    [Range(-3, 3)] public float CurrentPitchShooting;
+    [Range(-3, 3)] public float MinPitchShooting;
+    [Range(-3, 3)] public float MaxPitchShooting;
+    public bool VolumeChangeEnabledShooting;
+    [Range(0, 1)] public float CurrentVolumeShooting;
+    [Range(0, 1)] public float MinVolumeShooting;
+    [Range(0, 1)] public float MaxVolumeShooting;
+
+    private bool Justshot;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +124,7 @@ public class Enemy_Stage2 : MonoBehaviour
         //print(bounds2);
         // b.enabled = false;
         nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
+        Healthlastframe = maxHealth;
     }
 
     // Update is called once per frame
@@ -107,6 +142,7 @@ public class Enemy_Stage2 : MonoBehaviour
         {
             DetectedActions();
         }
+        Sounds();
     }
 
     void Movement()
@@ -231,6 +267,7 @@ public class Enemy_Stage2 : MonoBehaviour
         if (timeTillNextShot < 0)
         {
             Instantiate(projectilePrefab, /*projectileSpawn.*/transform.position + transform.forward, transform.rotation);
+            Justshot = true;
 
             if (currentShot == numberInSalve -1)
             {
@@ -252,4 +289,53 @@ public class Enemy_Stage2 : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(centerOfSpawnArea, sizeOfSpawnArea);
     }
+
+    void Sounds()
+    {
+        if (currentHealth < Healthlastframe)
+        {
+            if ((Healthlastframe - currentHealth) > HighDamageThreshold)
+            {
+                if (PitchChangeEnabledHighDamage == true)
+                {
+                    CurrentPitchHighDamage = Random.Range(MinPitchHighDamage, MaxPitchHighDamage);
+                }
+                TakeDamageSource.clip = TakeHighDamageClip;
+                TakeDamageSource.volume = MaxHighDamageVolume;
+                TakeDamageSource.pitch = CurrentPitchHighDamage;
+                TakeDamageSource.Play();
+            }
+            else
+            {
+                if (PitchChangeEnabledLowDamage == true)
+                {
+                    CurrentPitchLowDamage = Random.Range(MinPitchLowDamage, MaxPitchLowDamage);
+                }
+                TakeDamageSource.clip = TakeLowDamageClip;
+                TakeDamageSource.volume = MaxLowDamageVolume;
+                TakeDamageSource.pitch = CurrentPitchLowDamage;
+                TakeDamageSource.Play();
+            }
+
+
+        }
+        Healthlastframe = currentHealth;
+
+        if (Justshot == true) {
+            if (PitchChangeEnabledShooting == true)
+            {
+                CurrentPitchShooting = Random.Range(MinPitchShooting, MaxPitchShooting);
+            }
+            if (VolumeChangeEnabledShooting == true)
+            {
+                CurrentVolumeShooting = Random.Range(MinVolumeShooting, MaxVolumeShooting);
+            }
+            ShootingSource.clip = ShootingClips[Random.Range(0, ShootingClips.Length)];
+            ShootingSource.pitch = CurrentPitchShooting;
+            ShootingSource.volume = CurrentVolumeShooting;
+            ShootingSource.Play();
+            Justshot = false;
+        }
+    }
+
 }
