@@ -27,6 +27,12 @@ public class EnemyProjectile : MonoBehaviour
             collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().currentHealth -= damage;
             Destroy(gameObject);
         }
+        else if (collision.gameObject.GetComponent<HealthAndRespawn_Stage1>() != null)
+        {
+            collision.gameObject.GetComponent<HealthAndRespawn_Stage1>().currentHealth -= damage;
+            Destroy(gameObject);
+        }
+
         else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
 

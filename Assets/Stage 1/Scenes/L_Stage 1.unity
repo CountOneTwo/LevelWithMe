@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46509898, g: 0.256096, b: 0.19775322, a: 1}
+  m_IndirectSpecularColor: {r: 0.46515512, g: 0.2561008, b: 0.19805321, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25618,18 +25618,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3804634124783393813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbbfe21312f8cf488c8321d6ae80108, type: 3}
+  m_Script: {fileID: 11500000, guid: de53d30c3003fc94299ab386480621c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   respawnPoint: {x: 3.91, y: -2.21, z: 66.47}
-  respawnOrientation: {x: 0, y: 0, z: 0}
   currentHealth: 100
   minimumHeight: -150
-  healthBar: {fileID: 0}
-  disappearTime: 0
-  indicator: {fileID: 0}
-  fadeDuration: 0
+  healthCounter: {fileID: 398380957}
 --- !u!114 &3804634124783393821
 MonoBehaviour:
   m_ObjectHideFlags: 0
