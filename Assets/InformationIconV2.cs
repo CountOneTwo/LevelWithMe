@@ -119,7 +119,7 @@ public class InformationIconV2 : MonoBehaviour
 
         developerComment.enabled = true;
         unreadIcon.enabled = false;
-        
+        readIcon.enabled = false;
         progressSlider.gameObject.SetActive(false);
 
         developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
