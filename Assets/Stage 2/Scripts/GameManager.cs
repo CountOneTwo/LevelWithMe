@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static bool devNoteCurrentlyDisplayed = false;
     public static bool gamePaused = false;
-    public static InformationIcon currentDevNote;
+    public static InformationIconV2 currentDevNote;
     public Canvas pauseMenu;
 
     // Start is called before the first frame update

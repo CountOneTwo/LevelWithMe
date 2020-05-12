@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InformationIcon : MonoBehaviour
+public class InformationIconV2 : MonoBehaviour
 {
     bool thisNoteDisplayed;
 
-    Renderer renderer;
+    Image unreadIcon;
 
     float timeToDisplay;
 
@@ -17,8 +17,12 @@ public class InformationIcon : MonoBehaviour
     float hideArea;
 
     public Canvas developerComment;
-    public Material whenRead;
-    public Slider progressSlider;
+
+    public GameObject parentCanvas;
+
+    public Image progressSlider;
+    public Image readIcon;
+
     DeveloperNote parentNode;
 
     Camera mainCamera;
@@ -27,7 +31,7 @@ public class InformationIcon : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        renderer = GetComponent<Renderer>();
+        unreadIcon = GetComponent<Image>();
         parentNode = GetComponentInParent<DeveloperNote>();
         timeToDisplay = parentNode.timeToDisplay;
         showArea = parentNode.showArea;
@@ -39,7 +43,7 @@ public class InformationIcon : MonoBehaviour
     void Update()
     {
         VisibilityCheck();
-        transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, transform.position.y, GameObject.Find("Player").transform.position.z));
+        parentCanvas.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, transform.position.y, GameObject.Find("Player").transform.position.z));
     }
 
     void VisibilityCheck()
@@ -49,8 +53,7 @@ public class InformationIcon : MonoBehaviour
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < showArea)
             {
 
-                if (renderer.isVisible)
-                {
+
                     Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
                     RaycastHit hit;
 
@@ -71,12 +74,6 @@ public class InformationIcon : MonoBehaviour
                         timeLookedAt = 0;
                     }
 
-
-                }
-                else
-                {
-                    timeLookedAt = 0;
-                }
             }
             else
             {
@@ -94,7 +91,7 @@ public class InformationIcon : MonoBehaviour
                     currentlyLookedAt = true;
                 }
             }
-               
+
 
 
 
@@ -106,7 +103,7 @@ public class InformationIcon : MonoBehaviour
             }
         }
 
-        progressSlider.value = timeLookedAt / timeToDisplay;
+        progressSlider.fillAmount = timeLookedAt / timeToDisplay;
 
     }
 
@@ -114,15 +111,15 @@ public class InformationIcon : MonoBehaviour
     {
         if (GameManager.devNoteCurrentlyDisplayed)
         {
-            //GameManager.currentDevNote.DisableDevNote();
+            GameManager.currentDevNote.DisableDevNote();
 
         }
 
-       // GameManager.currentDevNote = this;
+        GameManager.currentDevNote = this;
 
         developerComment.enabled = true;
-        renderer.enabled = false;
-        renderer.material = whenRead;
+        unreadIcon.enabled = false;
+        
         progressSlider.gameObject.SetActive(false);
 
         developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
@@ -131,22 +128,18 @@ public class InformationIcon : MonoBehaviour
         thisNoteDisplayed = true;
         //print("Eyo");
 
-        foreach (Renderer r in GetComponentsInChildren<Renderer>())
-            r.enabled = false;
     }
 
 
     void DisableDevNote()
     {
-       // print("EyNOO");
+        // print("EyNOO");
         GameManager.devNoteCurrentlyDisplayed = false;
         thisNoteDisplayed = false;
         developerComment.enabled = false;
         progressSlider.gameObject.SetActive(true);
-        GetComponent<Renderer>().enabled = true;
-        foreach (Renderer r in GetComponentsInChildren<Renderer>())
-            r.enabled = true;
+        readIcon.enabled = true;
 
     }
-    
+
 }

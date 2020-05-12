@@ -15,7 +15,7 @@ public class DeveloperNote : MonoBehaviour
     public Text contentText;
     public Text developerText;
     public Text roleText;
-    public Text dateText;
+    //public Text dateText;
 
     [Header("Adjustable Options")]
     public developer selectedDeveloper;
@@ -40,7 +40,7 @@ public class DeveloperNote : MonoBehaviour
         {
             developerText.text = "";
             roleText.text = "";
-            dateText.text = "";
+            //dateText.text = "";
         }
         else
         {
@@ -68,11 +68,11 @@ public class DeveloperNote : MonoBehaviour
                     roleText.text = "Art";
                     break;
             }
-            dateText.text = selectedMonth.ToString() + ", " + dayOfMonth;
+            //dateText.text = selectedMonth.ToString() + ", " + dayOfMonth;
 
         }
 
-        contentText.text = content;
+        contentText.text = "- " + selectedMonth.ToString() + ", " + dayOfMonth + " - \\\n " + content;
         
     }
 
