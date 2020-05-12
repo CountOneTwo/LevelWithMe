@@ -117,7 +117,6 @@ public class Moving_Stage3 : MonoBehaviour
         dashDirection = dashDirection + newMovement * currentAirControl;
 
         float currentSpeed = minimumSpeed + ((maximumSpeed - minimumSpeed) * speedOverTime.Evaluate(dashProgression/dashDuration));
-        Debug.Log(currentSpeed);
         charController.Move(Vector3.ClampMagnitude(dashDirection, 1) * currentSpeed * Time.deltaTime);
 
     }

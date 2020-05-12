@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShotgunEnemyStage2 : MonoBehaviour
 {
@@ -13,6 +14,17 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     public Vector3 nextPoint;
     public float rotationalSpeed;
     public float movementSpeed;
+
+    [Header("Health")]
+    public float maxHealth;
+    public float healthPerTick;
+    public float tickTime;
+    public Slider healthSlider;
+    public Canvas healthSliderCanvas;
+    float tickTimer;
+    [HideInInspector]
+    public float currentHealth;
+
 
 
     bool moving;
@@ -47,6 +59,10 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     float waitTillChaseAgainTimer;
     //Rigidbody rigidbody;
     CharacterController character;
+    List<Vector3> nextChasePositon = new List<Vector3>();
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,9 +87,44 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         
     }
 
+    void HealthCheck()
+    {
+        healthSlider.value = currentHealth / maxHealth;
+        //print(currentHealth);
+        if (currentHealth < maxHealth)
+        {
+            healthSliderCanvas.enabled = true;
+            tickTimer += Time.deltaTime;
+        }
+        //healthSlider.value = currentHealth / maxHealth;
+
+
+        if (!detected)
+        {
+            if (tickTimer > tickTime)
+            {
+                currentHealth += healthPerTick;
+                tickTimer = 0;
+                if (currentHealth > maxHealth)
+                {
+                    currentHealth = maxHealth;
+                }
+            }
+        }
+
+
+
+        if (currentHealth < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void DetectedActions()
     {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(GameObject.Find("Player").transform.position - transform.position), Time.deltaTime * rotationalSpeed);
+        UpdateChasePositions();
+        print(nextChasePositon[0]);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(/*GameObject.Find("Player").transform.position*/nextChasePositon[0] - transform.position), Time.deltaTime * rotationalSpeed);
         if (!movingBackwards)
         {
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShoot)
@@ -90,31 +141,30 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
                     Instantiate(g, transform.position + transform.forward, transform.rotation);
                 }
+                //nextChasePositon.Clear();
                 movingBackwards = true;
-                 backwardsDestination = transform.position - transform.forward * backwardsMoveDistance;
-                Vector3 heading = backwardsDestination;
-                var distance = heading.magnitude;
-                var direction = heading / distance;
-                character.Move(direction * backwardsMoveSpeed * Time.deltaTime);
+                backwardsDestination = transform.position - (transform.forward * backwardsMoveDistance);
+                waitTillChaseAgainTimer = 0;
             }
             else
             {
-
-
-                // transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, movementSpeed * Time.deltaTime);
-
-                Vector3 heading = GameObject.Find("Player").transform.position - transform.position;
+                print(1);
+                Vector3 heading = nextChasePositon[0] -transform.position;
                 var distance = heading.magnitude;
                 var direction = heading / distance;
                 character.Move(direction * movementSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, nextChasePositon[0]) < 0.01)
+                {
+                   // print(nextChasePositon[0]);
+                  nextChasePositon.RemoveAt(0);
+                }
 
-                // transform.LookAt(GameObject.Find("Player").transform.position);
-                // rigidbody.AddRelativeForce(Vector3.forward * movementSpeed, ForceMode.Force);
+
             }
         }
         else
         {
-            if ((Vector3.Distance(transform.position, backwardsDestination) < 0.01))
+            if ((Vector3.Distance(transform.position, backwardsDestination) < 5))
             {
                 waitTillChaseAgainTimer += Time.deltaTime;
                 if (waitTillChaseAgainTimer > waitTillChaseAgain)
@@ -124,8 +174,10 @@ public class ShotgunEnemyStage2 : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, backwardsDestination, backwardsMoveSpeed * Time.deltaTime);
-                waitTillChaseAgainTimer = 0;
+           
+                Vector3 heading = (backwardsDestination - transform.position).normalized;
+                character.Move(heading * backwardsMoveSpeed * Time.deltaTime);
+                
             }
            
 
@@ -159,6 +211,50 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         }
     }
 
+    void UpdateChasePositions()
+    {
+
+        RaycastHit hit;
+            // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position, out hit))
+        {
+            if (hit.transform.gameObject.name.Equals("Player"))
+            {
+                nextChasePositon.Clear();
+                nextChasePositon.Add(GameObject.Find("Player").transform.position);
+            }      
+        }
+        else
+        {
+            for (int i = 0; i < nextChasePositon.Count; i++)
+            {
+                if (Physics.Raycast(nextChasePositon[i], GameObject.Find("Player").transform.position - nextChasePositon[i], out hit))
+                {
+                    if (hit.transform.gameObject.name.Equals("Player"))
+                    {
+                        nextChasePositon.Insert(i+1, GameObject.Find("Player").transform.position);
+                        //nextChasePositon.Add(GameObject.Find("Player").transform.position);
+                        for (int x = i + 2; x < nextChasePositon.Count; x++)
+                        {
+                            //print(nextChasePositon[x]);
+                          nextChasePositon.RemoveAt(x);
+                            
+                        }
+                        return;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    void PrepareChasePosition()
+    {
+        nextChasePositon.Clear();
+        nextChasePositon.Add(GameObject.Find("Player").transform.position);
+    }
+
+
     void DetectionCheck()
     {
         //print(Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position));
@@ -172,6 +268,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
                 //  print(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name.Equals("Player"))
                 {
+                    PrepareChasePosition();
                     //Detected
                     detected = true;
                 }
@@ -187,6 +284,14 @@ public class ShotgunEnemyStage2 : MonoBehaviour
             Random.Range(center.y - size.y / 2, center.y + size.y / 2),
             Random.Range(center.z - size.z / 2, center.z + size.z / 2)
         );
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (movingBackwards)
+        {
+            backwardsDestination = transform.position;
+        }
     }
 
     void OnDrawGizmosSelected()
