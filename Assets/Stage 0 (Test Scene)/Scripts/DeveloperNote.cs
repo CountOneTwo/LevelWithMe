@@ -72,7 +72,7 @@ public class DeveloperNote : MonoBehaviour
 
         }
 
-        contentText.text = "- " + selectedMonth.ToString() + ", " + dayOfMonth + " - \\\n " + content;
+        contentText.text = "- " + selectedMonth.ToString() + ", " + dayOfMonth + " - " + "\n" + content;
         
     }
 
