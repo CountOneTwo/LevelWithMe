@@ -53,6 +53,7 @@ public class Moving_Stage2 : MonoBehaviour
     private bool IsMoving;
     //private AudioClip LastFootstep;
 
+        /*
     [Header("Jumpstart Sound")]
     public AudioClip JumpstartSound;
     [Range(0, 2)] public float delayTillPlayJumpstart;
@@ -82,6 +83,7 @@ public class Moving_Stage2 : MonoBehaviour
     public float CurrentVolumeLanding;
     private bool GroundedLastFrame;
 
+    */
     [Header("Dash Sound")]
     public AudioSource DashAudioSource;
     public AudioClip Dashsound;
@@ -281,7 +283,7 @@ public class Moving_Stage2 : MonoBehaviour
         {
             isGrounded = false;
             downwardsVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            isJumping = true;
+            //isJumping = true;
         }
 
         charController.Move(downwardsVelocity * Time.deltaTime);
@@ -362,7 +364,7 @@ public class Moving_Stage2 : MonoBehaviour
             else FirstFootstep = true;
         }
         //Jump start + landing
-
+        /*
         if (isGrounded == false)
         {
             GroundedLastFrame = false;
@@ -419,7 +421,9 @@ public class Moving_Stage2 : MonoBehaviour
             hasPlayedJumpstart = false;
             Airtime = 0;
         }
+        */
         /*
+        //old version
         if (isJumping == true)
         {
             if(isGrounded == false)
