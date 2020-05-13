@@ -11,6 +11,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     public Vector3 respawnPoint;
     [HideInInspector]
     public Vector3 respawnOrientation;
+    [HideInInspector]
     public int currentHealth;
     [SerializeField] private float minimumHeight;
     public Slider healthBar;

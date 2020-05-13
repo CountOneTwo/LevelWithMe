@@ -34,6 +34,7 @@ public class Shooting_Stage3 : MonoBehaviour
     public float returnTime;
     float returnTimer;
 
+    [HideInInspector]
     public int drawState = 0;
     // Start is called before the first frame update
     void Start()
