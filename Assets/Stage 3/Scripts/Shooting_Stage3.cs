@@ -34,7 +34,7 @@ public class Shooting_Stage3 : MonoBehaviour
     public float returnTime;
     float returnTimer;
 
-
+    public int drawState = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +84,10 @@ public class Shooting_Stage3 : MonoBehaviour
     {
         if (coolDownTimer > coolDown)
         {
+            if (drawState == 3)
+            {
+                drawState = 0;
+            }
             if (Input.GetMouseButton(0) && !GameManager.gamePaused)
             {
                 float windupPercentage = windup / windupMaximum;
@@ -102,9 +106,11 @@ public class Shooting_Stage3 : MonoBehaviour
                     rightHalf.SetActive(false);
                     fullDrawn.SetActive(true);
                     windup = windupMaximum;
+                    drawState = 2;
                 }
                 else
                 {
+                    drawState = 1;
                     leftHalf.SetActive(true);
                     rightHalf.SetActive(true);
                 }
@@ -128,6 +134,7 @@ public class Shooting_Stage3 : MonoBehaviour
                 ReturnCombatCrosshair();
 
                 Instantiate(g, projectileSpawn.transform.position, transform.rotation);
+                drawState = 3;
                 windup = 0;
                 coolDownTimer = 0;
                 returnTimer = 0;
