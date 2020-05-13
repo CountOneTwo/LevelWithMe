@@ -67,6 +67,8 @@ public class Moving_Stage3 : MonoBehaviour
 
     Vector3 positionLastFrame;
     Vector3 movementLastFrame;
+    [HideInInspector]
+    public bool activelyMoving;
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
@@ -206,11 +208,12 @@ public class Moving_Stage3 : MonoBehaviour
                 }
 
 
-
+                activelyMoving = false;
             }
             else
             {
                 resultingMovement = ((forwardMovement + rightMovement) * acceleration + movementLastFrame * slideFactor);
+                activelyMoving = true;
             }
         }
 

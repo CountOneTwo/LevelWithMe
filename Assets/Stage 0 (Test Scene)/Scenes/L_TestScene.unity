@@ -23679,7 +23679,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 9089335080803395256, guid: bea1b0612671e434e91d3b23ac8efe31,
     type: 3}
   projectileSpawn: {fileID: 559038535}
-  coolDown: 0.32
+  coolDown: 1
   windupMaximum: 1.5
   windupMinimum: 0
   minDamage: 10
@@ -49583,24 +49583,6 @@ MonoBehaviour:
   CurrentVolumeFootsteps: 0
   MinVolumeFootsteps: 0
   MaxVolumeFootsteps: 0
-  JumpstartSound: {fileID: 0}
-  delayTillPlayJumpstart: 0
-  VolumeJumpstart: 0
-  PitchChangeEnabledJumpstart: 0
-  CurrentPitchJumpstart: 0
-  MinPitchJumpstart: 0
-  MaxPitchJumpstart: 0
-  Airtime: 0
-  LandingSounds: []
-  PitchChangeEnabledLanding: 0
-  CurrentPitchLanding: 0
-  MinPitchLanding: 0
-  MaxPitchLanding: 0
-  FallAffectsLandingVolume: 0
-  MinVolumeLanding: 0
-  NormalVolumeLanding: 0
-  MaxVolumeLanding: 0
-  CurrentVolumeLanding: 0
   DashAudioSource: {fileID: 0}
   Dashsound: {fileID: 0}
   DashVolume: 0
@@ -49626,6 +49608,26 @@ MonoBehaviour:
   disappearTime: 2
   indicator: {fileID: 1576688549}
   fadeDuration: 2
+  DeathSource: {fileID: 0}
+  DeathClips: []
+  PitchChangeEnabledDeath: 0
+  CurrentPitchDeath: 0
+  MinPitchDeath: 0
+  MaxPitchDeath: 0
+  VolumeChangeEnabledDeath: 0
+  CurrentVolumeDeath: 0
+  MinVolumeDeath: 0
+  MaxVolumeDeath: 0
+  HitSource: {fileID: 0}
+  HitClips: []
+  PitchChangeEnabledHit: 0
+  CurrentPitchHit: 0
+  MinPitchHit: 0
+  MaxPitchHit: 0
+  VolumeChangeEnabledHit: 0
+  CurrentVolumeHit: 0
+  MinVolumeHit: 0
+  MaxVolumeHit: 0
 --- !u!114 &1886600093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49781,6 +49783,7 @@ MonoBehaviour:
   sliderDeactivationTime: 1
   isGrounded: 0
   cooldown: 0
+  activelyMoving: 0
 --- !u!1 &1887210648
 GameObject:
   m_ObjectHideFlags: 0
@@ -60003,6 +60006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd91a5373b815274f95a3732b13f0664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 5819047316352449019}
 --- !u!1 &8331094429741944648
 GameObject:
   m_ObjectHideFlags: 0

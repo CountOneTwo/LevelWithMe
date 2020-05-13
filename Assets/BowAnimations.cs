@@ -7,7 +7,8 @@ public class BowAnimations : MonoBehaviour
     Animator animator;
     Moving_Stage3 movementScript;
     Shooting_Stage3 shootingScript;
-    Vector3 positionLastFrame;
+    //Vector3 positionLastFrame;
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,18 +21,23 @@ public class BowAnimations : MonoBehaviour
     void Update()
     {
         animator.SetInteger("DrawState", shootingScript.drawState);
-        animator.SetBool("Jumping", !movementScript.isGrounded);
-
-        if (positionLastFrame == transform.position)
+        if (shootingScript.drawState == 3)
         {
-            animator.SetBool("Running", false);
+            arrow.SetActive(false);
         }
         else
         {
-            animator.SetBool("Running", true);
+            arrow.SetActive(true);
         }
 
 
-        positionLastFrame = transform.position;
+
+        animator.SetBool("Jumping", !movementScript.isGrounded);
+
+
+            animator.SetBool("Running", movementScript.activelyMoving);
+        
+
+
     }
 }
