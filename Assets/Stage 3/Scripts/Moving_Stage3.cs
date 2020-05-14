@@ -246,6 +246,7 @@ public class Moving_Stage3 : MonoBehaviour
                 else {
                     dashDirection = forwardMovement + rightMovement;
                 }
+                dashGlow.SetActive(false);
                 dashing = true;
                 cooldown = true;
                 cooldownTimer = dashCooldown;

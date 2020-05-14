@@ -987,6 +987,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6661b6eb4370c9d4cb6266b823038946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doors: {fileID: 0}
+  doorPosition: {x: 0, y: 0, z: 0}
+  originalDoorPositon: {x: 0, y: 0, z: 0}
+  doorSpeed: 0
 --- !u!65 &45402107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58135,7 +58139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358547688644482790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top_part_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58151,7 +58155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8220527675615469449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottom_Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58167,7 +58171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841299646027178204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58198,7 +58202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3126795942738454598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58315,7 +58319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4129844894025036810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: String_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58374,7 +58378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4699615615196121100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: nurbsCircle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58571,7 +58575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5136807822273333264}
   - component: {fileID: 6032745818226421144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58685,7 +58689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5832083684486488223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: nurbsCircle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58701,7 +58705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8423835729653363993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottom_Part_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58733,7 +58737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8705317949502010192}
   - component: {fileID: 4302675935456167586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lower_part_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58816,7 +58820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2239776734341692976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperArm_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58832,7 +58836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7781072073812246892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wrest_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58848,7 +58852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7404687412136192809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58864,7 +58868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7932259146801380251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58937,7 +58941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9206966824009368168}
   - component: {fileID: 7520272186757527578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lower_part_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58953,7 +58957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 900954534170171673}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top_Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58969,7 +58973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5574657383959342869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58999,7 +59003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7168641843000250420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottom_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59015,7 +59019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3002912561541873128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: String_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59031,7 +59035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6784788320183631635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle_in
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59079,7 +59083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2169296489070563864}
   - component: {fileID: 5697394691715053738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: String_holder_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59096,7 +59100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6984103091972966832}
   - component: {fileID: 2511363047536377623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59220,7 +59224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8096370039597413287}
   - component: {fileID: 9078583769237804435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59307,7 +59311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2485090971419608458}
   - component: {fileID: 1746023897634116185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: String_holder_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59338,7 +59342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3819913667852012084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59355,7 +59359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8842940682418347738}
   - component: {fileID: 6674604280756033464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59371,7 +59375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2588132570557513176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59560,7 +59564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1579599281481046852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59669,7 +59673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7542284731574837188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59767,7 +59771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8958935068937618604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: nurbsCircle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59878,7 +59882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8051288563559109389}
   - component: {fileID: 5796768068386162330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59968,7 +59972,7 @@ GameObject:
   - component: {fileID: 5006512735100103094}
   - component: {fileID: 8296172669427686310}
   - component: {fileID: 8296172669427686311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bow_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60016,7 +60020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6152308107989670443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60047,7 +60051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2237987766792889164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60077,7 +60081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4725928788828521474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60093,7 +60097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5571621004304915751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bow_main_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60123,7 +60127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8110458326554182648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
