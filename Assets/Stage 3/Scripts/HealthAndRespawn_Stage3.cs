@@ -25,6 +25,10 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     public static bool dead;
     GameObject mainCamera;
 
+    private S_PlayerStreaming playerStreaming;
+    private GameObject[] LoadOnRepawn;
+    private GameObject[] UnloadOnRespawn;
+
     public float fadeDuration;
 
     private void Awake()
@@ -33,6 +37,13 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         respawnPoint = transform.position;
         respawnOrientation = transform.eulerAngles;
         charController = GetComponent<CharacterController>();
+        playerStreaming = GetComponent<S_PlayerStreaming>();
+        
+        if (playerStreaming != null)
+        {
+            LoadOnRepawn = playerStreaming.ObjectsToLoadOnStart;
+            UnloadOnRespawn = playerStreaming.ObjectsToUnloadOnStart;
+        }
     }
 
     // Start is called before the first frame update
@@ -72,6 +83,11 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         }
     }
 
+    public void UpdateObjectsToLoadOnRespawn(GameObject[] newUnload, GameObject[] newLoad)
+    {
+        UnloadOnRespawn = newUnload;
+        LoadOnRepawn = newLoad;
+    }
 
     void CheckForDisappearance()
     {
@@ -134,6 +150,10 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         charController.enabled = false;
         transform.position = respawnPoint;
         transform.eulerAngles = respawnOrientation;
+
+        playerStreaming.LoadObjects(UnloadOnRespawn, false);
+        playerStreaming.LoadObjects(LoadOnRepawn, true);
+
         charController.enabled = true;
         mainCamera.transform.localEulerAngles = Vector3.zero;
         currentHealth = maxHealth;
@@ -146,10 +166,6 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
             respawnPoint = transform.position;
         }
 
-        /* if (collider.gameObject.tag == "OutOfBounds")
-         {
-             Respawn();
-         }*/
     }
 
     void OnControllerColliderHit(ControllerColliderHit collision)

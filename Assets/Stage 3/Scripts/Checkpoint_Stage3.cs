@@ -5,6 +5,9 @@ using UnityEngine;
 public class Checkpoint_Stage3 : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject[] ObjectsToLoadOnRespawn = new GameObject[3];
+    public GameObject[] ObjectsToUnloadOnRespawn = new GameObject[3];
+
     void Start()
     {
         GetComponent<MeshRenderer>().enabled = false;
@@ -22,6 +25,7 @@ public class Checkpoint_Stage3 : MonoBehaviour
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().respawnPoint = transform.GetChild(0).transform.position;
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().respawnOrientation = transform.GetChild(0).transform.eulerAngles;
+            collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().UpdateObjectsToLoadOnRespawn(ObjectsToUnloadOnRespawn, ObjectsToLoadOnRespawn);
         }
     }
 }
