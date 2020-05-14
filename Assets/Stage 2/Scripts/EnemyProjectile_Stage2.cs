@@ -30,12 +30,17 @@ public class EnemyProjectile_Stage2 : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
+        if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null && collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().enabled == true)
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().currentHealth -= damage;
             collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
 
             Destroy(gameObject);
+        }
+        else if (collision.gameObject.GetComponent<HealthAndRespawn_Stage3>() != null && collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().enabled == true)
+        {
+            collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().currentHealth -= damage;
+            collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().ActivateHealthBar();
         }
         else if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {
