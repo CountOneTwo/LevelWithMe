@@ -41,6 +41,7 @@ public class EnemyProjectile_Stage2 : MonoBehaviour
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().currentHealth -= damage;
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().ActivateHealthBar();
+            collision.gameObject.GetComponent<Regenaration_Stage3>().ManualFadeOut();
         }
         else if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {

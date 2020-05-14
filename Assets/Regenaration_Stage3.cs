@@ -19,6 +19,8 @@ public class Regenaration_Stage3 : MonoBehaviour
     public static bool regenerating;
     bool currentlyFadingOut;
 
+    public float blurSize;
+
     public Image blurImage;
     public Image regenScreenEffect;
 
@@ -27,6 +29,7 @@ public class Regenaration_Stage3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        blurImage.material.SetFloat("_Size", 0);
         movementScript = FindObjectOfType<Moving_Stage3>();
         healthScript = FindObjectOfType<HealthAndRespawn_Stage3>();
     }
@@ -34,7 +37,7 @@ public class Regenaration_Stage3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R) && movementScript.isGrounded && !currentlyFadingOut && !GameManager.gamePaused && !HealthAndRespawn_Stage3.dead)
+        if (Input.GetKey(KeyCode.R) && movementScript.isGrounded && !currentlyFadingOut && !GameManager.gamePaused && !HealthAndRespawn_Stage3.dead && !movementScript.dashing)
         {
             if (!regenerating)
             {
@@ -107,7 +110,7 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     IEnumerator FadeOutFunction(float f)
     {
-        while (blurImage.material.GetFloat("_Size") < 10 /*blurImage.color.a < 0.8*/)
+        while (blurImage.material.GetFloat("_Size") < blurSize /*blurImage.color.a < 0.8*/)
         {
 
            /* Color c = blurImage.color;

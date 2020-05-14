@@ -49,7 +49,8 @@ public class Moving_Stage3 : MonoBehaviour
     public AnimationCurve fovOverTime;
     public float sliderDeactivationTime;
 
-    bool dashing;
+    [HideInInspector]
+    public bool dashing;
     Vector3 dashDirection;
     float dashProgression;
 
@@ -88,7 +89,7 @@ public class Moving_Stage3 : MonoBehaviour
             }
            
         }
-        
+        DashCooldown();
     }
 
     private void Dash()
@@ -103,7 +104,7 @@ public class Moving_Stage3 : MonoBehaviour
             return;
         }
 
-        DashCooldown();
+       // DashCooldown();
 
         float horizInput = Input.GetAxis(horizontalInputName);
         float vertInput = Input.GetAxis(verticalInputName);
@@ -257,7 +258,7 @@ public class Moving_Stage3 : MonoBehaviour
             }
         }
 
-        DashCooldown();
+       // DashCooldown();
 
 
 
