@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 136.95, y: 0}
-  m_SizeDelta: {x: 263.9, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &264086205
 CanvasRenderer:
@@ -961,8 +961,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 136.95, y: 0}
-  m_SizeDelta: {x: 273.9, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1658375889
 CanvasRenderer:
@@ -1381,9 +1381,9 @@ MonoBehaviour:
   roleText: {fileID: 718058718}
   topSeperator: {fileID: 63484803}
   bottomSeperator: {fileID: 837572152}
-  programmingColor: {r: 1, g: 0, b: 0, a: 1}
-  designColor: {r: 0, g: 0, b: 0, a: 1}
-  artColor: {r: 0, g: 0, b: 0, a: 1}
+  programmingColor: {r: 0.8862745, g: 0.25882354, b: 0.91764706, a: 1}
+  designColor: {r: 0.2509804, g: 0.92941177, b: 0.44313726, a: 1}
+  artColor: {r: 1, g: 0.7709804, b: 0.23113209, a: 1}
   selectedDeveloper: 0
   selectedMonth: 8
   dayOfMonth: 31
