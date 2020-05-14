@@ -17,6 +17,15 @@ public class DeveloperNote : MonoBehaviour
     public Text roleText;
     //public Text dateText;
 
+    [Header("Seperators")]
+    public Image topSeperator;
+    public Image bottomSeperator;
+    public Color programmingColor;
+    public Color designColor;
+    public Color artColor;
+    
+
+
     [Header("Adjustable Options")]
     public developer selectedDeveloper;
     public month selectedMonth;
@@ -49,23 +58,34 @@ public class DeveloperNote : MonoBehaviour
                 case developer.BonnieIProgramming:
                     developerText.text = "Bonnie";
                     roleText.text = "Programming";
+                    topSeperator.color = programmingColor;
+                    bottomSeperator.color = programmingColor;
+
                     break;
                 case developer.SandraIDesign:
                     developerText.text = "Sandra";
                     roleText.text = "Design";
+                    topSeperator.color = designColor;
+                    bottomSeperator.color = designColor;
                     break;
                 case developer.NikolaiIDesign:
                     developerText.text = "Nikolai";
                     roleText.text = "Design";
+                    topSeperator.color = designColor;
+                    bottomSeperator.color = designColor;
                     break;
                 case developer.AlejandroIArt:
                     developerText.text = "Alejandro";
                     //roleText.text = "Art & Sound";
                     roleText.text = "Art";
+                    topSeperator.color = artColor;
+                    bottomSeperator.color = artColor;
                     break;
                 case developer.IverIArt:
                     developerText.text = "Iver";
                     roleText.text = "Art";
+                    topSeperator.color = artColor;
+                    bottomSeperator.color = artColor;
                     break;
             }
             //dateText.text = selectedMonth.ToString() + ", " + dayOfMonth;
