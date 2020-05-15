@@ -7,9 +7,19 @@ public class S_PlayerStreaming : MonoBehaviour
     public GameObject[] ObjectsToLoadOnStart = new GameObject[1];
     public GameObject[] ObjectsToUnloadOnStart = new GameObject[1];
 
+    public bool DisableLevelStreaming = false;
+    public bool DisableLoadOnStart = false;
+
     void Start()
     {
-        LoadObjectsOnStart();
+        if (DisableLevelStreaming || DisableLoadOnStart)
+        {
+
+        }
+        else
+        {
+            LoadObjectsOnStart();
+        }
     }
 
     public void LoadObjectsOnStart()
@@ -20,13 +30,16 @@ public class S_PlayerStreaming : MonoBehaviour
 
     public void LoadObjects(GameObject[] gObjects, bool load)
     {
-        foreach (GameObject o in gObjects)
+        if(!DisableLevelStreaming)
         {
-            if (o != null)
+            foreach (GameObject o in gObjects)
             {
-                if (o.activeInHierarchy != load)
+                if (o != null)
                 {
-                    o.SetActive(load);
+                    if (o.activeInHierarchy != load)
+                    {
+                        o.SetActive(load);
+                    }
                 }
             }
         }

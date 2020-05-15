@@ -5986,6 +5986,7 @@ MonoBehaviour:
   tickTime: 1
   healthPerTick: 10
   hideHealthBarTime: 1
+  blurSize: 0
   blurImage: {fileID: 30962947}
   regenScreenEffect: {fileID: 2135620344}
 --- !u!114 &1886600095
@@ -6099,6 +6100,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   sliderDeactivationTime: 1
+  dashing: 0
   isGrounded: 0
   cooldown: 0
   activelyMoving: 0
@@ -6118,6 +6120,8 @@ MonoBehaviour:
   - {fileID: 638760203}
   ObjectsToUnloadOnStart:
   - {fileID: 969930842}
+  DisableLevelStreaming: 0
+  DisableLoadOnStart: 0
 --- !u!1 &1946221142
 GameObject:
   m_ObjectHideFlags: 0
