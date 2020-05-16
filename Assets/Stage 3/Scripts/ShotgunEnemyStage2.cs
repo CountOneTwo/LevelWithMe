@@ -24,7 +24,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     float tickTimer;
     [HideInInspector]
     public float currentHealth;
-
+    public GameObject deathVFX;
 
 
     bool moving;
@@ -170,7 +170,8 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
         if (currentHealth < 0)
         {
-            Instantiate(DeathSound, gameObject.transform);
+            Instantiate(DeathSound, gameObject.transform.position, transform.rotation);
+            Instantiate(deathVFX, gameObject.transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

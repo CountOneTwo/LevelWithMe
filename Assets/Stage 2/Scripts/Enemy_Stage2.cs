@@ -63,6 +63,7 @@ public class Enemy_Stage2 : MonoBehaviour
     public Slider healthSlider;
     public Canvas healthSliderCanvas;
     float tickTimer;
+    public GameObject deathVFX;
     [HideInInspector]
     public float currentHealth;
 
@@ -231,7 +232,15 @@ public class Enemy_Stage2 : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            if (Stage3 == true) Instantiate(DeathSound, gameObject.transform.position, transform.rotation);
+            if (Stage3 == true)
+            {
+                Instantiate(DeathSound, gameObject.transform.position, transform.rotation);
+                Instantiate(deathVFX, gameObject.transform.position, transform.rotation);
+
+            }
+
+
+
             Destroy(gameObject);
         }
     }

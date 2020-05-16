@@ -51,6 +51,10 @@ MonoBehaviour:
   damage: 19
   speed: 0
   mass: 0
+  hitEnemyVFX: {fileID: 443190605335609165, guid: 144997d03c583f04ab5a3f098e25272a,
+    type: 3}
+  hitWallVFX: {fileID: 5070585827285333179, guid: 9c5494abbff43fb46997a6e66a6791a8,
+    type: 3}
 --- !u!136 &699425143534243119
 CapsuleCollider:
   m_ObjectHideFlags: 0
