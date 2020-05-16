@@ -229,9 +229,9 @@ public class Enemy_Stage2 : MonoBehaviour
 
         
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
-            if (Stage3 == true) Instantiate(DeathSound, gameObject.transform);
+            if (Stage3 == true) Instantiate(DeathSound, gameObject.transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

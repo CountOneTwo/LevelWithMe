@@ -991,6 +991,11 @@ MonoBehaviour:
   doorPosition: {x: 0, y: 0, z: 0}
   originalDoorPositon: {x: 0, y: 0, z: 0}
   doorSpeed: 0
+  countDownTime: 0
+  minEnemies: 0
+  shotgunEnemy: {fileID: 0}
+  basicEnemy: {fileID: 0}
+  spawnPositions: []
 --- !u!65 &45402107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23697,6 +23702,48 @@ MonoBehaviour:
   fullDrawn: {fileID: 179935789}
   returnTime: 1
   drawState: 0
+  DrawSource: {fileID: 0}
+  DrawClips: []
+  PitchChangeEnabledDraw: 0
+  CurrentPitchDraw: 0
+  MinPitchDraw: 0
+  MaxPitchDraw: 0
+  VolumeChangeEnabledDraw: 0
+  CurrentVolumeDraw: 0
+  MinVolumeDraw: 0
+  MaxVolumeDraw: 0
+  ShootSource: {fileID: 0}
+  ShootClips: []
+  PitchChangeEnabledShoot: 0
+  CurrentPitchShoot: 0
+  MinPitchShoot: 0
+  MaxPitchShoot: 0
+  VolumeChangeEnabledShoot: 0
+  CurrentVolumeShoot: 0
+  MinVolumeShoot: 0
+  MaxVolumeShoot: 0
+  ShootSoundEscalationSpeed: 0
+  FCSource: {fileID: 0}
+  FCClips: []
+  PitchChangeEnabledFC: 0
+  CurrentPitchFC: 0
+  MinPitchFC: 0
+  MaxPitchFC: 0
+  VolumeChangeEnabledFC: 0
+  CurrentVolumeFC: 0
+  MinVolumeFC: 0
+  MaxVolumeFC: 0
+  ReloadSource: {fileID: 0}
+  ReloadClips: []
+  delayfromM1release: 0
+  PitchChangeEnabledReload: 0
+  CurrentPitchReload: 0
+  MinPitchReload: 0
+  MaxPitchReload: 0
+  VolumeChangeEnabledReload: 0
+  CurrentVolumeReload: 0
+  MinVolumeReload: 0
+  MaxVolumeReload: 0
 --- !u!1 &966831407
 GameObject:
   m_ObjectHideFlags: 0
@@ -48144,11 +48191,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 264086203, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 264086203, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 263.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 264086203, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchorMin.y
@@ -48184,11 +48231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658375885, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1658375885, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1658375885, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchorMin.y
@@ -49655,6 +49702,31 @@ MonoBehaviour:
   indicator: {fileID: 1576688549}
   lowHealthScreenEffect: {fileID: 2016068452}
   fadeDuration: 2
+  DeathSource: {fileID: 0}
+  DeathClips: []
+  PitchChangeEnabledDeath: 0
+  CurrentPitchDeath: 0
+  MinPitchDeath: 0
+  MaxPitchDeath: 0
+  VolumeChangeEnabledDeath: 0
+  CurrentVolumeDeath: 0
+  MinVolumeDeath: 0
+  MaxVolumeDeath: 0
+  HitSource: {fileID: 0}
+  HitClips: []
+  PitchChangeEnabledHit: 0
+  CurrentPitchHit: 0
+  MinPitchHit: 0
+  MaxPitchHit: 0
+  VolumeChangeEnabledHit: 0
+  CurrentVolumeHit: 0
+  MinVolumeHit: 0
+  MaxVolumeHit: 0
+  CritSource: {fileID: 0}
+  CritClip: {fileID: 0}
+  CriticalPitch: 0
+  CriticalVolume: 0
+  CriticalHealthThreshold: 0
 --- !u!114 &1886600094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49672,6 +49744,7 @@ MonoBehaviour:
   tickTime: 1
   healthPerTick: 10
   hideHealthBarTime: 1
+  blurSize: 0
   blurImage: {fileID: 30962947}
   regenScreenEffect: {fileID: 2135620344}
 --- !u!114 &1886600095
@@ -49785,9 +49858,42 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   sliderDeactivationTime: 1
+  dashing: 0
   isGrounded: 0
   cooldown: 0
   activelyMoving: 0
+  FootstepAudioSource: {fileID: 0}
+  FootstepSounds: []
+  FootstepCooldown: 0
+  PitchChangeEnabledFootsteps: 0
+  CurrentPitchFootsteps: 0
+  MinPitchFootsteps: 0
+  MaxPitchFootsteps: 0
+  VolumeChangeEnabledFootsteps: 0
+  CurrentVolumeFootsteps: 0
+  MinVolumeFootsteps: 0
+  MaxVolumeFootsteps: 0
+  JumpstartSound: {fileID: 0}
+  delayTillPlayJumpstart: 0
+  VolumeJumpstart: 0
+  PitchChangeEnabledJumpstart: 0
+  CurrentPitchJumpstart: 0
+  MinPitchJumpstart: 0
+  MaxPitchJumpstart: 0
+  Airtime: 0
+  LandingSounds: []
+  PitchChangeEnabledLanding: 0
+  CurrentPitchLanding: 0
+  MinPitchLanding: 0
+  MaxPitchLanding: 0
+  FallAffectsLandingVolume: 0
+  MinVolumeLanding: 0
+  NormalVolumeLanding: 0
+  MaxVolumeLanding: 0
+  CurrentVolumeLanding: 0
+  DashAudioSource: {fileID: 0}
+  Dashsound: {fileID: 0}
+  DashVolume: 0
 --- !u!1 &1887210648
 GameObject:
   m_ObjectHideFlags: 0
