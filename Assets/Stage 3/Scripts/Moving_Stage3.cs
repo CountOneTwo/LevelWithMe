@@ -70,6 +70,66 @@ public class Moving_Stage3 : MonoBehaviour
     Vector3 movementLastFrame;
     [HideInInspector]
     public bool activelyMoving;
+
+    [Header("Footsteps")]
+    public AudioSource FootstepAudioSource;
+    public AudioClip[] FootstepSounds;
+    public float FootstepCooldown;
+    public bool PitchChangeEnabledFootsteps;
+    [Range(-3, 3)] public float CurrentPitchFootsteps;
+    [Range(-3, 3)] public float MinPitchFootsteps;
+    [Range(-3, 3)] public float MaxPitchFootsteps;
+    public bool VolumeChangeEnabledFootsteps;
+    [Range(0, 1)] public float CurrentVolumeFootsteps;
+    [Range(0, 1)] public float MinVolumeFootsteps;
+    [Range(0, 1)] public float MaxVolumeFootsteps;
+
+    //private AudioClip CurrentFootstep;
+    private AudioClip RandomFootstep;
+    private int NrOfFootstepsPlayed;
+    private float FootstepCooldownTimer;
+    private bool FirstFootstep;
+    private bool IsMoving;
+    //private AudioClip LastFootstep;
+
+    
+[Header("Jumpstart Sound")]
+public AudioClip JumpstartSound;
+[Range(0, 2)] public float delayTillPlayJumpstart;
+[Range(0, 1)] public float VolumeJumpstart;
+public bool PitchChangeEnabledJumpstart;
+[Range(-3, 3)] public float CurrentPitchJumpstart;
+[Range(-3, 3)] public float MinPitchJumpstart;
+[Range(-3, 3)] public float MaxPitchJumpstart;
+
+public float Airtime;
+//Normal 1.2
+//max 3.2ish
+private bool hasPlayedJumpstart;
+private bool isJumping;
+
+[Header("Landing Sounds")]
+public AudioClip[] LandingSounds;
+public bool PitchChangeEnabledLanding;
+[Range(-3, 3)] public float CurrentPitchLanding;
+[Range(-3, 3)] public float MinPitchLanding;
+[Range(-3, 3)] public float MaxPitchLanding;
+public bool FallAffectsLandingVolume;
+[Range(0, 1)] public float MinVolumeLanding;
+[Range(0, 1)] public float NormalVolumeLanding;
+[Range(0, 1)] public float MaxVolumeLanding;
+
+public float CurrentVolumeLanding;
+private bool GroundedLastFrame;
+
+
+    [Header("Dash Sound")]
+    public AudioSource DashAudioSource;
+    public AudioClip Dashsound;
+    [Range(0, 1)] public float DashVolume;
+
+    private bool isDashing;
+
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
@@ -82,6 +142,7 @@ public class Moving_Stage3 : MonoBehaviour
             if (!dashing)
             {
                 PlayerMovement();
+                Sounds();
             }
             else
             {
@@ -190,6 +251,7 @@ public class Moving_Stage3 : MonoBehaviour
         {
             if (vertInput == 0 && horizInput == 0)
             {
+                IsMoving = false;
                 // print("Stop");
                 if (instantStop)
                 {
@@ -205,6 +267,7 @@ public class Moving_Stage3 : MonoBehaviour
                     else
                     {
                         resultingMovement = ((forwardMovement + rightMovement) * acceleration + Vector3.ClampMagnitude(movementLastFrame, clampingMagnitude));
+                        IsMoving = true;
                     }
                 }
 
@@ -332,6 +395,120 @@ public class Moving_Stage3 : MonoBehaviour
                 return true;
         return false;
     }
+    private void Sounds()
+    {
+        //Footsteps
+        if (isGrounded == true)
+        {
+            if (IsMoving == true)
+            {
+                FootstepCooldownTimer += Time.deltaTime;
 
+                if (FirstFootstep == true || FootstepCooldownTimer > FootstepCooldown)
+                {
+                    if (PitchChangeEnabledFootsteps == true)
+                    {
+                        CurrentPitchFootsteps = Random.Range(MinPitchFootsteps, MaxPitchFootsteps);
+                    }
+                    if (VolumeChangeEnabledFootsteps == true)
+                    {
+                        CurrentVolumeFootsteps = Random.Range(MinVolumeFootsteps, MaxVolumeFootsteps);
+                    }
+                    // FootstepAudioSource.clip = FootstepSounds[Random.Range(0, FootstepSounds.Length)];
+                    FootstepAudioSource.clip = FootstepSounds[NrOfFootstepsPlayed];
+                    FootstepAudioSource.pitch = CurrentPitchFootsteps;
+                    FootstepAudioSource.volume = CurrentVolumeFootsteps;
+                    FootstepAudioSource.Play();
+                    NrOfFootstepsPlayed++;
+                    if (NrOfFootstepsPlayed >= FootstepSounds.Length)
+                    {
+                        ShuffleArray();
+                        NrOfFootstepsPlayed = 0;
+                    }
+                    FirstFootstep = false;
+                    FootstepCooldownTimer = 0;
+                }
+            }
+            else FirstFootstep = true;
+        }
+        //Jump start + landing
+        
+        if (isGrounded == false)
+        {
+            GroundedLastFrame = false;
+            if (isJumping == true)
+            {
+                Airtime += Time.deltaTime;
+                if (Airtime >= delayTillPlayJumpstart && hasPlayedJumpstart == false)
+                {
+                    if (PitchChangeEnabledJumpstart == true)
+                    {
+                        CurrentPitchJumpstart = Random.Range(MinPitchJumpstart, MaxPitchJumpstart);
+                    }
+                    FootstepAudioSource.clip = JumpstartSound;
+                    FootstepAudioSource.pitch = CurrentPitchJumpstart;
+                    FootstepAudioSource.Play();
+                    hasPlayedJumpstart = true;
+                }
+            }
+        }
+        else if (GroundedLastFrame == false)
+        {
+            if (PitchChangeEnabledLanding == true)
+            {
+                CurrentPitchLanding = Random.Range(MinPitchLanding, MaxPitchLanding);
+            }
+            if (FallAffectsLandingVolume == true)
+            {
+                // CurrentVolumeLanding = NormalVolumeLanding + (((MaxVolumeLanding - NormalVolumeLanding)/3)*JumpstartDelayTimer);
+                //CurrentVolumeLanding = NormalVolumeLanding + 3.2f - JumpstartDelayTimer;
+                if (1.4f > Airtime && Airtime > 1.0f)
+                {
+                    CurrentVolumeLanding = NormalVolumeLanding;
+                }
+                else if (Airtime >= 1.4f)
+                {
+                    CurrentVolumeLanding = NormalVolumeLanding + (((MaxVolumeLanding - NormalVolumeLanding) / 3.2f) * Airtime);
+                }
+                else
+                {
+                    CurrentVolumeLanding = Airtime*NormalVolumeLanding;
+                    if (CurrentVolumeLanding < MinVolumeLanding)
+                    {
+                        CurrentVolumeLanding = MinVolumeLanding;
+                    }
+                }
+            }
+            FootstepAudioSource.clip = LandingSounds[Random.Range(0, LandingSounds.Length)];
+            FootstepAudioSource.pitch = CurrentPitchLanding;
+            FootstepAudioSource.volume = CurrentVolumeLanding;
+            FootstepAudioSource.Play();
+
+            isJumping = false;
+            GroundedLastFrame = true;
+            hasPlayedJumpstart = false;
+            Airtime = 0;
+        }
+        
+        
+        //Dashing Sound
+        if (isDashing == true)
+        {
+            DashAudioSource.PlayOneShot(Dashsound, DashVolume);
+            isDashing = false;
+        }
+
+
+    }
+    private void ShuffleArray()
+    {
+        for (int i = 0; i < FootstepSounds.Length - 1; i++)
+        {
+            int rnd = Random.Range(i, FootstepSounds.Length);
+            RandomFootstep = FootstepSounds[rnd];
+            FootstepSounds[rnd] = FootstepSounds[i];
+            FootstepSounds[i] = RandomFootstep;
+        }
+    }
 
 }
