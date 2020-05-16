@@ -61,7 +61,60 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     CharacterController character;
     List<Vector3> nextChasePositon = new List<Vector3>();
 
+    [Header("Taking Damage Sound")]
+    public AudioSource TakeDamageSource;
+    public AudioClip TakeHighDamageClip;
+    public AudioClip TakeLowDamageClip;
 
+    public float HighDamageThreshold;
+
+    [Range(0, 1)] public float MaxHighDamageVolume;
+    public bool PitchChangeEnabledHighDamage;
+    [Range(-3, 3)] public float CurrentPitchHighDamage;
+    [Range(-3, 3)] public float MinPitchHighDamage;
+    [Range(-3, 3)] public float MaxPitchHighDamage;
+
+    [Range(0, 1)] public float MaxLowDamageVolume;
+    public bool PitchChangeEnabledLowDamage;
+    [Range(-3, 3)] public float CurrentPitchLowDamage;
+    [Range(-3, 3)] public float MinPitchLowDamage;
+    [Range(-3, 3)] public float MaxPitchLowDamage;
+
+    private float Healthlastframe;
+
+    [Header("Shooting Sound")]
+    public AudioSource ShootingSource;
+    public AudioClip[] ShootingClips;
+
+    public bool PitchChangeEnabledShooting;
+    [Range(-3, 3)] public float CurrentPitchShooting;
+    [Range(-3, 3)] public float MinPitchShooting;
+    [Range(-3, 3)] public float MaxPitchShooting;
+    public bool VolumeChangeEnabledShooting;
+    [Range(0, 1)] public float CurrentVolumeShooting;
+    [Range(0, 1)] public float MinVolumeShooting;
+    [Range(0, 1)] public float MaxVolumeShooting;
+
+    private bool Justshot;
+
+    [Header("Windup Sound")]
+    public AudioSource WindUpSource;
+    public AudioClip[] WindUpClips;
+
+    public bool PitchChangeEnabledWindUp;
+    [Range(-3, 3)] public float CurrentPitchWindUp;
+    [Range(-3, 3)] public float MinPitchWindUp;
+    [Range(-3, 3)] public float MaxPitchWindUp;
+    public bool VolumeChangeEnabledWindUp;
+    [Range(0, 1)] public float CurrentVolumeWindUp;
+    [Range(0, 1)] public float MinVolumeWindUp;
+    [Range(0, 1)] public float MaxVolumeWindUp;
+
+    private bool hasPlayedWindUp;
+    public float PlaySecondsBeforeShot = .5f;
+    private bool resettedmagazine = true;
+
+    public GameObject DeathSound;
 
 
     // Start is called before the first frame update
@@ -70,6 +123,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         //rigidbody = GetComponent<Rigidbody>();
        character = GetComponent<CharacterController>();
         currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
+        Healthlastframe = maxHealth;
     }
 
     // Update is called once per frame
@@ -84,7 +138,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         {
             Movement();
         }
-        
+        Sounds();
     }
 
     void HealthCheck()
@@ -116,6 +170,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
         if (currentHealth < 0)
         {
+            Instantiate(DeathSound, gameObject.transform);
             Destroy(gameObject);
         }
     }
@@ -140,6 +195,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
                    
 
                     Instantiate(g, transform.position + transform.forward, transform.rotation);
+                    Justshot = true;
                 }
                 //nextChasePositon.Clear();
                 movingBackwards = true;
@@ -299,6 +355,72 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         // Draw a yellow cube at the transform position
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(centerOfSpawnArea, sizeOfSpawnArea);
+    }
+
+    void Sounds()
+    {
+        if (currentHealth < Healthlastframe)
+        {
+            if ((Healthlastframe - currentHealth) > HighDamageThreshold)
+            {
+                if (PitchChangeEnabledHighDamage == true)
+                {
+                    CurrentPitchHighDamage = Random.Range(MinPitchHighDamage, MaxPitchHighDamage);
+                }
+                TakeDamageSource.clip = TakeHighDamageClip;
+                TakeDamageSource.volume = MaxHighDamageVolume;
+                TakeDamageSource.pitch = CurrentPitchHighDamage;
+                TakeDamageSource.Play();
+            }
+            else
+            {
+                if (PitchChangeEnabledLowDamage == true)
+                {
+                    CurrentPitchLowDamage = Random.Range(MinPitchLowDamage, MaxPitchLowDamage);
+                }
+                TakeDamageSource.clip = TakeLowDamageClip;
+                TakeDamageSource.volume = MaxLowDamageVolume;
+                TakeDamageSource.pitch = CurrentPitchLowDamage;
+                TakeDamageSource.Play();
+            }
+
+
+        }
+        Healthlastframe = currentHealth;
+
+        if (Justshot == true)
+        {
+            if (PitchChangeEnabledShooting == true)
+            {
+                CurrentPitchShooting = Random.Range(MinPitchShooting, MaxPitchShooting);
+            }
+            if (VolumeChangeEnabledShooting == true)
+            {
+                CurrentVolumeShooting = Random.Range(MinVolumeShooting, MaxVolumeShooting);
+            }
+            ShootingSource.clip = ShootingClips[Random.Range(0, ShootingClips.Length)];
+            ShootingSource.pitch = CurrentPitchShooting;
+            ShootingSource.volume = CurrentVolumeShooting;
+            ShootingSource.Play();
+            Justshot = false;
+        }
+
+        if (hasPlayedWindUp == false)
+        {
+            if (PitchChangeEnabledWindUp == true)
+            {
+                CurrentPitchWindUp = Random.Range(MinPitchWindUp, MaxPitchWindUp);
+            }
+            if (VolumeChangeEnabledWindUp == true)
+            {
+                CurrentVolumeWindUp = Random.Range(MinVolumeWindUp, MaxVolumeWindUp);
+            }
+            WindUpSource.clip = WindUpClips[Random.Range(0, WindUpClips.Length)];
+            WindUpSource.pitch = CurrentPitchWindUp;
+            WindUpSource.volume = CurrentVolumeWindUp;
+            WindUpSource.Play();
+            hasPlayedWindUp = true;
+        }
     }
 
 }

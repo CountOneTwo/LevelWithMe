@@ -8,6 +8,8 @@ public class Enemy_Stage2 : MonoBehaviour
     //BoxCollider b;
     //Bounds bounds2;
 
+    public bool Stage3;
+
     [Header("Shooting")]
     public int numberInSalve;
     public float delayInSalve;
@@ -110,6 +112,25 @@ public class Enemy_Stage2 : MonoBehaviour
 
     private bool Justshot;
 
+    [Header("Windup Sound")]
+    public AudioSource WindUpSource;
+    public AudioClip[] WindUpClips;
+
+    public bool PitchChangeEnabledWindUp;
+    [Range(-3, 3)] public float CurrentPitchWindUp;
+    [Range(-3, 3)] public float MinPitchWindUp;
+    [Range(-3, 3)] public float MaxPitchWindUp;
+    public bool VolumeChangeEnabledWindUp;
+    [Range(0, 1)] public float CurrentVolumeWindUp;
+    [Range(0, 1)] public float MinVolumeWindUp;
+    [Range(0, 1)] public float MaxVolumeWindUp;
+
+    private bool hasPlayedWindUp;
+    public float PlaySecondsBeforeShot = .5f;
+    private bool resettedmagazine = true;
+
+    public GameObject DeathSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +146,7 @@ public class Enemy_Stage2 : MonoBehaviour
         // b.enabled = false;
         nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
         Healthlastframe = maxHealth;
+        hasPlayedWindUp = true;
     }
 
     // Update is called once per frame
@@ -209,6 +231,7 @@ public class Enemy_Stage2 : MonoBehaviour
 
         if (currentHealth < 0)
         {
+            if (Stage3 == true) Instantiate(DeathSound, gameObject.transform);
             Destroy(gameObject);
         }
     }
@@ -276,7 +299,11 @@ public class Enemy_Stage2 : MonoBehaviour
 
 
         timeTillNextShot -= Time.deltaTime;
-
+        if (timeTillNextShot <= PlaySecondsBeforeShot && resettedmagazine == true && Stage3 == true)
+        {
+            hasPlayedWindUp = false;
+            resettedmagazine = false;
+        }
         if (timeTillNextShot < 0)
         {
             Instantiate(projectilePrefab, /*projectileSpawn.*/transform.position + transform.forward, transform.rotation);
@@ -291,6 +318,7 @@ public class Enemy_Stage2 : MonoBehaviour
             {
                 currentShot++;
                 timeTillNextShot = delayInSalve;
+                resettedmagazine = true;
             }
         }
     }
@@ -348,6 +376,23 @@ public class Enemy_Stage2 : MonoBehaviour
             ShootingSource.volume = CurrentVolumeShooting;
             ShootingSource.Play();
             Justshot = false;
+        }
+
+        if (hasPlayedWindUp == false)
+        {
+            if (PitchChangeEnabledWindUp == true)
+            {
+                CurrentPitchWindUp = Random.Range(MinPitchWindUp, MaxPitchWindUp);
+            }
+            if (VolumeChangeEnabledWindUp == true)
+            {
+                CurrentVolumeWindUp = Random.Range(MinVolumeWindUp, MaxVolumeWindUp);
+            }
+            WindUpSource.clip = WindUpClips[Random.Range(0, WindUpClips.Length)];
+            WindUpSource.pitch = CurrentPitchWindUp;
+            WindUpSource.volume = CurrentVolumeWindUp;
+            WindUpSource.Play();
+            hasPlayedWindUp = true;
         }
     }
 
