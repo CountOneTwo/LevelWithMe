@@ -252,7 +252,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
             isPlayingCritical = false;
 
         }
-        else if (isPlayingCritical == false)
+        else if (isPlayingCritical == false && currentHealth <= CriticalHealthThreshold)
         {
             CritSource.clip = CritClip;
             CritSource.pitch = CriticalPitch;
