@@ -31,6 +31,49 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
 
     public float fadeDuration;
 
+    [Header("Death Sound")]
+    public AudioSource DeathSource;
+    public AudioClip[] DeathClips;
+
+    public bool PitchChangeEnabledDeath;
+    [Range(-3, 3)] public float CurrentPitchDeath;
+    [Range(-3, 3)] public float MinPitchDeath;
+    [Range(-3, 3)] public float MaxPitchDeath;
+    public bool VolumeChangeEnabledDeath;
+    [Range(0, 1)] public float CurrentVolumeDeath;
+    [Range(0, 1)] public float MinVolumeDeath;
+    [Range(0, 1)] public float MaxVolumeDeath;
+
+    [Header("Hit Sound")]
+    public AudioSource HitSource;
+    public AudioClip[] HitClips;
+
+    public bool PitchChangeEnabledHit;
+    [Range(-3, 3)] public float CurrentPitchHit;
+    [Range(-3, 3)] public float MinPitchHit;
+    [Range(-3, 3)] public float MaxPitchHit;
+    public bool VolumeChangeEnabledHit;
+    [Range(0, 1)] public float CurrentVolumeHit;
+    [Range(0, 1)] public float MinVolumeHit;
+    [Range(0, 1)] public float MaxVolumeHit;
+
+    private float healthLastFrame;
+
+    [Header("Critical Health Loop")]
+    public AudioSource CritSource;
+    public AudioClip CritClip;
+
+    [Range(-3, 3)] public float CriticalPitch;
+
+    [Range(0, 1)] public float CriticalVolume;
+    /*
+    public float CriticalFadeInSpeed;
+    public float CriticalFadeOutSpeed;
+    */
+    public float CriticalHealthThreshold;
+
+    private bool isPlayingCritical;
+
     private void Awake()
     {
         mainCamera = GameObject.Find("Main Camera");
@@ -50,6 +93,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthLastFrame = maxHealth;
 
     }
 
@@ -81,6 +125,11 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
 
             indicator.SetActive(true);
         }
+        if (currentHealth != healthLastFrame)
+        {
+            HitSoundAndCriticalLoop();
+        }
+        healthLastFrame = currentHealth;
     }
 
     public void UpdateObjectsToLoadOnRespawn(GameObject[] newUnload, GameObject[] newLoad)
@@ -122,6 +171,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     void PrepareRespawn()
     {
         dead = true;
+        DeathSound();
         GameObject.Find("Blackscreen").GetComponent<Fade_Stage23>().RespawnFadeOut(fadeDuration);
 
     }
@@ -175,5 +225,57 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         {
             PrepareRespawn();
         }
+    }
+    void HitSoundAndCriticalLoop()
+    {
+        if (currentHealth < healthLastFrame)
+        {
+            if (PitchChangeEnabledHit == true)
+            {
+                CurrentPitchHit = Random.Range(MinPitchHit, MaxPitchHit);
+            }
+            if (VolumeChangeEnabledHit == true)
+            {
+                CurrentVolumeHit = Random.Range(MinVolumeHit, MaxVolumeHit);
+            }
+            HitSource.clip = HitClips[Random.Range(0, HitClips.Length)];
+            HitSource.pitch = CurrentPitchHit;
+            HitSource.volume = CurrentVolumeHit;
+            HitSource.Play();
+        }
+
+        ///critical loop
+
+        if (healthLastFrame <= CriticalHealthThreshold && currentHealth > CriticalHealthThreshold)
+        {
+            CritSource.Stop();
+            isPlayingCritical = false;
+
+        }
+        else if (isPlayingCritical == false)
+        {
+            CritSource.clip = CritClip;
+            CritSource.pitch = CriticalPitch;
+            CritSource.volume = CriticalVolume;
+            CritSource.Play();
+            isPlayingCritical = true;
+        }
+
+    }
+    void DeathSound()
+    {
+        if (PitchChangeEnabledDeath == true)
+        {
+            CurrentPitchDeath = Random.Range(MinPitchDeath, MaxPitchDeath);
+        }
+        if (VolumeChangeEnabledDeath == true)
+        {
+            CurrentVolumeDeath = Random.Range(MinVolumeDeath, MaxVolumeDeath);
+        }
+        DeathSource.clip = DeathClips[Random.Range(0, DeathClips.Length)];
+        DeathSource.pitch = CurrentPitchDeath;
+        DeathSource.volume = CurrentVolumeDeath;
+        DeathSource.Play();
+
     }
 }
