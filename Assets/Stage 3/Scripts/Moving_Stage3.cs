@@ -141,8 +141,7 @@ private bool GroundedLastFrame;
         {
             if (!dashing)
             {
-                PlayerMovement();
-                Sounds();
+                PlayerMovement();   
             }
             else
             {
@@ -150,11 +149,13 @@ private bool GroundedLastFrame;
             }
            
         }
+        Sounds();
         DashCooldown();
     }
 
     private void Dash()
     {
+
         dashProgression += Time.deltaTime;
         if (dashProgression > dashDuration)
         {
@@ -278,6 +279,7 @@ private bool GroundedLastFrame;
             {
                 resultingMovement = ((forwardMovement + rightMovement) * acceleration + movementLastFrame * slideFactor);
                 activelyMoving = true;
+                IsMoving = true;
             }
         }
 
@@ -312,6 +314,7 @@ private bool GroundedLastFrame;
                 }
                 dashGlow.SetActive(false);
                 dashing = true;
+                isDashing = true;
                 cooldown = true;
                 cooldownTimer = dashCooldown;
                 dashProgression = 0;
@@ -352,6 +355,7 @@ private bool GroundedLastFrame;
         {
             isGrounded = false;
             downwardsVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            isJumping = true;
         }
 
         //Adjust y position
