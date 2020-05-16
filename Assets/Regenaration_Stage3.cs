@@ -47,7 +47,7 @@ public class Regenaration_Stage3 : MonoBehaviour
                 regenerating = true;
                 regenScreenEffect.enabled = true;
             }
-            else if (/*blurImage.color.a >= 0.8*/ blurImage.material.GetFloat("_Size") >= 10)
+            else if (/*blurImage.color.a >= 0.8*/ blurImage.material.GetFloat("_Size") >= blurSize)
             {
                 Regeneration();
             }
@@ -67,7 +67,7 @@ public class Regenaration_Stage3 : MonoBehaviour
 
             regenScreenEffect.enabled = false;
             currentlyFadingOut = true;
-            StopAllCoroutines();
+            StopCoroutine("FadeOutFunction");
             StartCoroutine("FadeInFunction", fadeInDuration);
     }
 
@@ -88,7 +88,7 @@ public class Regenaration_Stage3 : MonoBehaviour
 
     void DisableRegeneration()
     {
-        healthBarTimer = hideHealthBarTime;
+        
         regenerating = false;
         currentlyFadingOut = false;
     }
@@ -102,7 +102,7 @@ public class Regenaration_Stage3 : MonoBehaviour
             c.a -= (Time.deltaTime * f);
             blurImage.color = c;*/
            blurImage.material.SetFloat("_Size", blurImage.material.GetFloat("_Size") - f * Time.deltaTime);
-
+            healthBarTimer = hideHealthBarTime;
             yield return null;
         }
         DisableRegeneration();

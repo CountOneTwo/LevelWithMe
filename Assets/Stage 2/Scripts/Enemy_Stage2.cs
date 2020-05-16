@@ -238,7 +238,20 @@ public class Enemy_Stage2 : MonoBehaviour
                     timeUndetected = 0;
                     currentFov = updatedFov;
                     currentDetectionDepth = updatedDetectionDepth;
-                    GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
+                    if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>() != null)
+                    {
+                        GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
+                    }
+                    else if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>() != null)
+                    {
+                        GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>().disappearTimer = 0;
+                        GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>().ActivateHealthBar();
+                        
+                    }
+
+
+                    
+                    
                     return;
                 }
             }

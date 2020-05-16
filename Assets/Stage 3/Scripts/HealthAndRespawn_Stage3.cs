@@ -91,7 +91,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
 
     void CheckForDisappearance()
     {
-        if (disappearTimer > disappearTime && healthBar.gameObject.activeInHierarchy == true && Regenaration_Stage3.healthBarTimer <= 0)
+        if (disappearTimer > disappearTime && Regenaration_Stage3.healthBarTimer <= 0)
         {
             DeActivateHealthBar();
         }
