@@ -66,7 +66,7 @@ public class BossRoom : MonoBehaviour
     public void Reset()
     {
         durationTimer = 0;
-
+        nextWave = 0;
         activated = false;
         OpenDoors();
         foreach (Transform child in transform)

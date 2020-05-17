@@ -970,7 +970,7 @@ Transform:
   m_GameObject: {fileID: 45402104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20.33, z: -36.68}
-  m_LocalScale: {x: 89.37886, y: 69.16125, z: 2.7977026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 170972854}
   m_RootOrder: 1
@@ -992,8 +992,11 @@ MonoBehaviour:
   originalDoorPosition: {x: 3, y: -157.42, z: 160.49}
   doorSpeed: 20
   enemyWaves:
+  - time: 10
+    shotgunEnemies: 5
+    basicEnemies: 1
   - time: 5
-    shotgunEnemies: 1
+    shotgunEnemies: 5
     basicEnemies: 1
   completeDuration: 10
   countdownText: {fileID: 1590507431}
@@ -1019,7 +1022,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 77.93, y: 64.24, z: 2.71}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &45402108
 MeshRenderer:
@@ -1362,7 +1365,7 @@ GameObject:
   - component: {fileID: 68250472}
   m_Layer: 0
   m_Name: moveable platform (67)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1456,7 +1459,7 @@ GameObject:
   - component: {fileID: 73737652}
   m_Layer: 0
   m_Name: moveable platform (18)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3835,7 +3838,7 @@ GameObject:
   - component: {fileID: 160148501}
   m_Layer: 0
   m_Name: moveable platform (19)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4823,7 +4826,7 @@ GameObject:
   - component: {fileID: 195158137}
   m_Layer: 0
   m_Name: moveable platform
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8563,7 +8566,7 @@ GameObject:
   - component: {fileID: 336955778}
   m_Layer: 0
   m_Name: moveable platform (9)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9834,7 +9837,7 @@ GameObject:
   - component: {fileID: 411504046}
   m_Layer: 0
   m_Name: cube (27)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11288,7 +11291,7 @@ GameObject:
   - component: {fileID: 488575218}
   m_Layer: 0
   m_Name: moveable platform (16)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12405,7 +12408,7 @@ GameObject:
   - component: {fileID: 526681752}
   m_Layer: 0
   m_Name: cube (28)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -14611,7 +14614,7 @@ GameObject:
   - component: {fileID: 642962747}
   m_Layer: 0
   m_Name: moveable platform (66)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -14735,7 +14738,7 @@ GameObject:
   - component: {fileID: 646281602}
   m_Layer: 0
   m_Name: moveable platform (29)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -16400,7 +16403,7 @@ GameObject:
   - component: {fileID: 731074060}
   m_Layer: 0
   m_Name: cube (24)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -16414,7 +16417,7 @@ BoxCollider:
   m_GameObject: {fileID: 731074059}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -19370,7 +19373,7 @@ GameObject:
   - component: {fileID: 814331592}
   m_Layer: 0
   m_Name: moveable platform (28)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -19464,7 +19467,7 @@ GameObject:
   - component: {fileID: 814883892}
   m_Layer: 0
   m_Name: moveable platform (35)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -21154,7 +21157,7 @@ GameObject:
   - component: {fileID: 882892094}
   m_Layer: 0
   m_Name: moveable platform (68)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -21697,7 +21700,7 @@ GameObject:
   - component: {fileID: 890267856}
   m_Layer: 0
   m_Name: moveable platform (10)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -24721,7 +24724,7 @@ GameObject:
   - component: {fileID: 1002277916}
   m_Layer: 0
   m_Name: moveable platform (64)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -25192,7 +25195,7 @@ GameObject:
   - component: {fileID: 1023150358}
   m_Layer: 0
   m_Name: moveable platform (65)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -26783,7 +26786,7 @@ GameObject:
   - component: {fileID: 1091281300}
   m_Layer: 0
   m_Name: moveable platform (11)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -30330,7 +30333,7 @@ GameObject:
   - component: {fileID: 1225854553}
   m_Layer: 0
   m_Name: moveable platform (26)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -33907,7 +33910,7 @@ GameObject:
   - component: {fileID: 1361431268}
   m_Layer: 0
   m_Name: moveable platform (34)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -34344,7 +34347,7 @@ GameObject:
   - component: {fileID: 1388850414}
   m_Layer: 0
   m_Name: moveable platform (2)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -34439,7 +34442,7 @@ PrefabInstance:
     - target: {fileID: 4993622913901787109, guid: d1139e008e9e54a47919697f995c5c9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4993622913901787109, guid: d1139e008e9e54a47919697f995c5c9d,
         type: 3}
@@ -34751,7 +34754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394283610}
   m_LocalRotation: {x: -0, y: -0.7071067, z: -0, w: -0.7071069}
-  m_LocalPosition: {x: 30.000683, y: -1, z: -24.496277}
+  m_LocalPosition: {x: 30.000683, y: -1, z: -24.57}
   m_LocalScale: {x: 8, y: 2, z: 8}
   m_Children:
   - {fileID: 53323615}
@@ -37486,7 +37489,7 @@ GameObject:
   - component: {fileID: 1495631140}
   m_Layer: 0
   m_Name: moveable platform (7)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -38268,7 +38271,7 @@ GameObject:
   - component: {fileID: 1523245328}
   m_Layer: 0
   m_Name: moveable platform (50)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -40152,7 +40155,7 @@ GameObject:
   - component: {fileID: 1579028828}
   m_Layer: 0
   m_Name: moveable platform (25)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -40958,7 +40961,7 @@ GameObject:
   - component: {fileID: 1597001074}
   m_Layer: 0
   m_Name: moveable platform (17)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -41142,7 +41145,7 @@ GameObject:
   - component: {fileID: 1610467566}
   m_Layer: 0
   m_Name: moveable platform (76)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -41334,7 +41337,7 @@ GameObject:
   - component: {fileID: 1614068422}
   m_Layer: 0
   m_Name: moveable platform (8)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -45784,7 +45787,7 @@ GameObject:
   - component: {fileID: 1754828834}
   m_Layer: 0
   m_Name: moveable platform (75)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -47429,7 +47432,7 @@ GameObject:
   - component: {fileID: 1812995793}
   m_Layer: 0
   m_Name: moveable platform (27)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -48437,11 +48440,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 264086203, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 264086203, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 263.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 264086203, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchorMin.y
@@ -48477,11 +48480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658375885, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1658375885, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1658375885, guid: cfc8bbff5f780fa449fbd045af913473, type: 3}
       propertyPath: m_AnchorMin.y
@@ -49766,7 +49769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886600082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.832, y: 3, z: 0}
+  m_LocalPosition: {x: 0.21, y: -171.02, z: 223.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -49941,7 +49944,7 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 3, z: 0}
   respawnOrientation: {x: 0, y: 0, z: 0}
   currentHealth: 100
-  minimumHeight: -100
+  minimumHeight: -475.54
   healthBar: {fileID: 1679624906}
   disappearTime: 2
   disappearTimer: 0
@@ -50214,7 +50217,7 @@ GameObject:
   - component: {fileID: 1887634069}
   m_Layer: 0
   m_Name: moveable platform (49)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -50403,7 +50406,7 @@ PrefabInstance:
     - target: {fileID: 4993622913901787109, guid: d1139e008e9e54a47919697f995c5c9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 10.25
       objectReference: {fileID: 0}
     - target: {fileID: 4993622913901787109, guid: d1139e008e9e54a47919697f995c5c9d,
         type: 3}
@@ -51035,7 +51038,7 @@ GameObject:
   - component: {fileID: 1897015685}
   m_Layer: 0
   m_Name: moveable platform (1)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -52029,7 +52032,7 @@ GameObject:
   - component: {fileID: 1935655259}
   m_Layer: 0
   m_Name: moveable platform (73)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -54619,7 +54622,7 @@ GameObject:
   - component: {fileID: 2007354562}
   m_Layer: 0
   m_Name: moveable platform (74)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -58262,7 +58265,7 @@ GameObject:
   - component: {fileID: 2138142681}
   m_Layer: 0
   m_Name: moveable platform (20)
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -60701,36 +60704,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4393844434731709249, guid: f4be5876084902040aa3c62740a55f67,
-        type: 3}
-      propertyPath: sizeOfSpawnArea.x
-      value: 28.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393844434731709249, guid: f4be5876084902040aa3c62740a55f67,
-        type: 3}
-      propertyPath: sizeOfSpawnArea.y
-      value: 36.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393844434731709249, guid: f4be5876084902040aa3c62740a55f67,
-        type: 3}
-      propertyPath: sizeOfSpawnArea.z
-      value: 56.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393844434731709249, guid: f4be5876084902040aa3c62740a55f67,
-        type: 3}
-      propertyPath: centerOfSpawnArea.y
-      value: -153.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393844434731709249, guid: f4be5876084902040aa3c62740a55f67,
-        type: 3}
-      propertyPath: centerOfSpawnArea.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393844434731709249, guid: f4be5876084902040aa3c62740a55f67,
-        type: 3}
-      propertyPath: centerOfSpawnArea.z
-      value: 124.3
-      objectReference: {fileID: 0}
     - target: {fileID: 8464079136322393378, guid: f4be5876084902040aa3c62740a55f67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60790,6 +60763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Enemy_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464079136322393379, guid: f4be5876084902040aa3c62740a55f67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8464079136585345755, guid: f4be5876084902040aa3c62740a55f67,
         type: 3}
@@ -61276,6 +61254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotgunEnemyBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051520046878663032, guid: 2f6e2f7c3901a9745aa553a7788fc0a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6e2f7c3901a9745aa553a7788fc0a2, type: 3}
