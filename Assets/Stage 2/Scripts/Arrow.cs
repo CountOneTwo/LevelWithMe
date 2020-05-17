@@ -8,8 +8,7 @@ public class Arrow : MonoBehaviour
     public float speed;
     public float mass;
     Rigidbody rb;
-    public GameObject hitEnemyVFX;
-    public GameObject hitWallVFX;
+
 
 
    /* public float projectileSpeed;
@@ -65,15 +64,14 @@ public class Arrow : MonoBehaviour
             collision.gameObject.GetComponent<Enemy_Stage2>().currentHealth -= damage;
             collision.gameObject.GetComponent<Enemy_Stage2>().detected = true;
             collision.gameObject.GetComponent<Enemy_Stage2>().timeUndetected = 0;
-            Instantiate(hitEnemyVFX, transform.position, transform.rotation);
-
+          
             Destroy(gameObject);
         }
         else if (collision.gameObject.GetComponent<ShotgunEnemyStage2>() != null)
         {
             collision.gameObject.GetComponent<ShotgunEnemyStage2>().currentHealth -= damage;
             collision.gameObject.GetComponent<ShotgunEnemyStage2>().detected = true;
-            Instantiate(hitEnemyVFX, transform.position, transform.rotation);
+           
         }
         else if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
         {
@@ -81,7 +79,7 @@ public class Arrow : MonoBehaviour
         }
         else
         {
-            Instantiate(hitWallVFX, transform.position, transform.rotation);
+           
             Destroy(gameObject);
         }
 

@@ -23693,7 +23693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74037f37cc0d5b7458353da70bc0dce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 699425143534243104, guid: 33fc3b5313531e9459a2640b7ec205b3,
+  arrowPrefab: {fileID: 6406959556821089060, guid: 45fc039fa6175df46925964dc8630053,
     type: 3}
   projectileSpawn: {fileID: 559038535}
   coolDown: 1

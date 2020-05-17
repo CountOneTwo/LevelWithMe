@@ -197,9 +197,9 @@ public class Shooting_Stage3 : MonoBehaviour
                 }
 
                 GameObject g = arrowPrefab;
-                g.GetComponent<Arrow>().damage = minDamage + ((windup / windupMaximum) * (maxDamage - minDamage));
-                g.GetComponent<Arrow>().speed = minSpeed + ((windup / windupMaximum) * (maxSpeed - minSpeed));
-                g.GetComponent<Arrow>().mass = maxMass - ((windup / windupMaximum) * (maxMass - minMass));
+                g.GetComponent<Arrow_Stage3>().damage = minDamage + ((windup / windupMaximum) * (maxDamage - minDamage));
+                g.GetComponent<Arrow_Stage3>().speed = minSpeed + ((windup / windupMaximum) * (maxSpeed - minSpeed));
+                g.GetComponent<Arrow_Stage3>().mass = maxMass - ((windup / windupMaximum) * (maxMass - minMass));
 
 
                 ReturnCombatCrosshair();
