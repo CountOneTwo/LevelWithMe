@@ -10,9 +10,11 @@ public class BossRoom : MonoBehaviour
     public Vector3 originalDoorPositon;
     public float doorSpeed;
 
+    [Header("Waves")]
+    public int waves;
 
     [Header("General")]
-    public float countDownTime;
+    public Wave[] enemyWaves;
 
     [Header("Enemies")]
     public int minEnemies;

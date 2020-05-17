@@ -991,7 +991,14 @@ MonoBehaviour:
   doorPosition: {x: 0, y: 0, z: 0}
   originalDoorPositon: {x: 0, y: 0, z: 0}
   doorSpeed: 0
-  countDownTime: 0
+  waves: 0
+  enemyWaves:
+  - time: 0
+    shotgunEnemies: 0
+    basicEnemies: 0
+  - time: 0
+    shotgunEnemies: 0
+    basicEnemies: 0
   minEnemies: 0
   shotgunEnemy: {fileID: 0}
   basicEnemy: {fileID: 0}

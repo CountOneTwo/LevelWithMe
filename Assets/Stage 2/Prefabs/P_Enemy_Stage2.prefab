@@ -309,6 +309,7 @@ MonoBehaviour:
   tickTime: 1
   healthSlider: {fileID: 7015309330308273952}
   healthSliderCanvas: {fileID: 7015309329882467873}
+  deathVFX: {fileID: 0}
   currentHealth: 0
   centerOfSpawnArea: {x: 25.38, y: 1.1, z: 24.21}
   sizeOfSpawnArea: {x: -34.9, y: 9.7, z: 20.68}
@@ -938,6 +939,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7015309329968759054}
     m_Modifications:
+    - target: {fileID: -5178661895559278292, guid: f1aa50d488120ef4281c4f5d195da882,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 6099800089077584851, guid: a900ea9b79a97d74cb3e68204e0f5417,
+        type: 3}
     - target: {fileID: -4216859302048453862, guid: f1aa50d488120ef4281c4f5d195da882,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1012,7 +1019,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: a102343839491994f81ae797445284e6, type: 2}
     - target: {fileID: -927199367670048503, guid: f1aa50d488120ef4281c4f5d195da882,
         type: 3}
       propertyPath: m_Name

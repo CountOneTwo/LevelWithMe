@@ -478,6 +478,7 @@ MonoBehaviour:
   healthSlider: {fileID: 2078799214}
   healthSliderCanvas: {fileID: 381953024}
   currentHealth: 0
+  deathVFX: {fileID: 0}
   centerOfSpawnArea: {x: -7, y: -1, z: 74}
   sizeOfSpawnArea: {x: 42.98, y: 10.48, z: 36.26}
   fov: 50
@@ -810,7 +811,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 4632cc6c417c2394cb111a1477d80cdb, type: 2}
     - target: {fileID: -927199367670048503, guid: f64e7764e4a3f654290f378516fa6796,
         type: 3}
       propertyPath: m_Name
