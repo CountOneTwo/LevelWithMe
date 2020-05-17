@@ -75,6 +75,21 @@ public class Arrow_Stage3 : MonoBehaviour
             collision.gameObject.GetComponent<ShotgunEnemyStage2>().detected = true;
             Instantiate(hitEnemyVFX, transform.position, transform.rotation);
         }
+        else if (collision.gameObject.GetComponent<ShotgunEnemyBoss>() != null)
+        {
+            collision.gameObject.GetComponent<ShotgunEnemyBoss>().currentHealth -= damage;
+            collision.gameObject.GetComponent<ShotgunEnemyBoss>().detected = true;
+            Instantiate(hitEnemyVFX, transform.position, transform.rotation);
+        }else if (collision.gameObject.GetComponent<BasicEnemyBoss>() != null)
+        {
+            collision.gameObject.GetComponent<BasicEnemyBoss>().currentHealth -= damage;
+            collision.gameObject.GetComponent<BasicEnemyBoss>().detected = true;
+            collision.gameObject.GetComponent<BasicEnemyBoss>().timeUndetected = 0;
+            Instantiate(hitEnemyVFX, transform.position, transform.rotation);
+
+            Destroy(gameObject);
+        }
+
         else if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
         {
 

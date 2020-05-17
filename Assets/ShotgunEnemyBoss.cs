@@ -192,6 +192,11 @@ public class ShotgunEnemyBoss : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        GetComponentInParent<BossRoom>().currentEnemies--;
+    }
+
     void StartMovement()
     {
         transform.LookAt(centerPoint);
@@ -211,7 +216,7 @@ public class ShotgunEnemyBoss : MonoBehaviour
     void DetectedActions()
     {
         UpdateChasePositions();
-        print(nextChasePositon[0]);
+       // print(nextChasePositon[0]);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(/*GameObject.Find("Player").transform.position*/nextChasePositon[0] - transform.position), Time.deltaTime * rotationalSpeed);
         if (!movingBackwards)
         {
@@ -245,7 +250,7 @@ public class ShotgunEnemyBoss : MonoBehaviour
                     windupVFX.SetActive(true);
                 }
 
-                print(1);
+               // print(1);
                 Vector3 heading = nextChasePositon[0] - transform.position;
                 var distance = heading.magnitude;
                 var direction = heading / distance;
@@ -320,6 +325,7 @@ public class ShotgunEnemyBoss : MonoBehaviour
                 nextChasePositon.Clear();
                 nextChasePositon.Add(GameObject.Find("Player").transform.position);
             }
+            nextChasePositon.Add(GameObject.Find("Player").transform.position);
         }
         else
         {

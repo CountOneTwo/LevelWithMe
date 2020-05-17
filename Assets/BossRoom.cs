@@ -8,11 +8,8 @@ public class BossRoom : MonoBehaviour
     [Header("Doors")]
     public GameObject doors;
     public Vector3 doorPosition;
-    public Vector3 originalDoorPositon;
+    public Vector3 originalDoorPosition;
     public float doorSpeed;
-
-    [Header("Waves")]
-    public int waves;
 
     [Header("General")]
     public Wave[] enemyWaves;
@@ -25,8 +22,9 @@ public class BossRoom : MonoBehaviour
     public int minEnemies;
     public GameObject shotgunEnemy;
     public GameObject basicEnemy;
-    int currentEnemies;
-    public Vector3[] spawnPositions;
+    [HideInInspector]
+     public int currentEnemies;
+    public GameObject[] spawnPositions;
     int lastSpawn;
 
     public enum enemyType
@@ -36,6 +34,7 @@ public class BossRoom : MonoBehaviour
 
     bool activated;
     bool doorsClosed;
+    bool completed;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,17 +44,43 @@ public class BossRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!doorsClosed && activated)
+        if (!completed)
         {
-            CloseDoors();
+            if (!doorsClosed && activated)
+            {
+                CloseDoors();
+            }
+
+            if (activated)
+            {
+                durationTimer += Time.deltaTime;
+                CheckForMinEnemies();
+                countdownText.text = "Survive for " + (completeDuration - durationTimer) + "s";
+                CheckForWin();
+                CheckForWaves();
+            }
         }
 
-        if (activated)
-        {
-            durationTimer += Time.deltaTime;
-            CheckForMinEnemies();
-            
+    }
 
+    public void Reset()
+    {
+        durationTimer = 0;
+
+        activated = false;
+        OpenDoors();
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
+    void CheckForWin()
+    {
+        if (durationTimer > completeDuration)
+        {
+            completed = true;
+            OpenDoors();
         }
     }
 
@@ -65,17 +90,19 @@ public class BossRoom : MonoBehaviour
         {
             if (durationTimer > enemyWaves[nextWave].time)
             {
+                for (int i = 0; i < enemyWaves[nextWave].shotgunEnemies; i++)
+                {
+                    //print(1);
+                    SpawnEnemy(enemyType.Shotgun);
+                }
                 for (int i = 0; i < enemyWaves[nextWave].basicEnemies; i++)
                 {
                     SpawnEnemy(enemyType.Basic);
                 }
 
-                for (int i = 0; i < enemyWaves[nextWave].shotgunEnemies; i++)
-                {
-                    SpawnEnemy(enemyType.Shotgun);
-                }
 
-                
+
+                nextWave++;
             }
         }
 
@@ -102,11 +129,12 @@ public class BossRoom : MonoBehaviour
 
         if (e == enemyType.Shotgun)
         {
+            Instantiate(shotgunEnemy, spawnPositions[nextSpawn].transform.position, transform.rotation, transform);
            // Instantiate(shotgunEnemy, spawnPositions[nextSpawn],shotgunEnemy.transform.LookAt(spawnPositions[nextSpawn]));
         }
         else
         {
-
+            Instantiate(basicEnemy, spawnPositions[nextSpawn].transform.position, transform.rotation, transform);
         }
 
         currentEnemies++;
@@ -116,10 +144,20 @@ public class BossRoom : MonoBehaviour
     {
         if (Vector3.Distance(doorPosition, doors.transform.position) < 0.5)
         {
-            doors.transform.position -= (-transform.up * doorSpeed * Time.deltaTime);
+            doors.transform.position += (-transform.up * doorSpeed * Time.deltaTime);
             doorsClosed = true;
         }
        
+    }
+
+    void OpenDoors()
+    {
+        if (Vector3.Distance(originalDoorPosition, doors.transform.position) < 0.5)
+        {
+            doors.transform.position = (transform.up * doorSpeed * Time.deltaTime);
+            doorsClosed = false;
+        }
+
     }
 
     void OnTriggerEnter(Collider collision)
@@ -129,6 +167,7 @@ public class BossRoom : MonoBehaviour
             if (collision.gameObject.name.Equals("Player"))
             {
                 activated = true;
+                countdownText.enabled = true;
             }
         }
 
