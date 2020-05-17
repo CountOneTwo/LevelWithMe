@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 63484804}
   - component: {fileID: 63484803}
   - component: {fileID: 63484802}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Top Separator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 264086205}
   - component: {fileID: 264086206}
   - component: {fileID: 264086204}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Message text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 136.95, y: 0}
+  m_SizeDelta: {x: 263.9, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &264086205
 CanvasRenderer:
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 285657788}
   - component: {fileID: 285657787}
   - component: {fileID: 285657786}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 625946510}
   - component: {fileID: 625946512}
   - component: {fileID: 625946511}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Top Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 718058720}
   - component: {fileID: 718058718}
   - component: {fileID: 718058719}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Discipline Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 837572153}
   - component: {fileID: 837572152}
   - component: {fileID: 837572151}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: End Separator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 1478060655}
   - component: {fileID: 1478060654}
   - component: {fileID: 1478060653}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 1658375888}
   - component: {fileID: 1658375887}
   - component: {fileID: 1658375886}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Message Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,8 +961,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 136.95, y: 0}
+  m_SizeDelta: {x: 273.9, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1658375889
 CanvasRenderer:
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 1710921633}
   - component: {fileID: 1710921635}
   - component: {fileID: 1710921634}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Scaling DevNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 1849765595}
   - component: {fileID: 1849765596}
   - component: {fileID: 1849765594}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1408,7 @@ GameObject:
   - component: {fileID: 7351113719717536703}
   - component: {fileID: 7351113719717536700}
   - component: {fileID: 7351113719717536701}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ContentCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
