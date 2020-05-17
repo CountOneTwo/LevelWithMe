@@ -999,6 +999,8 @@ MonoBehaviour:
   - time: 0
     shotgunEnemies: 0
     basicEnemies: 0
+  completeDuration: 0
+  countdownText: {fileID: 0}
   minEnemies: 0
   shotgunEnemy: {fileID: 0}
   basicEnemy: {fileID: 0}

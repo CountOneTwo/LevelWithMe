@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossRoom : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class BossRoom : MonoBehaviour
 
     [Header("General")]
     public Wave[] enemyWaves;
+    public float completeDuration;
+    public Text countdownText;
+    float durationTimer;
+    int nextWave;
 
     [Header("Enemies")]
     public int minEnemies;
@@ -47,9 +52,35 @@ public class BossRoom : MonoBehaviour
 
         if (activated)
         {
+            durationTimer += Time.deltaTime;
             CheckForMinEnemies();
+            
+
         }
     }
+
+    void CheckForWaves()
+    {
+        if (nextWave < enemyWaves.Length)
+        {
+            if (durationTimer > enemyWaves[nextWave].time)
+            {
+                for (int i = 0; i < enemyWaves[nextWave].basicEnemies; i++)
+                {
+                    SpawnEnemy(enemyType.Basic);
+                }
+
+                for (int i = 0; i < enemyWaves[nextWave].shotgunEnemies; i++)
+                {
+                    SpawnEnemy(enemyType.Shotgun);
+                }
+
+                
+            }
+        }
+
+    }
+
 
     void CheckForMinEnemies()
     {
@@ -77,6 +108,8 @@ public class BossRoom : MonoBehaviour
         {
 
         }
+
+        currentEnemies++;
     }
 
     void CloseDoors()
