@@ -14,6 +14,7 @@ public class Enemy_Stage2 : MonoBehaviour
     public int numberInSalve;
     public float delayInSalve;
     public float windup;
+    public GameObject windupVFX;
     
    // public float deviationScaler;
 
@@ -310,6 +311,7 @@ public class Enemy_Stage2 : MonoBehaviour
         timeTillNextShot -= Time.deltaTime;
         if (timeTillNextShot <= PlaySecondsBeforeShot && resettedmagazine == true && Stage3 == true)
         {
+            windupVFX.SetActive(true);
             hasPlayedWindUp = false;
             resettedmagazine = false;
         }
@@ -323,6 +325,7 @@ public class Enemy_Stage2 : MonoBehaviour
                 currentShot = 0;
                 timeTillNextShot = windup;
                 resettedmagazine = true;
+                windupVFX.SetActive(false);
             }
             else
             {
@@ -330,6 +333,7 @@ public class Enemy_Stage2 : MonoBehaviour
                 timeTillNextShot = delayInSalve;
                 
             }
+            
         }
     }
 

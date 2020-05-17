@@ -50,9 +50,11 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     public float backwardsMoveSpeed;
     public float backwardsMoveDistance;
     public float waitTillChaseAgain;
+    public float distanceToShowWindup;
 
     [Header("GameObjects")]
     public GameObject shotgunProjectiles;
+    public GameObject windupVFX;
 
     bool movingBackwards;
     Vector3 backwardsDestination;
@@ -120,16 +122,19 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        windupVFX.SetActive(false);
         //rigidbody = GetComponent<Rigidbody>();
-       character = GetComponent<CharacterController>();
+        character = GetComponent<CharacterController>();
         currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
         Healthlastframe = maxHealth;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         DetectionCheck();
+        HealthCheck();
         if (detected)
         {
             DetectedActions();
@@ -185,6 +190,8 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShoot)
             {
+               
+                
                 //Shoot projectiles
                 for (int i = 0; i < amountOfProjectiles; i++)
                 {
@@ -202,9 +209,15 @@ public class ShotgunEnemyStage2 : MonoBehaviour
                 movingBackwards = true;
                 backwardsDestination = transform.position - (transform.forward * backwardsMoveDistance);
                 waitTillChaseAgainTimer = 0;
+                windupVFX.SetActive(false);
             }
             else
             {
+                if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShowWindup)
+                {
+                    windupVFX.SetActive(true);
+                }
+
                 print(1);
                 Vector3 heading = nextChasePositon[0] -transform.position;
                 var distance = heading.magnitude;
