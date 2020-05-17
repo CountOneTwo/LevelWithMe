@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e034109109d9d419494246b60124fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage3: 0
+  Stage3: 1
   numberInSalve: 3
   delayInSalve: 1
   windup: 3
@@ -301,7 +301,8 @@ MonoBehaviour:
   movementSpeed: 10
   lookInDirection: 1
   detected: 0
-  projectilePrefab: {fileID: 5793370063837323930, guid: fea095c1ad2be1747a5423e95e331a6c,
+  projectileSpawn: {fileID: 7015309330011609781}
+  projectilePrefab: {fileID: 5404135725881512573, guid: 862524668ca0f63468c4f711e1dc9bfd,
     type: 3}
   timeUndetected: 0
   maxHealth: 100
@@ -309,7 +310,7 @@ MonoBehaviour:
   tickTime: 1
   healthSlider: {fileID: 7015309330308273952}
   healthSliderCanvas: {fileID: 7015309329882467873}
-  deathVFX: {fileID: 0}
+  deathVFX: {fileID: 443190605335609165, guid: 230982413ef6fb747a1da4309e9761bd, type: 3}
   currentHealth: 0
   centerOfSpawnArea: {x: 25.38, y: 1.1, z: 24.21}
   sizeOfSpawnArea: {x: -34.9, y: 9.7, z: 20.68}
@@ -689,14 +690,13 @@ GameObject:
   - component: {fileID: 7015309330011609780}
   - component: {fileID: 7015309330011609785}
   - component: {fileID: 7015309330011609782}
-  - component: {fileID: 7015309330011609783}
   m_Layer: 0
-  m_Name: Front
+  m_Name: ProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7015309330011609780
 Transform:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7015309330011609781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.53}
+  m_LocalPosition: {x: 0, y: -0.052, z: 0.83}
   m_LocalScale: {x: 0.2762035, y: 0.2762035, z: 0.27509594}
   m_Children: []
   m_Father: {fileID: 7015309329968759054}
@@ -726,7 +726,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7015309330011609781}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -758,19 +758,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7015309330011609783
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7015309330011609781}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7015309330265800436
 GameObject:
   m_ObjectHideFlags: 0
