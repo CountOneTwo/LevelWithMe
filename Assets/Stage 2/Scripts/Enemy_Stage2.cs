@@ -49,7 +49,7 @@ public class Enemy_Stage2 : MonoBehaviour
     float timeTillNextShot;
     int currentShot;
 
-   // public GameObject projectileSpawn;
+    public GameObject projectileSpawn;
     public GameObject projectilePrefab;
 
     [HideInInspector]
@@ -315,19 +315,20 @@ public class Enemy_Stage2 : MonoBehaviour
         }
         if (timeTillNextShot < 0)
         {
-            Instantiate(projectilePrefab, /*projectileSpawn.*/transform.position + transform.forward, transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawn.transform.position + transform.forward, transform.rotation);
             Justshot = true;
 
             if (currentShot == numberInSalve -1)
             {
                 currentShot = 0;
                 timeTillNextShot = windup;
+                resettedmagazine = true;
             }
             else
             {
                 currentShot++;
                 timeTillNextShot = delayInSalve;
-                resettedmagazine = true;
+                
             }
         }
     }
