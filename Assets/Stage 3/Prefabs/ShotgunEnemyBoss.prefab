@@ -19857,6 +19857,7 @@ GameObject:
   - component: {fileID: 751869800899722906}
   - component: {fileID: 5401835553205226068}
   - component: {fileID: 6577702389073559738}
+  - component: {fileID: -3266704143347020196}
   m_Layer: 13
   m_Name: ShotgunEnemyBoss
   m_TagString: Untagged
@@ -20185,9 +20186,9 @@ MonoBehaviour:
     type: 3}
   windupVFX: {fileID: 5741262924605982104, guid: ed1cf284c06a84748b433bd8e7f7815f,
     type: 3}
-  TakeDamageSource: {fileID: 0}
-  TakeHighDamageClip: {fileID: 0}
-  TakeLowDamageClip: {fileID: 0}
+  TakeDamageSource: {fileID: 751869800899722906}
+  TakeHighDamageClip: {fileID: 8300000, guid: 9021b15e61ec542468f573d75a528757, type: 3}
+  TakeLowDamageClip: {fileID: 8300000, guid: 1fe4e7b7511bb8a48ba448c44a32ffbd, type: 3}
   HighDamageThreshold: 33
   MaxHighDamageVolume: 1
   PitchChangeEnabledHighDamage: 0
@@ -20199,7 +20200,7 @@ MonoBehaviour:
   CurrentPitchLowDamage: 1
   MinPitchLowDamage: 0
   MaxPitchLowDamage: 0
-  ShootingSource: {fileID: 0}
+  ShootingSource: {fileID: 5401835553205226068}
   ShootingClips: []
   PitchChangeEnabledShooting: 0
   CurrentPitchShooting: 1
@@ -20209,7 +20210,7 @@ MonoBehaviour:
   CurrentVolumeShooting: 1
   MinVolumeShooting: 0
   MaxVolumeShooting: 0
-  WindUpSource: {fileID: 0}
+  WindUpSource: {fileID: -3266704143347020196}
   WindUpClips: []
   PitchChangeEnabledWindUp: 0
   CurrentPitchWindUp: 1
@@ -20221,3 +20222,99 @@ MonoBehaviour:
   MaxVolumeWindUp: 0
   PlaySecondsBeforeShot: 0.5
   DeathSound: {fileID: 0}
+--- !u!82 &-3266704143347020196
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051520046878663032}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

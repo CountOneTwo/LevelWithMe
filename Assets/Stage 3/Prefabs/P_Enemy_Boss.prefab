@@ -10434,9 +10434,9 @@ MonoBehaviour:
   distanceFromCenterPoint: 10
   centerOfSpawnArea: {x: 1.4, y: -153.1, z: 124.3}
   sizeOfSpawnArea: {x: 28.6, y: 36.8, z: 56.4}
-  TakeDamageSource: {fileID: 0}
-  TakeHighDamageClip: {fileID: 0}
-  TakeLowDamageClip: {fileID: 0}
+  TakeDamageSource: {fileID: 6167089323492183764}
+  TakeHighDamageClip: {fileID: 8300000, guid: 9021b15e61ec542468f573d75a528757, type: 3}
+  TakeLowDamageClip: {fileID: 8300000, guid: 1fe4e7b7511bb8a48ba448c44a32ffbd, type: 3}
   HighDamageThreshold: 33
   MaxHighDamageVolume: 1
   PitchChangeEnabledHighDamage: 0
@@ -10445,13 +10445,13 @@ MonoBehaviour:
   MaxPitchHighDamage: 0
   MaxLowDamageVolume: 1
   PitchChangeEnabledLowDamage: 0
-  CurrentPitchLowDamage: 0
+  CurrentPitchLowDamage: 1
   MinPitchLowDamage: 0
   MaxPitchLowDamage: 0
-  ShootingSource: {fileID: 0}
+  ShootingSource: {fileID: 2018237749181159096}
   ShootingClips:
-  - {fileID: 0}
-  PitchChangeEnabledShooting: 0
+  - {fileID: 8300000, guid: ba7a68d3634311b4d8f8d8a1aaf5ccca, type: 3}
+  PitchChangeEnabledShooting: 1
   CurrentPitchShooting: 0
   MinPitchShooting: 0.5
   MaxPitchShooting: 1.1
@@ -10459,7 +10459,7 @@ MonoBehaviour:
   CurrentVolumeShooting: 0.85
   MinVolumeShooting: 0
   MaxVolumeShooting: 0
-  WindUpSource: {fileID: 0}
+  WindUpSource: {fileID: 8034660937568812320}
   WindUpClips: []
   PitchChangeEnabledWindUp: 0
   CurrentPitchWindUp: 1
