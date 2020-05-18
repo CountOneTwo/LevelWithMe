@@ -119,10 +119,12 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     public GameObject DeathSound;
 
     Vector3 startingPosition;
+    Vector3 startingRotation;
     // Start is called before the first frame update
     void Start()
     {
         startingPosition = transform.position;
+        startingRotation = transform.eulerAngles;
         windupVFX.SetActive(false);
         //rigidbody = GetComponent<Rigidbody>();
         character = GetComponent<CharacterController>();
@@ -152,6 +154,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     {
         if (Vector3.Distance(GameObject.Find("Player").transform.position, transform.position) > resetDistance)
         {
+            transform.eulerAngles = startingRotation;
             transform.position = startingPosition;
             Start();
             detected = false;
