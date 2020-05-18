@@ -32,6 +32,7 @@ public class Fade_Stage23 : MonoBehaviour
 
     }
 
+    //Fade in --> Decreases the alpha each frame until the blackscreen is gone
     IEnumerator FadeInFunction(float f)
     {
         while (blackScreen.color.a > 0)
@@ -43,6 +44,7 @@ public class Fade_Stage23 : MonoBehaviour
         }
     }
 
+    //Fade out --> Increases the alpha each frame until the screen is black --> Triggers Respawn at complete fadout and starts fade in again
     IEnumerator FadeOutFunction(float f)
     {
         while (blackScreen.color.a < 1)

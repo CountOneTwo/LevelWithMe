@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject projectilePrefab;
     GameObject player;
+    
+    public GameObject projectilePrefab; 
+    public GameObject projectileSpawn;
+
     public float detectionDistance;
     public float timeToShoot;
-    float timeInRange;
     public int health;
-    public GameObject projectileSpawn;
-    // Start is called before the first frame update
+
+    float timeInRange;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -21,8 +24,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         CheckForDeath();
-        CheckForLineOfSight();
-        
+        CheckForLineOfSight();       
     }
 
     void CheckForDeath()
@@ -35,15 +37,18 @@ public class Enemy : MonoBehaviour
 
     void CheckForLineOfSight()
     {
+        //Shoot raycast in player's direction an check if he has been hit and the distance is not to far
         RaycastHit hit;
         Vector3 rayDirection = player.transform.position - transform.position;
+
         if (Physics.Raycast(transform.position, rayDirection, out hit, detectionDistance))
         {
-            //Debug.Log("1");
             if (hit.transform == player.transform)
             {
-                //Debug.Log("2");
+
                 transform.LookAt(player.transform.position);
+
+                //If the player is in range for a certain time --> shoot
                 timeInRange += Time.deltaTime;
                 if (timeInRange > timeToShoot)
                 {

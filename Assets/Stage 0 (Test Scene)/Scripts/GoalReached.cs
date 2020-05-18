@@ -9,16 +9,6 @@ public class GoalReached : MonoBehaviour
     public float fadeoutFactor;
     public Image blackScreen;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter(Collider collider)
     {
@@ -35,6 +25,7 @@ public class GoalReached : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //Increases the alpha of the blackscreen until the screen is fully black --> triggers level transition
     IEnumerator FadeOutFunction()
     {
         while (blackScreen.color.a < 1)

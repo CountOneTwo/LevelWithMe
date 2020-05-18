@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class HealthAndRespawn : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    public Vector3 respawnPoint;
-    public int currentHealth;
     [SerializeField] private float minimumHeight;
+
+    public Vector3 respawnPoint;
     public Text healthCounter;
 
+    [HideInInspector]
+    public int currentHealth;
     private CharacterController charController;
 
 
@@ -28,12 +30,14 @@ public class HealthAndRespawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = new Vector3(0,0,0);
         healthCounter.text = "Health: " + currentHealth;
+
         CheckForRespawn();
+
         CheckForOutOfBounds();
     }
 
+    //Checks if player is below the level
     void CheckForOutOfBounds()
     {
         if (transform.position.y < minimumHeight)
@@ -50,18 +54,12 @@ public class HealthAndRespawn : MonoBehaviour
         }
     }
 
+    //Move the player to the spawn and reset his health
     void Respawn()
     {
-        //Debug.Log(charController.velocity);
-        //charController.velocity.Set(0f,0f,0f);
-        //charController.SimpleMove(Vector3.zero);
-        //charController.Move(Vector3.zero);
-       // Debug.Log("Respawning");
-
         charController.enabled = false;
         transform.position = respawnPoint;
         charController.enabled = true;
-
         currentHealth = maxHealth;
     }
 }

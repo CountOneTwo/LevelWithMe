@@ -6,14 +6,13 @@ public class Shooting : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public GameObject projectileSpawn;
-    // Start is called before the first frame update
 
-    // Update is called once per frame
     void Update()
     {
         CheckForShooting();
     }
 
+    //Shoot on mouse click if game is not paused
     void CheckForShooting()
     {
         if (Input.GetMouseButtonDown(0) && !GameManager.gamePaused)

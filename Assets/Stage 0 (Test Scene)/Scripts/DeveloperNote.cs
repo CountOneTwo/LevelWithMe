@@ -15,7 +15,6 @@ public class DeveloperNote : MonoBehaviour
     public Text contentText;
     public Text developerText;
     public Text roleText;
-    //public Text dateText;
 
     [Header("Seperators")]
     public Image topSeperator;
@@ -24,12 +23,9 @@ public class DeveloperNote : MonoBehaviour
     public Color designColor;
     public Color artColor;
     
-
-
     [Header("Adjustable Options")]
     public developer selectedDeveloper;
     public month selectedMonth;
-
     [Range(1, 31)]
     public int dayOfMonth;
 
@@ -38,18 +34,17 @@ public class DeveloperNote : MonoBehaviour
 
     public float timeToDisplay;
 
-
     [TextArea(3, 20)]
     public string content;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Update text fields and seperators
         if (selectedDeveloper == developer.Traitor)
         {
             developerText.text = "";
             roleText.text = "";
-            //dateText.text = "";
         }
         else
         {
@@ -88,7 +83,6 @@ public class DeveloperNote : MonoBehaviour
                     bottomSeperator.color = artColor;
                     break;
             }
-            //dateText.text = selectedMonth.ToString() + ", " + dayOfMonth;
 
         }
 
@@ -96,12 +90,8 @@ public class DeveloperNote : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //transform.LookAt(GameObject.Find("Player").transform.position);
-    }
 
+    //Show Show Area and Hide Area radiuses in Scene View
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

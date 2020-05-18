@@ -18,9 +18,11 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Move the projectile forward
         transform.position += transform.forward * Time.deltaTime * projectileSpeed;
     }
 
+    //Check for collisions and if it's an enemy subtract health
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Enemy>() != null)

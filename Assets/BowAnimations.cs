@@ -5,11 +5,12 @@ using UnityEngine;
 public class BowAnimations : MonoBehaviour
 {
     Animator animator;
+
     Moving_Stage3 movementScript;
     Shooting_Stage3 shootingScript;
-    //Vector3 positionLastFrame;
+
     public GameObject arrow;
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -20,7 +21,10 @@ public class BowAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Update current drawstate (drawing, max draw, reloading etc.)
         animator.SetInteger("DrawState", shootingScript.drawState);
+
+        //Disable the arrow if bow is released (arrow is shot) and reenable during reload animation
         if (shootingScript.drawState == 3)
         {
             arrow.SetActive(false);
@@ -31,11 +35,10 @@ public class BowAnimations : MonoBehaviour
         }
 
 
-
+        //Update to jumping animation if player is jumping
         animator.SetBool("Jumping", !movementScript.isGrounded);
-
-
-            animator.SetBool("Running", movementScript.activelyMoving);
+        //Update to jumping animation if player is running
+        animator.SetBool("Running", movementScript.activelyMoving);
         
 
 

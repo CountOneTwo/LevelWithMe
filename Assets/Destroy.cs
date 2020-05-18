@@ -6,13 +6,8 @@ public class Destroy : MonoBehaviour
 {
     public float TimeTillDestroy;
     private float Timer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    //Destroys the gameobject after a certain time
     void Update()
     {
         Timer += Time.deltaTime;

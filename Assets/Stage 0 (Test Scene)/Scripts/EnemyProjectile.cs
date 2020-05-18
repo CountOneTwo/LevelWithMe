@@ -17,12 +17,15 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Move the projectile forward
         transform.position += transform.forward * Time.deltaTime * projectileSpeed;
     }
 
     void OnCollisionEnter(Collision collision)
-    {      
-         if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
+    {   
+        
+        //Check for collisions --> if player has been hit subtract health
+        if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().currentHealth -= damage;
             Destroy(gameObject);

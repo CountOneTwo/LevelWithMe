@@ -14,12 +14,7 @@ public class FadeIn : MonoBehaviour
         StartCoroutine("FadeInFunction");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Decreases the alpha of the blackscreen till it's gone
     IEnumerator FadeInFunction()
     {
         while (blackScreen.color.a > 0)
