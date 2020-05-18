@@ -24,7 +24,7 @@ public class GoalReached : MonoBehaviour
     {
         if (collider.name == "Goal")
         {
-            print("YO");
+            blackScreen.enabled = true;
             StartCoroutine("FadeOutFunction");
         }
     }

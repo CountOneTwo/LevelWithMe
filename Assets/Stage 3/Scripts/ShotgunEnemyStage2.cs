@@ -25,7 +25,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     [HideInInspector]
     public float currentHealth;
     public GameObject deathVFX;
-
+    public float resetDistance;
 
     bool moving;
     float timeWaited = 0;
@@ -118,10 +118,11 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
     public GameObject DeathSound;
 
-
+    Vector3 startingPosition;
     // Start is called before the first frame update
     void Start()
     {
+        startingPosition = transform.position;
         windupVFX.SetActive(false);
         //rigidbody = GetComponent<Rigidbody>();
         character = GetComponent<CharacterController>();
@@ -133,6 +134,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckForReset();
         DetectionCheck();
         HealthCheck();
         if (detected)
@@ -144,6 +146,17 @@ public class ShotgunEnemyStage2 : MonoBehaviour
             Movement();
         }
         Sounds();
+    }
+
+    void CheckForReset()
+    {
+        if (Vector3.Distance(GameObject.Find("Player").transform.position, transform.position) > resetDistance)
+        {
+            transform.position = startingPosition;
+            Start();
+            detected = false;
+            nextChasePositon.Clear();
+        }
     }
 
     void HealthCheck()
@@ -184,7 +197,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     void DetectedActions()
     {
         UpdateChasePositions();
-        print(nextChasePositon[0]);
+        //print(nextChasePositon[0]);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(/*GameObject.Find("Player").transform.position*/nextChasePositon[0] - transform.position), Time.deltaTime * rotationalSpeed);
         if (!movingBackwards)
         {

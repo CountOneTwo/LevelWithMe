@@ -480,6 +480,7 @@ MonoBehaviour:
   healthSliderCanvas: {fileID: 381953024}
   currentHealth: 0
   deathVFX: {fileID: 443190605335609165, guid: 230982413ef6fb747a1da4309e9761bd, type: 3}
+  resetDistance: 100
   centerOfSpawnArea: {x: -7, y: -1, z: 53.51}
   sizeOfSpawnArea: {x: 42.98, y: 10.48, z: 36.26}
   fov: 50
@@ -489,7 +490,7 @@ MonoBehaviour:
   amountOfProjectiles: 5
   projectileConeAngle: 5
   projectileDamage: 10
-  projectileSpeed: 5
+  projectileSpeed: 17.5
   backwardsMoveSpeed: 10
   backwardsMoveDistance: 10
   waitTillChaseAgain: 1

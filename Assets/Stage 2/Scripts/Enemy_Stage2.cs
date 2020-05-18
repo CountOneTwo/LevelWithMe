@@ -296,8 +296,9 @@ public class Enemy_Stage2 : MonoBehaviour
             detected = false;
             currentFov = fov;
             currentDetectionDepth = detectionDepth;
+            healthSliderCanvas.enabled = false;
             //Maybe reset time till next shot
-          
+
         }
 
     }

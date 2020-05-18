@@ -36,9 +36,14 @@ public class EnemyProjectile_Stage3 : MonoBehaviour
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().disappearTimer = 0;
             collision.gameObject.GetComponent<HealthAndRespawn_Stage3>().ActivateHealthBar();
 
+            if (collision.gameObject.GetComponent<Regenaration_Stage3>() != null)
+            {
+                collision.gameObject.GetComponent<Regenaration_Stage3>().ManualFadeOut();
+            }
+
             Destroy(gameObject);
         }
-        else if (collision.gameObject.GetComponent<ShotgunEnemyStage2>() != null || collision.gameObject.GetComponent<EnemyProjectile_Stage3>() != null)
+        else if (collision.gameObject.GetComponent<ShotgunEnemyStage2>() != null || collision.gameObject.GetComponent<EnemyProjectile_Stage3>() != null || collision.gameObject.GetComponent<Arrow_Stage3>() != null)
         {
 
         }
