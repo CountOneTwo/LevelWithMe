@@ -188,7 +188,7 @@ public class BasicEnemyBoss : MonoBehaviour
         transform.LookAt(centerPoint);
         Vector3 heading = centerPoint - transform.position;
         var distance = heading.magnitude;
-        var direction = heading / distance * distance;
+        var direction = heading / distance;
         character.Move(direction * movementSpeed * Time.deltaTime);
         //transform.position = Vector3.MoveTowards(transform.position, centerPoint, movementSpeed);
         if (Vector3.Distance(transform.position, centerPoint) < distanceFromCenterPoint)
