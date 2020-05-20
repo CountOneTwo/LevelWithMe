@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InformationIconV2 : MonoBehaviour
+public class S_InformationIcon_Final : MonoBehaviour
 {
     bool thisNoteDisplayed;
 
@@ -23,7 +23,7 @@ public class InformationIconV2 : MonoBehaviour
     public Image progressSlider;
     public Image readIcon;
 
-    DeveloperNote parentNode;
+    S_DevNote_Final parentNode;
 
     Camera mainCamera;
 
@@ -35,7 +35,7 @@ public class InformationIconV2 : MonoBehaviour
         player = GameObject.Find("Player");
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         unreadIcon = GetComponent<Image>();
-        parentNode = GetComponentInParent<DeveloperNote>();
+        parentNode = GetComponentInParent<S_DevNote_Final>();
         timeToDisplay = parentNode.timeToDisplay;
         showArea = parentNode.showArea;
         hideArea = parentNode.hideArea;
@@ -112,13 +112,13 @@ public class InformationIconV2 : MonoBehaviour
 
     void EnableDevNote()
     {
-        if (GameManager.devNoteCurrentlyDisplayed)
+        if (GameManager_Final.devNoteCurrentlyDisplayed)
         {
-            GameManager.currentDevNote.DisableDevNote();
+            GameManager_Final.currentDevNote.DisableDevNote();
 
         }
 
-        GameManager.currentDevNote = this;
+        GameManager_Final.currentDevNote = this;
 
         developerComment.enabled = true;
         unreadIcon.enabled = false;
@@ -127,7 +127,7 @@ public class InformationIconV2 : MonoBehaviour
 
         developerComment.gameObject.transform.LookAt(new Vector3(player.transform.position.x, developerComment.gameObject.transform.position.y, player.transform.position.z));
 
-        GameManager.devNoteCurrentlyDisplayed = true;
+        GameManager_Final.devNoteCurrentlyDisplayed = true;
         thisNoteDisplayed = true;
         //print("Eyo");
 
@@ -137,7 +137,7 @@ public class InformationIconV2 : MonoBehaviour
     void DisableDevNote()
     {
         // print("EyNOO");
-        GameManager.devNoteCurrentlyDisplayed = false;
+        GameManager_Final.devNoteCurrentlyDisplayed = false;
         thisNoteDisplayed = false;
         developerComment.enabled = false;
         progressSlider.gameObject.SetActive(true);

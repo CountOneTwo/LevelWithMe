@@ -1577,12 +1577,12 @@ MonoBehaviour:
   - {fileID: 5904551226480145975}
   - {fileID: 857001232958825823}
   - {fileID: 857001233317957590}
-  buttonClip: {fileID: 8300000, guid: 03d88465db1d81b4695ff95a51b9cc78, type: 3}
+  buttonClip: {fileID: 8300000, guid: f2bc3f21561f2454a8be7fef1b9aab27, type: 3}
   sliderClip: {fileID: 8300000, guid: b9d4342df75b0434eb78bbaa509e9697, type: 3}
   toggleMenuClip: {fileID: 8300000, guid: 62122b2cedf1450489addbde68fa6455, type: 3}
   changeButtonVolume: 1
   buttonVolume: 1
-  minButtonVolume: 0.8
+  minButtonVolume: 0.9
   maxButtonVolume: 1
   changeButtonPitch: 1
   buttonPitch: 1
@@ -1590,14 +1590,14 @@ MonoBehaviour:
   maxButtonPitch: 1.1
   changeSliderVolume: 1
   sliderVolume: 1
-  minSliderVolume: 0.35
-  maxSliderVolume: 0.5
+  minSliderVolume: 0.3
+  maxSliderVolume: 0.4
   changeSliderPitch: 0
   sliderPitch: 0.88
   minSliderPitch: -1
   maxSliderPitch: 2
   changeToggleVolume: 0
-  toggleVolume: 0.744
+  toggleVolume: 0.69
   minToggleVolume: 0.7
   maxToggleVolume: 1
   changeTogglePitch: 1
