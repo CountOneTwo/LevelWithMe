@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
             gamePaused = true;
             Time.timeScale = 0;
         }
+
+        if(pauseMenu.GetComponent<S_PauseMenu_Stage3>() != null)
+        {
+            pauseMenu.GetComponent<S_PauseMenu_Stage3>().PlayToggleSound();
+        }
     }
 
     public void QuitGame()
