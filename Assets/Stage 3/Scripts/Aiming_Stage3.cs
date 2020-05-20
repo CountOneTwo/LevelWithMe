@@ -11,13 +11,8 @@ public class Aiming_Stage3 : MonoBehaviour
 
     private float xAxisClamp;
 
-    public Slider mouseSensSlider;
-    public InputField mouseSensInputField;
-
     private void Awake()
     {
-        mouseSensSlider.value = mouseSensitivity;
-        mouseSensInputField.text = mouseSensitivity.ToString();
         Cursor.lockState = CursorLockMode.Locked;
         xAxisClamp = 0.0f;
     }
@@ -31,23 +26,14 @@ public class Aiming_Stage3 : MonoBehaviour
 
     }
 
-    public void ChangeSensitivity(float newSensitivity)
+    public float GetMouseSens()
+    {
+        return mouseSensitivity;
+    }
+
+    public void SetMouseSens(float newSensitivity)
     {
         mouseSensitivity = newSensitivity;
-        mouseSensSlider.value = mouseSensitivity;
-        //Debug.Log(mouseSensitivity);
-        mouseSensInputField.text = mouseSensitivity.ToString();
-        mouseSensInputField.textComponent.text = mouseSensitivity.ToString();
-    }
-
-    public void ChangeSensitivityBySlider()
-    {
-        ChangeSensitivity(mouseSensSlider.value);
-    }
-
-    public void ChangeSensitivityByInputField()
-    {
-        ChangeSensitivity(float.Parse(mouseSensInputField.text));
     }
 
     private void CameraRotation()

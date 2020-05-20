@@ -6,6 +6,10 @@ using UnityEngine.Audio;
 
 public class S_PauseMenu_Stage3 : MonoBehaviour
 {
+    public Slider sensSlider;
+    public Text sensText;
+    public Aiming_Stage3 aimingRef;
+
     public AudioMixer audioMixer;
 
     public Slider masterSlider;
@@ -19,12 +23,16 @@ public class S_PauseMenu_Stage3 : MonoBehaviour
     Resolution[] resolutions;
     int currentResolutionIndex = 0;
 
+    System.Globalization.CultureInfo culture;
+
     void Start()
     {
+        culture = new System.Globalization.CultureInfo("en-US");
         InitializeVolumeSliders();
         InitializeQualityButtons();
         InitializeFullscreenToggle();
         InitializeResolutionsDropdown();
+        InitializeSensitivity();
     }
 
     void InitializeVolumeSliders()
@@ -116,14 +124,14 @@ public class S_PauseMenu_Stage3 : MonoBehaviour
 
             List<string> resolutionOptions = new List<string>();
 
-            for (int i = 0; i < resolutions.Length; i++)
+            for (int i = (resolutions.Length-1); i >= 0; i--)
             {
                 string option = resolutions[i].width + " x " + resolutions[i].height;
                 resolutionOptions.Add(option);
 
                 if (resolutions[i].height == Screen.currentResolution.height && resolutions[i].width == Screen.currentResolution.width)
                 {
-                    currentResolutionIndex = i;
+                    currentResolutionIndex = (resolutions.Length - 1) - i;
                 }
             }
 
@@ -135,7 +143,30 @@ public class S_PauseMenu_Stage3 : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        currentResolutionIndex = resolutionIndex;
+        currentResolutionIndex = (resolutions.Length - 1) - resolutionIndex;
         Screen.SetResolution(resolutions[currentResolutionIndex].width, resolutions[currentResolutionIndex].height, Screen.fullScreen);
+    }
+
+    void InitializeSensitivity()
+    {
+        if (aimingRef != null)
+        {
+            if (sensSlider != null)
+            {
+                sensSlider.value = aimingRef.GetMouseSens();
+            }
+
+            if (sensText != null)
+            {
+                sensText.text = aimingRef.GetMouseSens().ToString("#.0", culture);
+
+            }
+        }
+    }
+
+    public void SetMouseSensitivity(float newValue)
+    {
+        aimingRef.SetMouseSens(newValue);
+        sensText.text = aimingRef.GetMouseSens().ToString("#.0", culture);
     }
 }

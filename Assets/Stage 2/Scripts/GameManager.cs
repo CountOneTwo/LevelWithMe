@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        pauseMenu.enabled = false;
+        gamePaused = false;
+        Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
