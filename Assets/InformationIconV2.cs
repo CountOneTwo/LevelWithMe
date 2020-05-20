@@ -27,9 +27,12 @@ public class InformationIconV2 : MonoBehaviour
 
     Camera mainCamera;
 
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         unreadIcon = GetComponent<Image>();
         parentNode = GetComponentInParent<DeveloperNote>();
@@ -43,14 +46,14 @@ public class InformationIconV2 : MonoBehaviour
     void Update()
     {
         VisibilityCheck();
-        parentCanvas.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, transform.position.y, GameObject.Find("Player").transform.position.z));
+        parentCanvas.transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
     }
 
     void VisibilityCheck()
     {
         if (!thisNoteDisplayed)
         {
-            if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < showArea)
+            if (Vector3.Distance(transform.position, player.transform.position) < showArea)
             {
 
 
@@ -96,7 +99,7 @@ public class InformationIconV2 : MonoBehaviour
 
 
             //Check if is visible
-            if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > hideArea || !currentlyLookedAt)
+            if (Vector3.Distance(transform.position, player.transform.position) > hideArea || !currentlyLookedAt)
             {
                 DisableDevNote();
                 timeLookedAt = 0;
@@ -122,7 +125,7 @@ public class InformationIconV2 : MonoBehaviour
         readIcon.enabled = false;
         progressSlider.gameObject.SetActive(false);
 
-        developerComment.gameObject.transform.LookAt(new Vector3(GameObject.Find("Player").transform.position.x, developerComment.gameObject.transform.position.y, GameObject.Find("Player").transform.position.z));
+        developerComment.gameObject.transform.LookAt(new Vector3(player.transform.position.x, developerComment.gameObject.transform.position.y, player.transform.position.z));
 
         GameManager.devNoteCurrentlyDisplayed = true;
         thisNoteDisplayed = true;

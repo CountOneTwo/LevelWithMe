@@ -120,9 +120,12 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
     Vector3 startingPosition;
     Vector3 startingRotation;
+
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         startingPosition = transform.position;
         startingRotation = transform.eulerAngles;
         windupVFX.SetActive(false);
@@ -152,7 +155,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
     void CheckForReset()
     {
-        if (Vector3.Distance(GameObject.Find("Player").transform.position, transform.position) > resetDistance)
+        if (Vector3.Distance(player.transform.position, transform.position) > resetDistance)
         {
             transform.eulerAngles = startingRotation;
             transform.position = startingPosition;
@@ -204,7 +207,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(/*GameObject.Find("Player").transform.position*/nextChasePositon[0] - transform.position), Time.deltaTime * rotationalSpeed);
         if (!movingBackwards)
         {
-            if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShoot)
+            if (Vector3.Distance(transform.position, player.transform.position) < distanceToShoot)
             {
                
                 
@@ -229,12 +232,12 @@ public class ShotgunEnemyStage2 : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < distanceToShowWindup)
+                if (Vector3.Distance(transform.position, player.transform.position) < distanceToShowWindup)
                 {
                     windupVFX.SetActive(true);
                 }
 
-                print(1);
+               // print(1);
                 Vector3 heading = nextChasePositon[0] -transform.position;
                 var distance = heading.magnitude;
                 var direction = heading / distance;
@@ -302,23 +305,23 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
         RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position, out hit))
+        if (Physics.Raycast(transform.position, player.transform.position, out hit))
         {
             if (hit.transform.gameObject.name.Equals("Player"))
             {
                 nextChasePositon.Clear();
-                nextChasePositon.Add(GameObject.Find("Player").transform.position);
+                nextChasePositon.Add(player.transform.position);
             }      
         }
         else
         {
             for (int i = 0; i < nextChasePositon.Count; i++)
             {
-                if (Physics.Raycast(nextChasePositon[i], GameObject.Find("Player").transform.position - nextChasePositon[i], out hit))
+                if (Physics.Raycast(nextChasePositon[i], player.transform.position - nextChasePositon[i], out hit))
                 {
                     if (hit.transform.gameObject.name.Equals("Player"))
                     {
-                        nextChasePositon.Insert(i+1, GameObject.Find("Player").transform.position);
+                        nextChasePositon.Insert(i+1, player.transform.position);
                         //nextChasePositon.Add(GameObject.Find("Player").transform.position);
                         for (int x = i + 2; x < nextChasePositon.Count; x++)
                         {
@@ -337,19 +340,19 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     void PrepareChasePosition()
     {
         nextChasePositon.Clear();
-        nextChasePositon.Add(GameObject.Find("Player").transform.position);
+        nextChasePositon.Add(player.transform.position);
     }
 
 
     void DetectionCheck()
     {
         //print(Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position));
-        if (Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position) < fov)
+        if (Vector3.Angle(transform.forward, player.transform.position - transform.position) < fov)
         {
 
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position - transform.position, out hit) && Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < detectionDepth)
+            if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit) && Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < detectionDepth)
             {
                 //  print(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name.Equals("Player"))

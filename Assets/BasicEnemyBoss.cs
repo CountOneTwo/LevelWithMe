@@ -138,9 +138,12 @@ public class BasicEnemyBoss : MonoBehaviour
 
     CharacterController character;
 
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         character = GetComponent<CharacterController>();
         currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
         currentDetectionDepth = detectionDepth;
@@ -288,12 +291,12 @@ public class BasicEnemyBoss : MonoBehaviour
     void DetectionCheck()
     {
         //print(Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position));
-        if (Vector3.Angle(transform.forward, GameObject.Find("Player").transform.position - transform.position) < currentFov)
+        if (Vector3.Angle(transform.forward, player.transform.position - transform.position) < currentFov)
         {
 
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, GameObject.Find("Player").transform.position - transform.position, out hit) && Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) < currentDetectionDepth)
+            if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit) && Vector3.Distance(transform.position, player.transform.position) < currentDetectionDepth)
             {
                 //  print(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name.Equals("Player"))
@@ -303,14 +306,14 @@ public class BasicEnemyBoss : MonoBehaviour
                     timeUndetected = 0;
                     currentFov = updatedFov;
                     currentDetectionDepth = updatedDetectionDepth;
-                    if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>() != null)
+                    if (player.GetComponent<HealthAndRespawn_Stage2>() != null)
                     {
-                        GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
+                        player.GetComponent<HealthAndRespawn_Stage2>().ActivateHealthBar();
                     }
-                    else if (GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>() != null)
+                    else if (player.GetComponent<HealthAndRespawn_Stage3>() != null)
                     {
-                        GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>().disappearTimer = 0;
-                        GameObject.Find("Player").GetComponent<HealthAndRespawn_Stage3>().ActivateHealthBar();
+                        player.GetComponent<HealthAndRespawn_Stage3>().disappearTimer = 0;
+                        player.GetComponent<HealthAndRespawn_Stage3>().ActivateHealthBar();
 
                     }
 
@@ -342,7 +345,7 @@ public class BasicEnemyBoss : MonoBehaviour
     void DetectedActions()
     {
         //transform.LookAt(GameObject.Find("Player").transform);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(GameObject.Find("Player").transform.position - transform.position), Time.deltaTime * rotationalSpeed);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime * rotationalSpeed);
 
 
         timeTillNextShot -= Time.deltaTime;
