@@ -23,7 +23,7 @@ public class InformationIconV2 : MonoBehaviour
     public Image progressSlider;
     public Image readIcon;
 
-    DeveloperNote parentNode;
+    S_DevNote_Final parentNode;
 
     Camera mainCamera;
 
@@ -35,7 +35,7 @@ public class InformationIconV2 : MonoBehaviour
         player = GameObject.Find("Player");
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         unreadIcon = GetComponent<Image>();
-        parentNode = GetComponentInParent<DeveloperNote>();
+        parentNode = GetComponentInParent<S_DevNote_Final>();
         timeToDisplay = parentNode.timeToDisplay;
         showArea = parentNode.showArea;
         hideArea = parentNode.hideArea;
