@@ -194,7 +194,7 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
         dead = false;
         DeActivateHealthBar();
         GetComponent<Moving_Stage3>().cooldown = false;
-        GameObject.Find("BossRoomTrigger")?.GetComponent<BossRoom>().Reset();
+        GameObject.Find("Boss Room Trigger")?.GetComponent<BossRoom>().Reset();
         //print(respawnPoint);
         GetComponentInChildren<Shooting_Stage3>().DisableCrosshair();
         charController.enabled = false;

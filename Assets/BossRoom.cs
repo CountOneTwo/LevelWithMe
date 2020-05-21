@@ -142,8 +142,8 @@ public class BossRoom : MonoBehaviour
 
     void CloseDoors()
     {
-        doors.transform.position = Vector3.MoveTowards(doors.transform.position, doorPosition, doorSpeed * Time.deltaTime);
-        if (Vector3.Distance(doorPosition, doors.transform.position) < 0.1)
+        doors.transform.localPosition = Vector3.MoveTowards(doors.transform.localPosition, doorPosition, doorSpeed * Time.deltaTime);
+        if (Vector3.Distance(doorPosition, doors.transform.localPosition) < 0.1)
         {
             
             doorsClosed = true;
@@ -151,14 +151,23 @@ public class BossRoom : MonoBehaviour
        
     }
 
+
+
+    IEnumerator OpenDoorsEnumerator()
+    {
+        while (Vector3.Distance(originalDoorPosition, doors.transform.localPosition) > 0.1)
+        {
+            doors.transform.localPosition = Vector3.MoveTowards(doors.transform.localPosition, originalDoorPosition, doorSpeed * Time.deltaTime);
+            yield return null;
+        }
+        doorsClosed = false;
+    }
+
+
     void OpenDoors()
     {
-        doors.transform.position = Vector3.MoveTowards(doors.transform.position, originalDoorPosition, doorSpeed * Time.deltaTime);
-        if (Vector3.Distance(originalDoorPosition, doors.transform.position) < 0.1)
-        {
-            
-            doorsClosed = false;
-        }
+
+        StartCoroutine("OpenDoorsEnumerator");
 
     }
 
