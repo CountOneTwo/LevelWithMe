@@ -171,9 +171,9 @@ public class HealthAndRespawn_Stage3 : MonoBehaviour
     void PrepareRespawn()
     {
         dead = true;
-        DeathSound();
+        
         GameObject.Find("Blackscreen").GetComponent<Fade_Stage23>().RespawnFadeOut(fadeDuration);
-
+        DeathSound();
     }
 
     void CheckForRespawn()

@@ -33,7 +33,7 @@ public class BossRoom : MonoBehaviour
     }
 
     bool activated;
-    bool doorsClosed;
+    bool doorsClosed = false;
     bool completed;
     // Start is called before the first frame update
     void Start()
@@ -142,9 +142,10 @@ public class BossRoom : MonoBehaviour
 
     void CloseDoors()
     {
-        if (Vector3.Distance(doorPosition, doors.transform.position) < 0.5)
+        doors.transform.position = Vector3.MoveTowards(doors.transform.position, doorPosition, doorSpeed * Time.deltaTime);
+        if (Vector3.Distance(doorPosition, doors.transform.position) < 0.1)
         {
-            doors.transform.position += (-transform.up * doorSpeed * Time.deltaTime);
+            
             doorsClosed = true;
         }
        
@@ -152,9 +153,10 @@ public class BossRoom : MonoBehaviour
 
     void OpenDoors()
     {
-        if (Vector3.Distance(originalDoorPosition, doors.transform.position) < 0.5)
+        doors.transform.position = Vector3.MoveTowards(doors.transform.position, originalDoorPosition, doorSpeed * Time.deltaTime);
+        if (Vector3.Distance(originalDoorPosition, doors.transform.position) < 0.1)
         {
-            doors.transform.position = (transform.up * doorSpeed * Time.deltaTime);
+            
             doorsClosed = false;
         }
 
