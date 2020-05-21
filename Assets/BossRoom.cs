@@ -55,7 +55,7 @@ public class BossRoom : MonoBehaviour
             {
                 durationTimer += Time.deltaTime;
                 CheckForMinEnemies();
-                countdownText.text = "Survive for " + (completeDuration - durationTimer) + "s";
+                countdownText.text = "Survive for " + (int)(completeDuration - durationTimer) + "s";
                 CheckForWin();
                 CheckForWaves();
             }

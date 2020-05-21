@@ -10432,8 +10432,8 @@ MonoBehaviour:
   currentHealth: 0
   centerPoint: {x: 3, y: -150, z: 125}
   distanceFromCenterPoint: 10
-  centerOfSpawnArea: {x: 1.4, y: -153.1, z: 124.3}
-  sizeOfSpawnArea: {x: 28.6, y: 36.8, z: 56.4}
+  centerOfSpawnArea: {x: 1.4, y: -163.1, z: 124.3}
+  sizeOfSpawnArea: {x: 28.6, y: 17.9, z: 56.4}
   TakeDamageSource: {fileID: 6167089323492183764}
   TakeHighDamageClip: {fileID: 8300000, guid: 9021b15e61ec542468f573d75a528757, type: 3}
   TakeLowDamageClip: {fileID: 8300000, guid: 1fe4e7b7511bb8a48ba448c44a32ffbd, type: 3}
