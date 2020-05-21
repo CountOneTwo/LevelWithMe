@@ -7,7 +7,7 @@ using UnityEditor;
 public class S_DevNote_Final : MonoBehaviour
 {
 
-    public enum developer {AlexanderIArt, AlexandruIProgramming, IgnacioIDesign, LarsIDesign, RobertIArt};
+    public enum developer {AlexanderIArt, AlexandruIProgramming, LarsIDesign, MoonyIDesign, RobertIArt};
     public enum month {January, February, March, April, May, June, July, August, September, October, November, December};
 
 
@@ -56,14 +56,14 @@ public class S_DevNote_Final : MonoBehaviour
                     topSeperator.color = programmingColor;
                     bottomSeperator.color = programmingColor;
                 break;
-                case developer.IgnacioIDesign:
-                    developerText.text = "Ignacio";
+                case developer.LarsIDesign:
+                    developerText.text = "Lars";
                     roleText.text = "Design";
                     topSeperator.color = designColor;
                     bottomSeperator.color = designColor;
                     break;
-                case developer.LarsIDesign:
-                    developerText.text = "Lars";
+                case developer.MoonyIDesign:
+                    developerText.text = "Moony";
                     roleText.text = "Design";
                     topSeperator.color = designColor;
                     bottomSeperator.color = designColor;

@@ -655,8 +655,8 @@ Transform:
   m_Children:
   - {fileID: 1489464283}
   - {fileID: 686515216}
-  - {fileID: 656632634}
   - {fileID: 1832270860}
+  - {fileID: 656632634}
   - {fileID: 2132661591}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -739,7 +739,7 @@ PrefabInstance:
     - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
       propertyPath: selectedDeveloper
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161424, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
@@ -784,7 +784,7 @@ PrefabInstance:
     - target: {fileID: 7351113719694161427, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161427, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
@@ -1595,7 +1595,22 @@ PrefabInstance:
     - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
       propertyPath: selectedDeveloper
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
+        type: 3}
+      propertyPath: content
+      value: "Thank you for making it all the way to the end! I\u2019m Lars, a manager
+        and game designer on this project. I was responsible for the developer comments.
+        There are Bonnies, Nikolais, Sandras, Alejandros, and Ivers behind every
+        game you play. No matter how insignificant it may seem to you, someone put
+        their heart and soul into it. And this someone might\u2019ve quit their job
+        at a bakery to create it\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161424, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
@@ -1640,7 +1655,7 @@ PrefabInstance:
     - target: {fileID: 7351113719694161427, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161427, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
