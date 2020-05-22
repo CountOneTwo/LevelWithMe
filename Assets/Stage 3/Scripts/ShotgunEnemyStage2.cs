@@ -203,7 +203,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     void DetectedActions()
     {
         UpdateChasePositions();
-        //print(nextChasePositon[0]);
+        print(nextChasePositon[0]);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(/*GameObject.Find("Player").transform.position*/nextChasePositon[0] - transform.position), Time.deltaTime * rotationalSpeed);
         if (!movingBackwards)
         {
@@ -305,7 +305,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
         RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, player.transform.position, out hit))
+        if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit))
         {
             if (hit.transform.gameObject.name.Equals("Player"))
             {
