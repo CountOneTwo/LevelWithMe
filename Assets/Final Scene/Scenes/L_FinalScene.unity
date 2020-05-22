@@ -2265,6 +2265,14 @@ PrefabInstance:
       propertyPath: selectedDeveloper
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
+        type: 3}
+      propertyPath: content
+      value: "Dear player,\r\nThank you very much for playing our game. I hope you
+        enjoyed your time here :D! I also hope you\u2019ll continue to support me
+        and the games I\u2019ll make in the future. Te extra\xF1o Tia, ojal\xE1 estes
+        bien. See you in about a blue moon,\r\n- Moony \u263D\r"
+      objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161424, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
       propertyPath: m_Name
@@ -2412,6 +2420,16 @@ PrefabInstance:
         type: 3}
       propertyPath: selectedDeveloper
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
+        type: 3}
+      propertyPath: content
+      value: "Congratulations, you made it to the end! I hope you enjoyed the journey
+        just as much as I enjoyed working on the game. Whenever you want to do something
+        and you don\u2019t know how or if you can, just start, many things will fall
+        into place and you\u2019ll be surprised how easy and enjoyable they were.
+        Never delay them or avoid them, it will just cause more problems. Applies
+        to both programming and life."
       objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161424, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
@@ -5077,6 +5095,16 @@ PrefabInstance:
         type: 3}
       propertyPath: selectedDeveloper
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451309098900857228, guid: d4d4fe1a95956274187562e3fad738fe,
+        type: 3}
+      propertyPath: content
+      value: 'I have one sentence in mind when it comes to creating something new:
+        Finished, not perfect. Finishing something is way more important than having
+        something perfect that is unfinished. That''s how you improve and become
+        better in the things you do. The best way to learn is to make mistakes and
+        embrace them. An important part of becoming an artist is having the ability
+        to finish something.'
       objectReference: {fileID: 0}
     - target: {fileID: 7351113719694161424, guid: d4d4fe1a95956274187562e3fad738fe,
         type: 3}
