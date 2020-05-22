@@ -15,7 +15,8 @@ public class BossRoom : MonoBehaviour
     public Wave[] enemyWaves;
     public float completeDuration;
     public Text countdownText;
-    float durationTimer;
+    [HideInInspector]
+    public float durationTimer;
     int nextWave;
 
     [Header("Enemies")]
