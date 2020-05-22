@@ -321,6 +321,7 @@ public class ShotgunEnemyBoss : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit))
         {
+            //print(hit.transform.gameObject.name);
             if (hit.transform.gameObject.name.Equals("Player"))
             {
                 nextChasePositon.Clear();
