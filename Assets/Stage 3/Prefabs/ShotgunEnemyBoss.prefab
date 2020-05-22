@@ -20221,7 +20221,8 @@ MonoBehaviour:
   MinVolumeWindUp: 0
   MaxVolumeWindUp: 0
   PlaySecondsBeforeShot: 0.5
-  DeathSound: {fileID: 0}
+  DeathSound: {fileID: 3979003921183559158, guid: 6c362db14084acd4faaf3fd45cc4d628,
+    type: 3}
 --- !u!82 &-3266704143347020196
 AudioSource:
   m_ObjectHideFlags: 0
