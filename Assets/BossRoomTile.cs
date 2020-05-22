@@ -22,9 +22,14 @@ public class BossRoomTile : MonoBehaviour
     float jiggleTimer;
     public float jiggleSpeed;
     public float movementSpeed;
+
+    float[] finalDestinationPositions;
     // Start is called before the first frame update
     void Start()
     {
+
+
+
         parentTransform = transform.parent;
        // parentCollider = GetComponentInParent<BoxCollider>();
         currentMovement = 0;
@@ -32,6 +37,20 @@ public class BossRoomTile : MonoBehaviour
         originalPoisition = transform.position;
         renderer = GetComponent<MeshRenderer>();
         bossRoom = GameObject.Find("Boss Room Trigger").GetComponent<BossRoom>();
+
+        finalDestinationPositions = new float[movementTimeAndDestinations.Length];
+        for (int i = 0; i < movementTimeAndDestinations.Length; i++)
+        {
+            float f = parentTransform.position.y;
+            for (int j = 0; j <= i; j++)
+            {
+                f += movementTimeAndDestinations[j].destinationPosition;
+            }
+
+
+            finalDestinationPositions[i] = f;
+        }
+
     }
 
     // Update is called once per frame
@@ -105,9 +124,9 @@ public class BossRoomTile : MonoBehaviour
                 else
                 {
                     transform.localPosition = Vector3.zero;
-                    if (Vector3.Distance(parentTransform.position, movementTimeAndDestinations[currentMovement].destinationPosition) > 0.1)
+                    if (Vector3.Distance(parentTransform.position, new Vector3(parentTransform.position.x,finalDestinationPositions[currentMovement], parentTransform.position.z)) > 0.1)
                     {
-                        parentTransform.position = Vector3.MoveTowards(parentTransform.position, movementTimeAndDestinations[currentMovement].destinationPosition, movementSpeed * Time.deltaTime);
+                        parentTransform.position = Vector3.MoveTowards(parentTransform.position, new Vector3(parentTransform.position.x, finalDestinationPositions[currentMovement], parentTransform.position.z), movementSpeed * Time.deltaTime);
                     }
                     else
                     {

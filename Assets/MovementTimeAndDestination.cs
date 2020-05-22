@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class MovementTimeAndDestination
 {
-    public Vector3 destinationPosition;
+    public float destinationPosition;
     public int movementTime;
 
 }
