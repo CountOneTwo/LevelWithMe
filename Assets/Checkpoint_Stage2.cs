@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checkpoint_Stage2 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Make respawn points invisible
     void Start()
     {
         GetComponent<MeshRenderer>().enabled = false;
@@ -15,9 +15,9 @@ public class Checkpoint_Stage2 : MonoBehaviour
     }
 
 
+    //Update the respawn point and orientation if trigger is entered - position and orientation are gotten from the red cube child to help the designers process
     void OnTriggerEnter(Collider collision)
-    {
-        print(1);
+    {        
         if (collision.gameObject.GetComponent<HealthAndRespawn_Stage2>() != null)
         {
             collision.gameObject.GetComponent<HealthAndRespawn_Stage2>().respawnPoint = transform.GetChild(0).transform.position;

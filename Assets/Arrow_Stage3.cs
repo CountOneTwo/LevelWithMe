@@ -23,7 +23,7 @@ public class Arrow_Stage3 : MonoBehaviour
      //public float speed;*/
 
 
-    // Start is called before the first frame update
+    // Get rigidboy and set mass and velocity
     void Start()
     {
         // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y +90, transform.eulerAngles.z);
@@ -54,12 +54,14 @@ public class Arrow_Stage3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Make the arrow point in the right direction regarding the current flightpath
         transform.rotation = Quaternion.LookRotation(rb.velocity);
     }
 
+
     void OnCollisionEnter(Collision collision)
     {
-        // print(collision.gameObject.name);
+        //Checks for collisions, subtracts health, updates detection status accordingly | ignores collision with onwn player collider
         if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {
             collision.gameObject.GetComponent<Enemy_Stage2>().currentHealth -= damage;
@@ -88,11 +90,6 @@ public class Arrow_Stage3 : MonoBehaviour
             Instantiate(hitEnemyVFX, transform.position, transform.rotation);
 
             Destroy(gameObject);
-        }
-
-        else if (collision.gameObject.GetComponent<HealthAndRespawn>() != null)
-        {
-
         }
         else
         {

@@ -9,13 +9,6 @@ public class GameManager_Stage3 : MonoBehaviour
     public static InformationIcon currentDevNote;
     public Canvas pauseMenu;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (!Regenaration_Stage3.regenerating)
@@ -31,20 +24,26 @@ public class GameManager_Stage3 : MonoBehaviour
 
     public void TogglePause()
     {
+        //Unpause or pause game
         if (gamePaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             pauseMenu.enabled = false;
             gamePaused = false;
+
             Time.timeScale = 1;
-            Cursor.visible = false;
+                      
         }
         else
         {
-            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;            
+
             pauseMenu.enabled = true;
             gamePaused = true;
+
             Time.timeScale = 0;
         }
     }

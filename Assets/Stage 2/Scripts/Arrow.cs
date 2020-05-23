@@ -22,7 +22,7 @@ public class Arrow : MonoBehaviour
     //public float speed;*/
 
 
-    // Start is called before the first frame update
+    // Get rigidboy and set mass and velocity
     void Start()
     {
         // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y +90, transform.eulerAngles.z);
@@ -37,10 +37,10 @@ public class Arrow : MonoBehaviour
                 projectileSpeed = maxProjectileSpeed;
             }*/
 
-        /// GetComponent<Rigidbody>().velocity = transform.forward * speed * windupMultiplier;
-        /// 
+        // GetComponent<Rigidbody>().velocity = transform.forward * speed * windupMultiplier;
+        // 
         rb.mass = mass;
-      rb.velocity = transform.forward * speed;
+        rb.velocity = transform.forward * speed;
         
        // damage = windupMultiplier * damage;
 
@@ -53,12 +53,13 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Make the arrow point in the right direction regarding the current flightpath
         transform.rotation = Quaternion.LookRotation(rb.velocity);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-       // print(collision.gameObject.name);
+        //Checks for collisions, subtracts health, updates detection status accordingly | ignores collision with onwn player collider
         if (collision.gameObject.GetComponent<Enemy_Stage2>() != null)
         {
             collision.gameObject.GetComponent<Enemy_Stage2>().currentHealth -= damage;

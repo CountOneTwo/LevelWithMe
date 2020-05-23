@@ -13,38 +13,44 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         pauseMenu.enabled = false;
         gamePaused = false;
-        Time.timeScale = 1;
-        Cursor.visible = false;
+
+        Time.timeScale = 1;     
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Pause"))
         {
             TogglePause();
         }
-
     }
 
     public void TogglePause()
     {
+        //Unpause Game or Pause Game
         if (gamePaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             pauseMenu.enabled = false;
             gamePaused = false;
+
             Time.timeScale = 1;
-            Cursor.visible = false;
+
         }
         else
         {
-            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             pauseMenu.enabled = true;
             gamePaused = true;
+
             Time.timeScale = 0;
         }
 

@@ -5,10 +5,12 @@ public class Moving : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
+
     [SerializeField] private float movementSpeed;
 
-    public float jumpHeight;
-    public float gravity;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float gravity;
+
     Vector3 velocity;
 
     bool isGrounded;
@@ -28,6 +30,7 @@ public class Moving : MonoBehaviour
 
     private void PlayerMovement()
     {
+        //Check if player is on the ground
         if (charController.isGrounded)
         {
             isGrounded = true;
@@ -36,41 +39,37 @@ public class Moving : MonoBehaviour
             isGrounded = false;
         }
 
+        //Reset downforce
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
        
 
-
+        //Get inputs and calibrate movements in each axis direction accordingly - take out movementSpeeds for documentation
         float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
         float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
 
         Vector3 rightMovement = transform.right * horizInput;
         Vector3 forwardMovement = transform.forward * vertInput;
 
-
+        //Actually move the character
         charController.Move((forwardMovement + rightMovement) * movementSpeed * Time.deltaTime);
 
 
-
+        //Account for gravity
         velocity.y += gravity * Time.deltaTime;
 
+        //Check for a jump and apply jumpforce if necessary
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             isGrounded = false;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
+        //Adjust character in y-Position due to gravity and/or jumpforce
         charController.Move(velocity * Time.deltaTime);
-
-
-
-
     }
-
-
-
 }
 
    /* public class Moving: MonoBehaviour
