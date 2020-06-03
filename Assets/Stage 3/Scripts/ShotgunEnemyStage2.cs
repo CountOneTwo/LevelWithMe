@@ -122,6 +122,13 @@ public class ShotgunEnemyStage2 : MonoBehaviour
     Vector3 startingRotation;
 
     GameObject player;
+
+    /*//public GameObject MusicManager;
+    public musicManagerScript musicmanagerscript;
+    [HideInInspector]
+    public bool HasClaimedDetected;
+    public bool HasClaimedUndetected;*/
+
     // Start is called before the first frame update
     void Start()
     {
@@ -134,6 +141,7 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
         Healthlastframe = maxHealth;
         currentHealth = maxHealth;
+       // HasClaimedUndetected = true;
     }
 
     // Update is called once per frame
@@ -149,6 +157,14 @@ public class ShotgunEnemyStage2 : MonoBehaviour
         else
         {
             Movement();
+            
+              /*  if (HasClaimedUndetected == false)
+                {
+                    musicmanagerscript.NrOfDetections -= 1;
+                    HasClaimedUndetected = true;
+                    HasClaimedDetected = false;
+                }*/
+            
         }
         Sounds();
     }
@@ -192,10 +208,14 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
 
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Instantiate(DeathSound, gameObject.transform.position, transform.rotation);
             Instantiate(deathVFX, gameObject.transform.position, transform.rotation);
+           /* if (HasClaimedDetected == true)
+            {
+                musicmanagerscript.NrOfDetections -= 1;
+            }*/
             Destroy(gameObject);
         }
     }
@@ -272,7 +292,12 @@ public class ShotgunEnemyStage2 : MonoBehaviour
 
 
         }
-
+        /*if (HasClaimedDetected == false)
+        {
+            musicmanagerscript.NrOfDetections += 1;
+            HasClaimedDetected = true;
+            HasClaimedUndetected = false;
+        }*/
     }
 
     void Movement()

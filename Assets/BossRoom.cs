@@ -36,6 +36,8 @@ public class BossRoom : MonoBehaviour
     bool activated;
     bool doorsClosed = false;
     bool completed;
+
+    public musicManagerScript musicmanagerscript;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,8 +61,14 @@ public class BossRoom : MonoBehaviour
                 countdownText.text = "Survive for " + (int)(completeDuration - durationTimer) + "s";
                 CheckForWin();
                 CheckForWaves();
-            }
+            }           
         }
+
+        if(currentEnemies > 0)
+        {
+            musicmanagerscript.NrOfDetections = 99;
+        }
+        else musicmanagerscript.NrOfDetections = 0;
 
     }
 

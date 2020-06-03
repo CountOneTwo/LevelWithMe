@@ -20177,7 +20177,7 @@ MonoBehaviour:
   amountOfProjectiles: 5
   projectileConeAngle: 5
   projectileDamage: 10
-  projectileSpeed: 5
+  projectileSpeed: 17.5
   backwardsMoveSpeed: 10
   backwardsMoveDistance: 10
   waitTillChaseAgain: 1
@@ -20223,6 +20223,9 @@ MonoBehaviour:
   PlaySecondsBeforeShot: 0.5
   DeathSound: {fileID: 3979003921183559158, guid: 6c362db14084acd4faaf3fd45cc4d628,
     type: 3}
+  musicmanagerscript: {fileID: 0}
+  HasClaimedDetected: 0
+  HasClaimedUndetected: 0
 --- !u!82 &-3266704143347020196
 AudioSource:
   m_ObjectHideFlags: 0

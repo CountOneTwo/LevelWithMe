@@ -140,6 +140,13 @@ public class BasicEnemyBoss : MonoBehaviour
 
     GameObject player;
 
+    //public GameObject MusicManager;
+    public musicManagerScript musicmanagerscript;
+    [HideInInspector]
+    public bool HasClaimedDetected;
+    public bool HasClaimedUndetected;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -158,6 +165,7 @@ public class BasicEnemyBoss : MonoBehaviour
         nextPoint = RandomPointInArea(centerOfSpawnArea, sizeOfSpawnArea);
         Healthlastframe = maxHealth;
         hasPlayedWindUp = true;
+        HasClaimedUndetected = true;
     }
 
     // Update is called once per frame
@@ -180,6 +188,15 @@ public class BasicEnemyBoss : MonoBehaviour
             if (detected)
             {
                 DetectedActions();
+            }
+            else
+            {
+                if (HasClaimedUndetected == false)
+                {
+                    musicmanagerscript.NrOfDetections -= 1;
+                    HasClaimedUndetected = true;
+                    HasClaimedDetected = false;
+                }
             }
         }
 
@@ -270,7 +287,10 @@ public class BasicEnemyBoss : MonoBehaviour
             {
                 Instantiate(DeathSound, gameObject.transform.position, transform.rotation);
                 Instantiate(deathVFX, gameObject.transform.position, transform.rotation);
-
+                if (HasClaimedDetected == true)
+                {
+                    musicmanagerscript.NrOfDetections -= 1;
+                }
             }
 
 
@@ -374,6 +394,12 @@ public class BasicEnemyBoss : MonoBehaviour
 
             }
 
+        }
+        if (HasClaimedDetected == false)
+        {
+            musicmanagerscript.NrOfDetections += 1;
+            HasClaimedDetected = true;
+            HasClaimedUndetected = false;
         }
     }
 
