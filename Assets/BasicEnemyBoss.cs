@@ -141,7 +141,7 @@ public class BasicEnemyBoss : MonoBehaviour
     GameObject player;
 
     //public GameObject MusicManager;
-    public musicManagerScript musicmanagerscript;
+    private musicManagerScript musicmanagerscript;
     [HideInInspector]
     public bool HasClaimedDetected;
     public bool HasClaimedUndetected;
@@ -150,6 +150,8 @@ public class BasicEnemyBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        musicmanagerscript = GameObject.Find("Music Manager").GetComponent<musicManagerScript>();
+
         player = GameObject.Find("Player");
         character = GetComponent<CharacterController>();
         currentWaitTillMove = Random.Range(waitTillMove, maxWaitTillMove);
