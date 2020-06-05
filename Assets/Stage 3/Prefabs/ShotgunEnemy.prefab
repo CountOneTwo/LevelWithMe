@@ -473,7 +473,7 @@ MonoBehaviour:
   nextPoint: {x: 0, y: 0, z: 0}
   rotationalSpeed: 100
   movementSpeed: 20
-  maxHealth: 100
+  maxHealth: 60
   healthPerTick: 10
   tickTime: 2
   healthSlider: {fileID: 2078799214}

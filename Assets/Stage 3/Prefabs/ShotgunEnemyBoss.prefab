@@ -20159,7 +20159,7 @@ MonoBehaviour:
   nextPoint: {x: 0, y: 0, z: 0}
   rotationalSpeed: 100
   movementSpeed: 20
-  maxHealth: 100
+  maxHealth: 60
   healthPerTick: 10
   tickTime: 2
   healthSlider: {fileID: 5413218326993599858}
@@ -20201,7 +20201,8 @@ MonoBehaviour:
   MinPitchLowDamage: 0
   MaxPitchLowDamage: 0
   ShootingSource: {fileID: 5401835553205226068}
-  ShootingClips: []
+  ShootingClips:
+  - {fileID: 8300000, guid: 9e4f87dc6c63abb469d41dd24a6e8f0e, type: 3}
   PitchChangeEnabledShooting: 0
   CurrentPitchShooting: 1
   MinPitchShooting: 0
@@ -20211,7 +20212,8 @@ MonoBehaviour:
   MinVolumeShooting: 0
   MaxVolumeShooting: 0
   WindUpSource: {fileID: -3266704143347020196}
-  WindUpClips: []
+  WindUpClips:
+  - {fileID: 8300000, guid: f88651d6d7b02e34281ce3536bc7043f, type: 3}
   PitchChangeEnabledWindUp: 0
   CurrentPitchWindUp: 1
   MinPitchWindUp: 0
@@ -20223,9 +20225,6 @@ MonoBehaviour:
   PlaySecondsBeforeShot: 0.5
   DeathSound: {fileID: 3979003921183559158, guid: 6c362db14084acd4faaf3fd45cc4d628,
     type: 3}
-  musicmanagerscript: {fileID: 0}
-  HasClaimedDetected: 0
-  HasClaimedUndetected: 0
 --- !u!82 &-3266704143347020196
 AudioSource:
   m_ObjectHideFlags: 0
