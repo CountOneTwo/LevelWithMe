@@ -74,6 +74,7 @@ public class BossRoom : MonoBehaviour
 
     public void Reset()
     {
+        countdownText.enabled = false;
         durationTimer = 0;
         nextWave = 0;
         activated = false;
