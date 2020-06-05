@@ -66,6 +66,7 @@ public class BossRoomTile : MonoBehaviour
 
     void Reset()
     {
+        parentTransform.transform.position = originalPoisition;
         transform.position = originalPoisition;
         currentMovement = 0;
         renderer.material = originalMaterial;
